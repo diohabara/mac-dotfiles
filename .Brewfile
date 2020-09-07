@@ -1,1 +1,10 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
 
+cask "google-chrome"
+cask "google-japanese-ime"
+cask "iterm2"
+cask "dash"
+cask "visual-studio-code"
+cask "docker"
