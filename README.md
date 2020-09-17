@@ -4,5 +4,5 @@ FOR 🍎
 ## setup
 
 ```sh
-$ bash -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup)"
+$ sh -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup)"
 ```
