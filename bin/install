@@ -18,7 +18,7 @@ function installing() {
 }
 
 function installed() {
-  echo "$1 is install!"
+  echo "$1 is installed!"
 }
 
 : "install brew" && {
