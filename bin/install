@@ -28,6 +28,22 @@ function installed() {
   fi
 }
 
+: "install brew" && {
+  if ! command_exists brew; then
+    installing brew
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    installed brew
+  else
+    echo "brew is already installed!"
+  fi
+}
+
+: "install packages by brew" && {
+  echo "Installing packages by brew..."
+  brew bundle install --file "${REPO_ROOT}/.Brewfile"
+  echo "Installed packages by brew!" 
+}
+
 : "install other packages" && {
   installing 'poetry'
   curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
@@ -46,22 +62,6 @@ function installed() {
   installing 'Haskell'
   curl -sSL https://get.haskellstack.org/ | sh -s - -f
   installed 'Haskell'
-}
-
-: "install brew" && {
-  if ! command_exists brew; then
-    installing brew
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    installed brew
-  else
-    echo "brew is already installed!"
-  fi
-}
-
-: "install packages by brew" && {
-  echo "Installing packages by brew..."
-  brew bundle install --file "${REPO_ROOT}/.Brewfile"
-  echo "Installed packages by brew!" 
 }
 
 echo "Complete instalation!"
