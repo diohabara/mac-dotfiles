@@ -1,4 +1,7 @@
 # mac-dotfiles
+
+![CI](https://github.com/diohabara/mac-dotfiles/workflows/CI/badge.svg)
+
 FOR 🍎
 
 ## setup
