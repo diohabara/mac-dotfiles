@@ -57,7 +57,7 @@ function installed() {
 
   installing 'Command Line Tools'
   xcode-select --install
-  installed 'Command Line Tools'
+  installed 'Command Line Tools' > dev/null 2>&1
 }
 
 echo "Complete instalation!"
