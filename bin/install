@@ -14,7 +14,7 @@ function installed() {
 }
 
 XDG_CONFIG_HOME="${HOME}/.config"
-GHQ_ROOT="${HOME}/ghq"
+GHQ_ROOT="${HOME}/repo"
 REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
 DOTFILES_HOME="${REPO_ROOT}/dotfiles"
 
@@ -29,7 +29,7 @@ DOTFILES_HOME="${REPO_ROOT}/dotfiles"
 
 : "install packages by brew" && {
   echo "Install packages by brew..."
-  brew bundle
+  brew bundle install --file "${REPO_ROOT}/.Brewfile"
 }
 
 : "install other packages" && {
