@@ -49,10 +49,6 @@ function installed() {
   installing 'Rust'
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   installed 'Rust'
-  
-  installing 'Haskell'
-  curl -sSL https://get.haskellstack.org/ | sh
-  installed 'Haskell'
 }
 
 echo "Complete instalation.!"
