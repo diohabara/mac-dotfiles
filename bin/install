@@ -51,7 +51,7 @@ function installed() {
   installed 'Rust'
 
   installing 'Haskell'
-  curl -sSL https://get.haskellstack.org/
+  curl -sSL https://get.haskellstack.org/ | sh
   stack upgrade
   installed 'Haskell'
 
