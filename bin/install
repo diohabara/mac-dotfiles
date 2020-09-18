@@ -1,6 +1,11 @@
 #!/usr/bin/env sh
 set -eu
 
+XDG_CONFIG_HOME="${HOME}/.config"
+GHQ_ROOT="${HOME}/repo"
+REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
+DOTFILES_HOME="${REPO_ROOT}/dotfiles"
+
 function command_exists() {
   type "$1" &> /dev/null ;
 }
@@ -12,11 +17,6 @@ function installing() {
 function installed() {
   echo "$1 is install!"
 }
-
-XDG_CONFIG_HOME="${HOME}/.config"
-GHQ_ROOT="${HOME}/repo"
-REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
-DOTFILES_HOME="${REPO_ROOT}/dotfiles"
 
 : "install brew" && {
   if ! command_exists brew; then
