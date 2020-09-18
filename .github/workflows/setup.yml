@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: setup dotfiles
-        run: ./bin/setup
+        run: chmod +x ./bin/setup && ./bin/setup
