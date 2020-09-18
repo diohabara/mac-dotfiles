@@ -1,11 +1,13 @@
 name: CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   macos:
     runs-on: macos-latest
+    
     steps:
       - uses: actions/checkout@v1
-      - name: setup dotfiles
-        run: chmod +x ./bin/* && ./bin/setup
+        
+      - name: setup
+        run: ${GITHUB_WORKSPACE}/bin/init.sh
