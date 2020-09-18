@@ -15,3 +15,20 @@ alias sudo='sudo -E'
 
 # PATH
 export PATH="/usr/local/bin:$PATH"
+
+# Languages
+## Python
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+### poetry
+source $HOME/.poetry/env
+## Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+export PKG_CONFIG_PATH="$HOME/bin/convert"
+## GoLang
+export GOENV_ROOT=$HOME/.goenv
+export PATH=$GOENV_ROOT/bin:$PATH
+eval "$(goenv init -)"
+## Haskell
+[ -f "/home/denjo/.ghcup/env" ] && source "/home/denjo/.ghcup/env" # ghcup-env
