@@ -21,18 +21,28 @@ function installed() {
   echo "$1 is installed!"
 }
 
+: "install CLT" && {
+  if ! command_exists xcode-select --install; then
+    installing 'Command Line Tools"
+    xcode-select --install
+    installed 'Command Line Tools"
+  fi
+}
+
 : "install brew" && {
   if ! command_exists brew; then
-    echo "Install brew..."
+    installing brew
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    installed brew
   else
-    echo "brew is already installed"
+    echo "brew is already installed!"
   fi
 }
 
 : "install packages by brew" && {
-  echo "Install packages by brew..."
+  echo "Installing packages by brew..."
   brew bundle install --file "${REPO_ROOT}/.Brewfile"
+  echo "Installed packages by brew!" 
 }
 
 : "install other packages" && {
@@ -53,10 +63,6 @@ function installed() {
   installing 'Haskell'
   curl -sSL https://get.haskellstack.org/ | sh -s - -f
   installed 'Haskell'
-
-  installing 'Command Line Tools'
-  xcode-select --install
-  installed 'Command Line Tools' > dev/null 2>&1
 }
 
 echo "Complete instalation!"
