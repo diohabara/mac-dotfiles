@@ -47,7 +47,7 @@ function installed() {
   installed 'pip'
   
   installing 'Rust'
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   installed 'Rust'
   
   installing 'Haskell'
