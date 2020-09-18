@@ -59,7 +59,7 @@ function installed() {
   fi
   installed 'pip'
   
-  if command_exists cargo; then
+  if ! command_exists cargo; then
     installing 'Rust'
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
   fi
