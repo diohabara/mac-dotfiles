@@ -1,0 +1,31 @@
+
+# Doc: https://git-scm.com/docs/git-config
+[user]
+    name = diohabara
+    email = diohabara@gmail.com
+
+[core]
+    # Repo: https://github.com/neovim/neovim
+    editor = nvim
+    quotepath = false
+    # Repo: https://github.com/dandavison/delta
+    pager = delta --dark
+
+[init]
+    templatedir = ~/.config/git/templates
+
+[diff]
+    tool = nvimdiff
+
+[difftool "nvimdiff"]
+    cmd = "nvim -R -d -c \"wincmd l\" -d \"${LOCAL}\" \"${REMOTE}\""
+
+[mergetool "nvimdiff"]
+    cmd = "nvim -d -c \"4wincmd w | wincmd J\" \"${LOCAL}\" \"${BASE}\" \"${REMOTE}\"  \"${MERGED}\""
+
+[commit]
+    template = ~/.config/git/templates/gitmessage.txt
+
+# Repo: https://github.com/dandavison/delta
+[delta]
+    syntax-theme = 'Solarized (dark)'
