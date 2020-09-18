@@ -5,6 +5,11 @@ function command_exists() {
   type "$1" &> /dev/null ;
 }
 
+XDG_CONFIG_HOME="${HOME}/.config"
+GHQ_ROOT="${HOME}/ghq"
+REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
+DOTFILES_HOME="${REPO_ROOT}/dotfiles"
+
 : "install brew" && {
   if ! command_exists brew; then
     echo "Install brew..."
@@ -16,7 +21,7 @@ function command_exists() {
 
 : "lnstall packages by brew" && {
 echo "Install packages by brew..."
-  brew bundle
+  brew bundle --file "${REPO_ROOT}/.Brewfile"
 }
 
-echo "Complete!"
+echo "Complete instalation.!"
