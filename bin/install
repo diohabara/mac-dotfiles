@@ -50,6 +50,11 @@ function installed() {
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   installed 'Rust'
 
+  installing 'Haskell'
+  curl -sSL https://get.haskellstack.org/
+  stack upgrade
+  installed 'Haskell'
+
   installing 'Command Line Tools'
   xcode-select --install
   installed 'Command Line Tools'
