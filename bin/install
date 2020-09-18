@@ -5,6 +5,14 @@ function command_exists() {
   type "$1" &> /dev/null ;
 }
 
+function installing() {
+  echo "Installing $1..."
+}
+
+function installed() {
+  echo "$1 is install!"
+}
+
 XDG_CONFIG_HOME="${HOME}/.config"
 GHQ_ROOT="${HOME}/ghq"
 REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
@@ -19,9 +27,33 @@ DOTFILES_HOME="${REPO_ROOT}/dotfiles"
   fi
 }
 
-: "lnstall packages by brew" && {
-echo "Install packages by brew..."
+: "install packages by brew" && {
+  echo "Install packages by brew..."
   brew bundle --file "${REPO_ROOT}/.Brewfile"
+}
+
+: "install other packages" && {
+  installing 'starship'
+  curl -fsSL https://starship.rs/install.sh | bash
+  installed 'starship'
+  
+  installing 'poetry'
+  curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+  installed 'poetry'
+  
+  installing 'pip'
+  curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+  python get-pip.py
+  rm get-pip.py
+  installed 'pip'
+  
+  installing 'Rust'
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  installed 'Rust'
+  
+  installing 'Haskell'
+  curl -sSL https://get.haskellstack.org/ | sh
+  installed 'Haskell'
 }
 
 echo "Complete instalation.!"
