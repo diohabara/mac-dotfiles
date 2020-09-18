@@ -27,6 +27,3 @@ source $HOME/.poetry/env
 ## Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 export PKG_CONFIG_PATH="$HOME/bin/convert"
-
-## Haskell
-[ -f "/home/denjo/.ghcup/env" ] && source "/home/denjo/.ghcup/env" # ghcup-env
