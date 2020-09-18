@@ -22,9 +22,9 @@ function installed() {
 
 : "install CLT" && {
   if ! command_exists xcode-select; then
-    installing 'Command Line Tools"
+    installing 'Command Line Tools'
     xcode-select --install
-    installed 'Command Line Tools"
+    installed 'Command Line Tools'
   fi
 }
 
