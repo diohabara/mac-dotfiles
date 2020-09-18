@@ -17,5 +17,5 @@ else
 fi
 
 cd "${REPO_ROOT}"
-./bin/install
 ./bin/link
+./bin/install
