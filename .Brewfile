@@ -7,7 +7,6 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 
 brew "bash"
-brew "bat"
 brew "curl"
 brew "emacs"
 brew "fzf"
