@@ -45,12 +45,6 @@ function installed() {
 }
 
 : "install python packages" && {
-  if ! command_exists pyenv; then
-    installing 'pyenv'
-    git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-  fi
-  install pyenv
-
   if ! command_exists poetry; then
     installing 'poetry'
     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
