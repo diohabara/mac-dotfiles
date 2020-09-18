@@ -45,22 +45,30 @@ function installed() {
 }
 
 : "install other packages" && {
-  installing 'poetry'
-  curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
+  if ! command_exists poetry; then
+    installing 'poetry'
+    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
+  fi
   installed 'poetry'
   
-  installing 'pip'
-  curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-  python get-pip.py
-  rm get-pip.py
+  if ! command_exists; then
+    installing 'pip'
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python get-pip.py
+    rm get-pip.py
+  fi
   installed 'pip'
   
-  installing 'Rust'
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+  if command_exists cargo; then
+    installing 'Rust'
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+  fi
   installed 'Rust'
 
-  installing 'Haskell'
-  curl -sSL https://get.haskellstack.org/ | sh -s - -f
+  if ! command_exists stack; then
+    installing 'Haskell'
+    curl -sSL https://get.haskellstack.org/ | sh -s - -f
+  fi
   installed 'Haskell'
 }
 
