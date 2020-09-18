@@ -46,7 +46,7 @@ function installed() {
 
 : "install other packages" && {
   installing 'poetry'
-  curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+  curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
   installed 'poetry'
   
   installing 'pip'
