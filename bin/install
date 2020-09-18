@@ -36,10 +36,6 @@ function installed() {
 }
 
 : "install other packages" && {
-  installing 'starship'
-  curl -fsSL https://starship.rs/install.sh | bash
-  installed 'starship'
-  
   installing 'poetry'
   curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
   installed 'poetry'
