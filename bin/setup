@@ -4,7 +4,7 @@ export LC_ALL=C
 export LANG=C
 IFS="$(printf " \t\nx")"
 
-REPO_URI='git@github.com/diohabara/mac-dotfiles.git'
+REPO_URI='git@github.com:diohabara/mac-dotfiles.git'
 GHQ_ROOT="${HOME}/repo"
 REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
 
