@@ -80,4 +80,5 @@ flycheck_*.el
 /network-security.data
 
 
-
+# brew
+.Brewfile.lock.json
