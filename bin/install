@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 set -eu
+export LC_ALL=C
+export LANG=C
+IFS="$(printf " \t\nx")"
 
 XDG_CONFIG_HOME="${HOME}/.config"
 GHQ_ROOT="${HOME}/repo"
