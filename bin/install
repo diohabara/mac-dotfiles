@@ -54,6 +54,10 @@ function installed() {
   curl -sSL https://get.haskellstack.org/ | sh
   stack upgrade
   installed 'Haskell'
+
+  installing 'Command Line Tools'
+  xcode-select --install
+  installed 'Command Line Tools' > dev/null 2>&1
 }
 
 echo "Complete instalation!"
