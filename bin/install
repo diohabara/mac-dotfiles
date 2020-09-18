@@ -44,7 +44,13 @@ function installed() {
   echo "Installed packages by brew!" 
 }
 
-: "install other packages" && {
+: "install python packages" && {
+  if ! command_exists pyenv; then
+    installing 'pyenv'
+    git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+  fi
+  install pyenv
+
   if ! command_exists poetry; then
     installing 'poetry'
     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
@@ -58,13 +64,17 @@ function installed() {
     rm get-pip.py
   fi
   installed 'pip'
-  
+}
+
+: "install rust packages" && {
   if ! command_exists cargo; then
     installing 'Rust'
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
   fi
   installed 'Rust'
+}
 
+: "install haskell packages" && {
   if ! command_exists stack; then
     installing 'Haskell'
     curl -sSL https://get.haskellstack.org/ | sh -s - -f
