@@ -23,6 +23,8 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 ### poetry
 source $HOME/.poetry/env
+### pip
+export PATH="$HOME/Library/Python/2.7/bin"
 
 ## Rust
 export PATH="$HOME/.cargo/bin:$PATH"
