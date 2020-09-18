@@ -1,4 +1,3 @@
-#!/usr/bin/env sh
 set -eu
 export LC_ALL=C
 export LANG=C
@@ -22,7 +21,7 @@ function installed() {
 }
 
 : "install CLT" && {
-  if ! command_exists xcode-select --install; then
+  if ! command_exists xcode-select; then
     installing 'Command Line Tools"
     xcode-select --install
     installed 'Command Line Tools"
