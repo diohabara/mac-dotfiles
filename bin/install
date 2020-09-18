@@ -55,4 +55,4 @@ function installed() {
   installed 'Command Line Tools'
 }
 
-echo "Complete instalation.!"
+echo "Complete instalation!"
