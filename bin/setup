@@ -6,8 +6,7 @@ export LANG=C
 IFS="$(printf " \t\nx")"
 
 REPO_URI='https://github.com/diohabara/mac-dotfiles'
-XDG_DATA_HOME="${HOME}/.local/share"
-GHQ_ROOT="${XDG_DATA_HOME}/ghq"
+GHQ_ROOT="${HOME}/repo"
 REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
 
 if [ ! -d "${REPO_ROOT}" ]; then
