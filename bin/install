@@ -71,6 +71,9 @@ function installed() {
     installing 'Rust'
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
   fi
+  # For rust-analyzer
+  # Doc: https://rust-analyzer.github.io/manual.html#installation
+  rustup component add rust-src
   installed 'Rust'
 }
 
