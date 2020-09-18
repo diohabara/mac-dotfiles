@@ -4,9 +4,13 @@ export LANG=C
 IFS="$(printf " \t\nx")"
 
 XDG_CONFIG_HOME="${HOME}/.config"
+ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+ZSH_FUNCCOMP_DIR="${ZDOTDIR}/func_comp"
 GHQ_ROOT="${HOME}/repo"
 REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
 DOTFILES_HOME="${REPO_ROOT}/dotfiles"
+
+command mkdir -p "${ZSH_FUNCCOMP_DIR}"
 
 function command_exists() {
   type "$1" &> /dev/null ;
@@ -50,17 +54,25 @@ function installed() {
     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
   fi
   installed 'poetry'
+  
+  if ! command_exists pip; then
+    installing 'pip'
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python get-pip.py
+    rm get-pip.py
+  installed 'pip'
 }
 
 : "install rust packages" && {
   if ! command_exists cargo; then
     installing 'Rust'
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+    rustup completions zsh > "${ZSH_FUNCCOMP_DIR}/_rustup"
+    # For rust-analyzer
+    # Doc: https://rust-analyzer.github.io/manual.html#installation
+    rustup component add rust-src
+    installed 'Rust'
   fi
-  # For rust-analyzer
-  # Doc: https://rust-analyzer.github.io/manual.html#installation
-  rustup component add rust-src
-  installed 'Rust'
 }
 
 : "install haskell packages" && {
