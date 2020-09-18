@@ -49,6 +49,10 @@ function installed() {
   installing 'Rust'
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   installed 'Rust'
+
+  installing 'Command Line Tools'
+  xcode-select --install
+  installed 'Command Line Tools'
 }
 
 echo "Complete instalation.!"
