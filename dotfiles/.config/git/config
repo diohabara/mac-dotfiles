@@ -26,6 +26,9 @@
 [commit]
     template = ~/.config/git/templates/gitmessage.txt
 
+[ghq]
+    root = ~/repo
+
 # Repo: https://github.com/dandavison/delta
 [delta]
     syntax-theme = 'Solarized (dark)'
