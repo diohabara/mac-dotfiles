@@ -15,6 +15,7 @@ alias sudo='sudo -E'
 
 # PATH
 export PATH="/usr/local/bin:$PATH"
+export PATH=$PATH:~/.local/bin
 
 # Languages
 ## Python
