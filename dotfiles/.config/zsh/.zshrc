@@ -31,3 +31,4 @@ export PKG_CONFIG_PATH="$HOME/bin/convert"
 
 ## Haskell
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
