@@ -15,6 +15,9 @@ else
     command git pull origin master
 fi
 
+# install submodules
+git submodule update --init --recursive
+
 cd "${REPO_ROOT}"
 ./bin/link
 ./bin/install
