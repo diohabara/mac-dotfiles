@@ -24,21 +24,27 @@ function installed() {
   echo "$1 is installed!"
 }
 
+function already() {
+  echo "$1 is already installed"
+}
+
 : "install CLT" && {
   if ! command_exists xcode-select; then
     installing 'Command Line Tools'
     xcode-select --install
     installed 'Command Line Tools'
+  else
+    already 'Command Line Tools'
   fi
 }
 
 : "install brew" && {
   if ! command_exists brew; then
-    installing brew
+    installing 'brew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    installed brew
+    installed 'brew'
   else
-    echo "brew is already installed!"
+    already 'brew'
   fi
 }
 
@@ -52,8 +58,10 @@ function installed() {
   if ! command_exists poetry; then
     installing 'poetry'
     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
+    installed 'poetry'
+  else
+    already 'poetry'
   fi
-  installed 'poetry'
 }
 
 : "install rust packages" && {
@@ -65,15 +73,19 @@ function installed() {
     # Doc: https://rust-analyzer.github.io/manual.html#installation
     rustup component add rust-src
     installed 'Rust'
+  else
+    already 'Rust'
   fi
 }
 
 : "install haskell packages" && {
   if ! command_exists stack; then
-    installing 'Haskell'
+    installing 'Haskell-Stack'
     curl -sSL https://get.haskellstack.org/ | sh -s - -f
+    installed 'Haskell-Stack'
+  else
+    already 'Haskell-Stack'
   fi
-  installed 'Haskell'
 }
 
 echo "Complete instalation!"
