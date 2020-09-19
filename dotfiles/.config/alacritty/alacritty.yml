@@ -1,15 +1,13 @@
-tabspaces: 4
-
 font:
-	normal:
-		family: "JetBrains Mono"
+  normal:
+    family: "JetBrains Mono"
 
-	bold:
-		family: "JetBrains Mono"
-		style: Bold
+  bold:
+    family: "JetBrains Mono"
+    style: Bold
 
-	italic:
-		family: "JetBrains Mono"
-		style: Italic
+  italic:
+    family: "JetBrains Mono"
+    style: Italic
 
-	size: 14.0
+  size: 14.0
