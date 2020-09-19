@@ -41,6 +41,7 @@ function already() {
 : "install brew" && {
   if ! command_exists brew; then
     installing 'brew'
+    # Doc: https://brew.sh/
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     installed 'brew'
   else
@@ -50,6 +51,7 @@ function already() {
 
 : "install packages by brew" && {
   echo "Installing packages by brew..."
+  # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
   brew bundle install --file "${REPO_ROOT}/.Brewfile"
   echo "Installed packages by brew!" 
 }
@@ -57,6 +59,7 @@ function already() {
 : "install python packages" && {
   if ! command_exists poetry; then
     installing 'poetry'
+    # Doc: https://python-poetry.org/docs/
     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
     installed 'poetry'
   else
@@ -67,7 +70,9 @@ function already() {
 : "install rust packages" && {
   if ! command_exists rustup; then
     installing 'Rust'
+    Doc: https://www.rust-lang.org/tools/install
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+    Doc: https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion-for-bash-fish-zsh-or-powershell
     rustup completions zsh > "${ZSH_FUNCCOMP_DIR}/_rustup"
     # For rust-analyzer
     # Doc: https://rust-analyzer.github.io/manual.html#installation
@@ -81,6 +86,7 @@ function already() {
 : "install haskell packages" && {
   if ! command_exists stack; then
     installing 'Haskell-Stack'
+    # Doc: https://docs.haskellstack.org/en/stable/README/
     curl -sSL https://get.haskellstack.org/ | sh -s - -f
     installed 'Haskell-Stack'
   else
@@ -89,6 +95,7 @@ function already() {
   
   if ! command_exists ghcup; then
     installing 'ghcup'
+    # Doc: https://gitlab.haskell.org/haskell/ghcup-hs
     curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
     installed 'ghcup'
   else
