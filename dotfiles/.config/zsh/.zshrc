@@ -1,6 +1,7 @@
 # Autocompletion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' # ignore lowercase
+eval "$(gh completion -s zsh)"
 
 # Shell prompt
 eval "$(starship init zsh)"
