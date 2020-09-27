@@ -36,7 +36,6 @@ brew "tmux"
 brew "tokei"
 brew "unzip"
 brew "wget"
-brew "ytop"
 brew "zsh"
 
 cask "alacritty"
