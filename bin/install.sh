@@ -36,7 +36,7 @@ function already() {
 
 : "install Nix" && {
   if ! command_exists nix-env; then
-    curl -L https://nixos.org/nix/install | sh
+    sh <"$(curl -L https://nixos.org/nix/install)" --darwin-use-unencrypted-nix-store-volume
   else
     already 'Nix'
   fi
