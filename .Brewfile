@@ -41,6 +41,7 @@ brew "tmux"
 brew "tokei"
 brew "unzip"
 brew "wget"
+brew "yarn"
 brew "zsh"
 
 cask "alacritty"
