@@ -36,7 +36,7 @@ function already() {
 
 : "install Nix" && {
   if ! command_exists nix-env; then
-    sh <(curl -L https://nixos.org/nix/install) --daemon
+    sh -c "$(curl -L https://nixos.org/nix/install)" 
   else
     already 'Nix'
   fi
