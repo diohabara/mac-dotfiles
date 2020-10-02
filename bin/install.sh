@@ -34,13 +34,6 @@ function already() {
   echo "$1 is already installed"
 }
 
-: "install Nix" && {
-  if ! command_exists nix-env; then
-    sh <"$(curl -L https://nixos.org/nix/install)" --darwin-use-unencrypted-nix-store-volume
-  else
-    already 'Nix'
-  fi
-}
 
 : "install CLT" && {
   if ! command_exists xcode-select; then
