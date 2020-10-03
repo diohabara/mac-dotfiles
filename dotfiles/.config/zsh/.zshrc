@@ -14,7 +14,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias sudo='sudo -E'
 alias cargo='c'
-alias gp='ghq list --full-path | peco'
+alias gc='cd $(ghq list -p | peco)'
 
 # PATH
 export PATH="/usr/local/bin:$PATH"
