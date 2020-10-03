@@ -13,7 +13,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias sudo='sudo -E'
-alias cargo='c'
+alias c='cargo'
 alias gc='cd $(ghq list -p | peco)'
 
 # PATH
