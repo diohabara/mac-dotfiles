@@ -8,11 +8,13 @@ eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship.toml
 
 # Alias
-alias new='emacs -nw'
+alias e='emacs -nw'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias sudo='sudo -E'
+alias cargo='c'
+alias gp='ghq list --full-path | peco'
 
 # PATH
 export PATH="/usr/local/bin:$PATH"
