@@ -1,6 +1,6 @@
 # Autocompletion
 autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' # ignore lowercase
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 eval "$(gh completion -s zsh)"
 
 # Shell prompt
@@ -14,7 +14,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias sudo='sudo -E'
 alias c='cargo'
-alias gc='cd $(ghq list -p | peco)'
+alias gf='cd $(ghq list -p | fzf)'
 
 # PATH
 export PATH="/usr/local/bin:$PATH"
