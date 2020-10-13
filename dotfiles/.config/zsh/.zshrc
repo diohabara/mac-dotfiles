@@ -15,6 +15,9 @@ alias cp='cp -i'
 alias sudo='sudo -E'
 alias c='cargo'
 alias gf='cd $(ghq list -p | fzf)'
+alias ls='exa'
+alias tree='exa -T'
+alias find='fd'
 
 # PATH
 export PATH="/usr/local/bin:$PATH"
