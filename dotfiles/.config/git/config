@@ -10,6 +10,7 @@
     quotepath = false
     # Repo: https://github.com/dandavison/delta
     pager = delta --dark
+    excludefile = ~/git/.gitignore
 
 [init]
     templatedir = ~/.config/git/templates
