@@ -91,6 +91,14 @@ function already() {
   fi
 }
 
+: "install cargo packages" && {
+  if command_exists cargo; then
+    already 'cargo'
+    cargo install cargo-raze
+    cargo install cargo-vendor
+  fi
+}
+
 : "install haskell packages" && {
   if ! command_exists stack; then
     installing 'Haskell-Stack'
