@@ -96,6 +96,7 @@ function already() {
     already 'cargo'
     cargo install cargo-raze
     cargo install cargo-vendor
+    cargo install mdbook
   fi
 }
 
