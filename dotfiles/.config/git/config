@@ -34,4 +34,4 @@
 [delta]
     syntax-theme = 'Solarized (dark)'
 [http]
-	cookiefile = ~/.gitcookies
+	cookiefile = /Users/jio/.gitcookies
