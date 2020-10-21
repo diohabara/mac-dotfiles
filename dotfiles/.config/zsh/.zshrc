@@ -43,7 +43,3 @@ export PKG_CONFIG_PATH="$HOME/bin/convert"
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
-# Projects
-## V8
-export PATH=/Users/jio/repo/chromium.googlesource.com/chromium/tools/depot_tools:$PATH
-
