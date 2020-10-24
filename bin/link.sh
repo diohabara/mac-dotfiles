@@ -10,6 +10,9 @@ DOTFILES_HOME="${REPO_ROOT}/dotfiles"
 
 cd "${DOTFILES_HOME}"
 
+# for Emacs
+ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
+
 echo 'Symlinking dotfiles...'
 command find . -type d | command xargs -I '{}' command mkdir -p "${HOME}/{}"
 command find . -type f |
