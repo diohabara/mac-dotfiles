@@ -1,3 +1,0 @@
-[submodule "dotfiles/.emacs.d"]
-	path = dotfiles/.emacs.d
-	url = git@github.com:diohabara/.emacs.d.git
