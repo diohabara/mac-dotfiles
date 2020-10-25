@@ -167,3 +167,7 @@ Temporary Items
 
 ### Zsh ###
 *.zwc
+
+### vscode ###
+.vscode
+
