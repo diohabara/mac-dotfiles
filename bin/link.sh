@@ -10,8 +10,18 @@ DOTFILES_HOME="${REPO_ROOT}/dotfiles"
 
 cd "${DOTFILES_HOME}"
 
+function file_exists() {
+  type "$1" $> /dev/null;
+}
+
 # for Emacs
-ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
+
+"link Emacs" && {
+  if ! file_exists /Applications/Emacs.app;
+    then 
+      ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
+  fi
+}
 
 echo 'Symlinking dotfiles...'
 command find . -type d | command xargs -I '{}' command mkdir -p "${HOME}/{}"
