@@ -11,7 +11,8 @@ DOTFILES_HOME="${REPO_ROOT}/dotfiles"
 cd "${DOTFILES_HOME}"
 
 : "link Emacs" && {
-  if test -f "/Applications/Emacs.app";
+  file="/Applications/Emacs.app"
+  if [[-L "$file" && -d "$file" ]]
     then
       echo "Emacs already installed"
     else
