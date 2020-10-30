@@ -78,16 +78,16 @@ function already() {
 : "install rust packages" && {
   if ! command_exists rustup; then
     installing 'Rust'
-    Doc: https://www.rust-lang.org/tools/install
+    # Doc: https://www.rust-lang.org/tools/install
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
-    Doc: https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion-for-bash-fish-zsh-or-powershell
+    # Doc: https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion-for-bash-fish-zsh-or-powershell
     rustup completions zsh > "${ZSH_FUNCCOMP_DIR}/_rustup"
     # For rust-analyzer
     # Doc: https://rust-analyzer.github.io/manual.html#installation
     rustup component add rust-src
     installed 'Rust'
   else
-    already 'Rust'
+    rustup update
   fi
 }
 
