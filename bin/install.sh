@@ -120,4 +120,4 @@ function already() {
   fi
 }
 
-echo "Complete instalation!"
+echo "Complete installation!"
