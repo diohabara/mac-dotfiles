@@ -10,15 +10,11 @@ DOTFILES_HOME="${REPO_ROOT}/dotfiles"
 
 cd "${DOTFILES_HOME}"
 
-function file_exists() {
-  type "$1" $> /dev/null;
-}
-
-# for Emacs
-
 "link Emacs" && {
-  if ! file_exists /Applications/Emacs.app;
-    then 
+  if test -f "Applications/Emacs.app";
+    then
+      echo "Emacs already installed"
+    else
       ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
   fi
 }
