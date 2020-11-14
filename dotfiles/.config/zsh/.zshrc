@@ -18,7 +18,7 @@ alias e='emacs -nw'
 alias find='fd'
 alias gd='cd $(ghq root)'
 alias gf='cd $(ghq list -p | fzf)'
-alias gg "ghq get $*"
+alias gg="ghq get $*"
 alias gs='git status'
 alias ls='exa'
 alias sudo='sudo -E'
