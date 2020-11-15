@@ -1,13 +1,13 @@
 font:
   normal:
-    family: "Cascadia Code PL"
+    family: "JetBrains Mono"
 
   bold:
-    family: "Cascadia Code PL"
+    family: "JetBrains Mono"
     style: Bold
 
   italic:
-    family: "Cascadia Code PL"
+    family: "JetBrains Mono"
     style: Italic
 
   size: 16.0
