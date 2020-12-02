@@ -61,6 +61,7 @@ brew "unzip"
 brew "watchman"
 brew "wget"
 brew "yarn"
+brew "youtube-dl"
 brew "zsh"
 
 cask "alacritty"
