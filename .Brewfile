@@ -93,3 +93,6 @@ cask "typora"
 cask "visual-studio-code"
 cask "vivaldi"
 cask "zoomus"
+
+mas "Xcode", id: 497799835
+mas "BeFocuedPro", id: 961632517

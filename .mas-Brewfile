@@ -1,5 +1,0 @@
-tap "homebrew/bundle"
-tap "homebrew/core"
-
-mas "Xcode", id: 497799835
-mas "BeFocuedPro", id: 961632517
