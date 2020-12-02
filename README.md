@@ -1,8 +1,6 @@
 # mac-dotfiles
 
-![CI](https://github.com/diohabara/mac-dotfiles/workflows/CI/badge.svg)
-
-FOR 🍎
+For 🍎(currently x86-64 only...(´；ω；｀))
 
 ## setup
 
