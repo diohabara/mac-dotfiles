@@ -7,6 +7,13 @@ eval "$(gh completion -s zsh)"
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship.toml
 
+# history
+export HISTFILE=${HOME}/.zsh_history # where to save
+export HISTSIZE=1000 # max size in memory
+export SAVEHIST=100000 # max size in .zsh_history
+setopt hist_ignore_dups # never save duplicates
+setopt EXTENDED_HISTORY # save when to start and end
+
 # Alias
 ## for security
 alias cp='cp -i'
@@ -17,6 +24,7 @@ alias c='cargo'
 alias e='emacs -nw'
 alias find='fd'
 alias gd='cd $(ghq root)'
+alias fh='history -E 1 | fzf'
 alias gf='cd $(ghq list -p | fzf)'
 alias gg="ghq get $*"
 alias gs='git status'
