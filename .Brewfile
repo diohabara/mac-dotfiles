@@ -95,6 +95,7 @@ cask "texpad"
 cask "typora"
 cask "visual-studio-code"
 cask "vivaldi"
+cask "vlc"
 cask "zoomus"
 
 mas "Xcode", id: 497799835
