@@ -1,13 +1,13 @@
-name: CI
-
-on: [push, pull_request]
-
-jobs:
-  macos:
-    runs-on: macos-latest
-    
-    steps:
-      - uses: actions/checkout@v1
-        
-      - name: setup
-        run: sh -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup)"
+#name: CI
+#
+#on: [push, pull_request]
+#
+#jobs:
+#  macos:
+#    runs-on: macos-latest
+#    
+#    steps:
+#      - uses: actions/checkout@v1
+#        
+#      - name: setup
+#        run: sh -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup)"
