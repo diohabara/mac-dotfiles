@@ -1,3 +1,8 @@
+# XDG Base Directory Specification
+XDG_CONFIG_HOME="${HOME}/.config"
+XDG_CACHE_HOME="${HOME}/.cache"
+XDG_DATA_HOME="${HOME}/.share"
+
 # Autocompletion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
@@ -8,7 +13,7 @@ eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship.toml
 
 # history
-export HISTFILE=${HOME}/.zsh_history # where to save
+export HISTFILE=${XDG_CONFIG_HOME}/zsh/.zsh_history # where to save
 export HISTSIZE=1000 # max size in memory
 export SAVEHIST=100000 # max size in .zsh_history
 setopt hist_ignore_dups # never save duplicates
