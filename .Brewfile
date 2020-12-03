@@ -8,6 +8,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "versent/homebrew-taps"
+cask_args appdir: "/Applications"
 
 brew "awscli"
 brew "bash"
