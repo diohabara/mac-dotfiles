@@ -36,6 +36,7 @@ alias gs='git status'
 alias ls='exa'
 alias sudo='sudo -E'
 alias tree='exa -T'
+alias typora='open -a Typora'
 
 # PATH
 export PATH="/usr/local/bin:$PATH"
