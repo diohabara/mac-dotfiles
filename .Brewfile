@@ -36,6 +36,7 @@ brew "grep"
 brew "groovy"
 brew "heroku"
 brew "hyperfine" # for benchmark
+brew "jq" # json processor
 brew "llvm"
 brew "mas"
 brew "mysql"
