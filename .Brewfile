@@ -100,5 +100,6 @@ cask "vivaldi"
 cask "vlc"
 cask "zoomus"
 
-mas "Xcode", id: 497799835
 mas "BeFocuedPro", id: 961632517
+mas "Pocket", id: 568494494
+mas "Xcode", id: 497799835
