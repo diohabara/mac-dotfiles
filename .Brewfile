@@ -101,7 +101,7 @@ cask "vivaldi"
 cask "vlc"
 cask "zoomus"
 
-mas "papership", id: 686459498
+#mas "papership", id: 686459498
 mas "befocuedpro", id: 961632517
 mas "pocket", id: 568494494
 mas "xcode", id: 497799835
