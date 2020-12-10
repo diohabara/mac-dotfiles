@@ -85,6 +85,7 @@ cask "google-japanese-ime"
 cask "iterm2"
 cask "karabiner-elements"
 cask "keybase"
+cask "mactex-no-gui"
 cask "microsoft-edge"
 cask "notion"
 cask "obs"
@@ -99,6 +100,6 @@ cask "vivaldi"
 cask "vlc"
 cask "zoomus"
 
-mas "BeFocuedPro", id: 961632517
-mas "Pocket", id: 568494494
-mas "Xcode", id: 497799835
+mas "befocuedpro", id: 961632517
+mas "pocket", id: 568494494
+mas "xcode", id: 497799835
