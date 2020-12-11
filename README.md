@@ -22,6 +22,10 @@ sh -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup.sh)"
   chmod 755 /usr/local/share/zsh
   chmod 755 /usr/local/share/zsh/site-functions
   ```
+- After installing change this repo into git.
+  ```sh
+  git remote set-url origin git@github.com:diohabara/mac-dotfiles.git
+  ```
 
 ## Mac
 
