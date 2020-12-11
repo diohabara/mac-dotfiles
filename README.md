@@ -12,6 +12,16 @@ xcode-select --install
 sh -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup.sh)"
 ```
 
+- If you get the error below, then type `compaudit`
+  ```sh
+  zsh compinit: insecure directories, run compaudit for list.
+  Ignore insecure directories and continue [y] or abort compinit [n]?
+  ```
+- And you should type like this.
+  ```sh
+  chmod 755 /usr/local/share/zsh
+  chmod 755 /usr/local/share/zsh/site-functions
+  ```
 
 ## Mac
 
@@ -41,3 +51,5 @@ sh -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup.sh)"
   - Keybase
     - add a new device
   - Google Japanese Input
+  - Visual Studio Code
+    - turn on Sync
