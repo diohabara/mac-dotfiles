@@ -30,6 +30,7 @@ sh -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup.sh)"
 - hide Dock icons automatically
 - connect HHKB via Bluetooth
 - disable Spotlight in "Keyboard shortcuts" in "System Preferences"
+- turn caps lock key into control key in "Modifier Keys" in "Keyboard" in "System Preferences"
 - change Alfred's shortcut `command + space`
 - change "Define a word"'s shortcut `d`
 - `defaults write -g ApplePressAndHoldEnabled -bool true` to enable key repeat
