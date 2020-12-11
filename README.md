@@ -5,11 +5,13 @@ For 🍎. Currently x86-64 only...(´；ω；｀)
 ## setup
 
 - Before execute this command, sign in to App Store.
+- You may need to type `sudo xcodebuild -license accept`
 
 ```sh
 xcode-select --install
 sh -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup.sh)"
 ```
+
 
 ## Mac
 
