@@ -41,6 +41,7 @@ brew "jq" # json processor
 brew "llvm"
 brew "mas"
 brew "mysql"
+brew "neofetch"
 brew "neovim"
 brew "node"
 brew "openssl"
