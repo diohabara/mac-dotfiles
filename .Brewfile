@@ -10,6 +10,7 @@ tap "homebrew/core"
 tap "versent/homebrew-taps"
 cask_args appdir: "/Applications"
 
+# ===brew===
 brew "awscli"
 brew "bash"
 brew "bat"
@@ -47,7 +48,6 @@ brew "pkg-config"
 brew "procs" # replacement of ps
 brew "pyenv"
 brew "python@3.9"
-brew "r"
 brew "ripgrep" # replacement of grep
 brew "saml2aws"
 brew "sbcl"
@@ -65,10 +65,10 @@ brew "yarn"
 brew "youtube-dl"
 brew "zsh"
 
+# ===cask===
 cask "alacritty"
 cask "alfred"
 cask "alt-tab"
-cask "dash"
 cask "discord"
 cask "docker"
 cask "dropbox"
@@ -82,25 +82,20 @@ cask "font-source-code-pro"
 cask "google-backup-and-sync"
 cask "google-chrome"
 cask "google-japanese-ime"
-cask "iterm2"
 cask "karabiner-elements"
 cask "keybase"
 cask "mendeley"
-cask "microsoft-edge"
 cask "notion"
 cask "obs"
-cask "racket"
-cask "rstudio"
 cask "shiftit"
 cask "slack"
 cask "spotify"
 cask "typora"
 cask "visual-studio-code"
-cask "vivaldi"
 cask "vlc"
 cask "zoomus"
 
-#mas "papership", id: 686459498
+# ===mas===
 mas "befocuedpro", id: 961632517
 mas "pocket", id: 568494494
 mas "xcode", id: 497799835
