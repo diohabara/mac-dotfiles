@@ -37,7 +37,7 @@ sh -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup.sh)"
 - turn caps lock key into control key in "Modifier Keys" in "Keyboard" in "System Preferences"
 - change Alfred's shortcut `command + space`
 - change "Define a word"'s shortcut `d`
-- `defaults write -g ApplePressAndHoldEnabled -bool true` to enable key repeat
+- `defaults write -g ApplePressAndHoldEnabled -bool false` to enable key repeat
 - make "Key Repeat" and "Delay Until Repeat" fastest and shortest in "System Preferences" respectively
 - set up 
   - AltTab
