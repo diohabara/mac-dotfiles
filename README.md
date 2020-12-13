@@ -56,5 +56,7 @@ sh -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup.sh)"
   - Keybase
     - add a new device
   - Google Japanese Input
+    - change "Keymap" to "ATOK" in "General"
+    - make conversions in "Advanced" halfwidth
   - Visual Studio Code
     - turn on Sync
