@@ -8,6 +8,12 @@ REPO_URI='https://github.com/diohabara/mac-dotfiles.git'
 GHQ_ROOT="${HOME}/repo"
 REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
 
+: "install CLT" && {
+  if ! type xcode-select &> /dev/null; then
+    xcode-install --install
+  fi
+}
+
 if [ ! -d "${REPO_ROOT}" ]; then
     command git clone "${REPO_URI}" "${REPO_ROOT}"
 else

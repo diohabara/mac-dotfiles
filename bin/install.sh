@@ -36,16 +36,6 @@ function already() {
 }
 
 
-: "install CLT" && {
-  if ! command_exists xcode-select; then
-    installing 'Command Line Tools'
-    xcode-select --install
-    installed 'Command Line Tools'
-  else
-    already 'Command Line Tools'
-  fi
-}
-
 : "install brew" && {
   if ! command_exists brew; then
     installing 'brew'
