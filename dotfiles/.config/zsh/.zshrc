@@ -19,39 +19,12 @@ export SAVEHIST=100000 # max size in .zsh_history
 setopt hist_ignore_dups # never save duplicates
 setopt EXTENDED_HISTORY # save when to start and end
 
-# Alias
-## for security
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-## for convenience
-### cargo
-alias c='cargo'
-alias cb='cargo build'
-alias cf='cargo fmt'
-alias ct='cargo test'
-alias cr='cargo run'
-alias e='emacs -nw'
-### ls
-if type 'ls' > /dev/null 2>&1; then
-  alias l='exa --git'
-  alias la='exa -a --git'
-  alias ll='exa -lab --git'
-  alias tree='exa --tree'
-else
-  alias l='ls'
-  alias la='ls -a'
-  alias ll='ls -al'
-fi
-
-alias find='fd'
-alias gd='cd $(ghq root)'
-alias fh='history -E 1 | fzf'
-alias gf='cd $(ghq list -p | fzf)'
-alias gg="ghq get $*"
-alias gs='git status'
-alias sudo='sudo -E'
-alias typora='open -a Typora'
+for file in ${XDG_CONFIG_HOME}/zsh/.{alias}; do
+	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
+		# shellcheck source=/dev/null
+		source "$file"
+	fi
+done
 
 # PATH
 export PATH="/usr/local/bin:$PATH"
