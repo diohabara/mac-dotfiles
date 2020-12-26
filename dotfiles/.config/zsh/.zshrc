@@ -20,7 +20,7 @@ setopt hist_ignore_dups # never save duplicates
 setopt EXTENDED_HISTORY # save when to start and end
 
 # divided files
-source .alias
+source ${XDG_CONFIG_HOME}/zsh/".alias"
 
 # PATH
 export PATH="/usr/local/bin:$PATH"
