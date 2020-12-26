@@ -19,7 +19,7 @@ export SAVEHIST=100000 # max size in .zsh_history
 setopt hist_ignore_dups # never save duplicates
 setopt EXTENDED_HISTORY # save when to start and end
 
-for file in ${XDG_CONFIG_HOME}/zsh/.{alias}; do
+for file in ${XDG_CONFIG_HOME}/zsh/{.alias}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
 		source "$file"
