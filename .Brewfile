@@ -69,7 +69,6 @@ brew "zsh"
 # ===cask===
 cask "alacritty"
 cask "alfred"
-cask "alt-tab"
 cask "discord"
 cask "docker"
 cask "dotnet-sdk"
