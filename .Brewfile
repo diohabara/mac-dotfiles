@@ -7,6 +7,7 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
+tap "nrlquaker/createzap"
 tap "versent/homebrew-taps"
 cask_args appdir: "/Applications"
 
