@@ -1,4 +1,5 @@
-#+TITLE: Config
+#+TITLE: Org-Mode Literate Config
+#+EXPORT_FILE_NAME: README
 
 
 * PERSONAL INFORMATION
@@ -8,10 +9,13 @@
 #+end_src
 
 * DOOM THEME
+#+begin_src emacs-lisp
+(setq doom-theme 'doom-one)
+#+end_src
+
 
 * BETTER DEFAULT
 #+begin_src emacs-lisp
-(setq doom-theme 'doom-one)
 (setq org-directory "~/org/")
 (setq display-line-numbers-type t)
 #+end_src
@@ -23,3 +27,10 @@
       doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 36)
       doom-serif-font (font-spec :family "JetBrains Mono" :weight 'light))
 #+END_SRC
+
+* ORG MODE
+#+begin_src emacs-lisp
+(setq
+    org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿")
+)
+#+end_src
