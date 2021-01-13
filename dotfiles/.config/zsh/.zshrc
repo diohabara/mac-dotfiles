@@ -26,6 +26,7 @@ source ${XDG_CONFIG_HOME}/zsh/".alias"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:~/.local/bin"
 export PATH="$PATH:/usr/local/texlive/2020/bin/x86_64-darwin/"
+export PATH="$PATH:/Library/TeX/texbin/"
 ## LLVM
 export PATH="/usr/local/opt/llvm/bin:$PATH" # LLVM
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
