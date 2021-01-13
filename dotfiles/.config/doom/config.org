@@ -31,6 +31,5 @@
 * ORG MODE
 #+begin_src emacs-lisp
 (setq
-    org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿")
-)
+    org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿"))
 #+end_src
