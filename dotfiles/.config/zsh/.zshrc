@@ -25,8 +25,6 @@ source ${XDG_CONFIG_HOME}/zsh/".alias"
 # PATH
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:~/.local/bin"
-export PATH="$PATH:/usr/local/texlive/2020/bin/x86_64-darwin/"
-export PATH="$PATH:/Library/TeX/texbin/"
 ## LLVM
 export PATH="/usr/local/opt/llvm/bin:$PATH" # LLVM
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
@@ -48,3 +46,6 @@ export PKG_CONFIG_PATH="$HOME/bin/convert"
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
+## LaTeX
+export PATH="$PATH:/usr/local/texlive/2020/bin/x86_64-darwin/"
+export PATH="$PATH:/Library/TeX/texbin/"
