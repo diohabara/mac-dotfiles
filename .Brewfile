@@ -99,7 +99,7 @@ cask "thunderbird"
 cask "typora"
 cask "visual-studio-code"
 cask "vlc"
-cask "zoomus"
+cask "zoom"
 
 # ===mas===
 mas "befocuedpro", id: 961632517
