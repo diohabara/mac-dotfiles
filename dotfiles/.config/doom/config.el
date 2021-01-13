@@ -35,15 +35,8 @@
       doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 18)
       doom-serif-font (font-spec :family "JetBrains Mono" :weight 'light))
 
-(message "hello")
-(setq exec-path (parse-colon-path (getenv "PATH")))
-(add-to-list 'exec-path "/Library/TeX/texbin")
-(add-to-list 'exec-path (executable-find "dvipng"))
-(add-to-list 'exec-path (executable-find "latex"))
-(getenv "PATH")
-(setenv "/Library/TeX/texbin")
-(setq eshell-path-env "/Library/TeX/texbin/latex")
-
+(setenv "PATH" (concat "/Library/TeX/texbin" (getenv "PATH")))
+(setq exec-path (append '("/Library/TeX/texbin") exec-path))
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
