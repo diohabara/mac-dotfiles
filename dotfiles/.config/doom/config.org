@@ -1,10 +1,13 @@
 #+TITLE: Config
 
+
 * PERSONAL INFORMATION
 #+begin_src emacs-lisp
 (setq user-full-name "Kadoi Takemaru"
       user-mail-address "diohabara@gmail.com")
 #+end_src
+
+* DOOM THEME
 
 * BETTER DEFAULT
 #+begin_src emacs-lisp
@@ -15,8 +18,8 @@
 
 * FONTS
 #+BEGIN_SRC emacs-lisp
-(setq doom-font (font-spec :family "JetBrains Mono" :size 24)
+(setq doom-font (font-spec :family "JetBrains Mono" :size 36)
       doom-big-font (font-spec :family "JetBrains Mono" :size 36)
-      doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 24)
+      doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 36)
       doom-serif-font (font-spec :family "JetBrains Mono" :weight 'light))
 #+END_SRC
