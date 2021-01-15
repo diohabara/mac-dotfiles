@@ -15,4 +15,14 @@
       doom-serif-font (font-spec :family "JetBrains Mono" :weight 'light))
 
 (after! org
-  (setq org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿")))
+  (setq org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿"))
+  )
+
+(use-package! wakatime-mode
+  :ensure t
+  :when (file-exists-p "~/.wakatime.cfg")
+  :init
+  (global-wakatime-mode))
+
+(provide 'config)
+;;; config.el ends here

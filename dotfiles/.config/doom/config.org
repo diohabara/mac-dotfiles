@@ -2,9 +2,7 @@
 #+STARTUP: showeverything
 
 * HOW TO USE
-- Go to the top of the file.
-- Type ~C-c C-c~ and refresh the configural.
-- Type ~C-c C-v t~ and comform ~config.org~ to ~config.el~.
+- ~org-babel-load-file~ this file
 
 * PERSONAL INFORMATION
 #+begin_src emacs-lisp
@@ -64,3 +62,24 @@ Adding paths for LaTeX
 
 #+RESULTS:
 | ⁖ | ◉ | ○ | ✸ | ✿ |
+
+* MONITORING
+#+begin_src emacs-lisp
+(use-package! wakatime-mode
+  :ensure t
+  :when (file-exists-p "~/.wakatime.cfg")
+  :init
+  (global-wakatime-mode))
+#+end_src
+
+#+RESULTS:
+: t
+
+* EOF
+#+begin_src emacs-lisp
+(provide 'config)
+;;; config.el ends here
+#+end_src
+
+#+RESULTS:
+: config

@@ -3,6 +3,7 @@
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+alias sudo='sudo -E'
 ## for convenience
 ### cargo
 alias c='cargo'
@@ -22,13 +23,13 @@ else
   alias la='ls -a'
   alias ll='ls -al'
 fi
-
-alias find='fd'
-alias gd='cd $(ghq root)'
-alias fh='history -E 1 | fzf'
+### ghq
 alias gf='cd $(ghq list -p | fzf)'
 alias gg="ghq get $*"
+### fzf
+alias fh='history -E 1 | fzf'
+## git
 alias gs='git status'
-alias sudo='sudo -E'
+alias gd='git diff'
+### misc
 alias typora='open -a Typora'
-
