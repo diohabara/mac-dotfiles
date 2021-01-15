@@ -81,6 +81,13 @@ function already() {
   fi
 }
 
+: "install pip3 packages" && {
+  if command_exists pip3; then
+    already 'pip3'
+    pip3 install wakatime
+  fi
+}
+
 : "install cargo packages" && {
   if command_exists cargo; then
     already 'cargo'
