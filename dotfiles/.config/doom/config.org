@@ -1,6 +1,10 @@
 #+TITLE: Org-Mode Literate Config
-#+EXPORT_FILE_NAME: README
+#+STARTUP: showeverything
 
+* HOW TO USE
+- Go to the top of the file.
+- Type ~C-c C-c~ and refresh the configural.
+- Type ~C-c C-v t~ and comform ~config.org~ to ~config.el~.
 
 * PERSONAL INFORMATION
 #+begin_src emacs-lisp
@@ -8,17 +12,27 @@
       user-mail-address "diohabara@gmail.com")
 #+end_src
 
+#+RESULTS:
+: diohabara@gmail.com
+
 * PATH
 Adding paths for LaTeX
+
 #+begin_src emacs-lisp
 (setenv "PATH" (concat "/Library/TeX/texbin" (getenv "PATH")))
 (setq exec-path (append '("/Library/TeX/texbin") exec-path))
 #+end_src
 
+#+RESULTS:
+| /Library/TeX/texbin | /Library/TeX/texbin/latex | /Library/TeX/texbin/dvipng | /Library/TeX/texbin | /Users/jio/.cabal/bin/ | /Users/jio/.ghcup/bin/ | /Users/jio/.cabal/bin/ | /Users/jio/.ghcup/bin/ | /Users/jio/.cargo/bin/ | /Users/jio/.poetry/bin/ | /Users/jio/.pyenv/shims/ | /Users/jio/.pyenv/bin/ | /usr/local/opt/llvm/bin/ | /usr/local/bin/ | /usr/local/bin/ | /usr/bin/ | /bin/ | /usr/sbin/ | /sbin/ | /usr/local/share/dotnet/ | ~/.dotnet/tools/ | /Users/jio/.local/bin/ |
+
 * DOOM THEME
 #+begin_src emacs-lisp
 (setq doom-theme 'doom-one)
 #+end_src
+
+#+RESULTS:
+: doom-one
 
 
 * BETTER DEFAULT
@@ -27,16 +41,26 @@ Adding paths for LaTeX
 (setq display-line-numbers-type 'relative)
 #+end_src
 
+#+RESULTS:
+: relative
+
 * FONTS
-#+BEGIN_SRC emacs-lisp
-(setq doom-font (font-spec :family "JetBrains Mono" :size 14)
+#+begin_src emacs-lisp
+(setq doom-font (font-spec :family "JetBrains Mono" :size 15)
       doom-big-font (font-spec :family "JetBrains Mono" :size 18)
       doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 18)
       doom-serif-font (font-spec :family "JetBrains Mono" :weight 'light))
-#+END_SRC
+#+end_src
+
+#+RESULTS:
+: #<font-spec nil nil JetBrains\ Mono nil nil light nil nil nil nil nil nil nil>
 
 * ORG MODE
 #+begin_src emacs-lisp
-(setq
-    org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿"))
+(after! org
+  (setq org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿"))
+  )
 #+end_src
+
+#+RESULTS:
+| ⁖ | ◉ | ○ | ✸ | ✿ |
