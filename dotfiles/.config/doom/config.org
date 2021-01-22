@@ -84,11 +84,12 @@ Adding paths for LaTeX
 * PROGRAMMING LANGUAGE
 ** Common Lisp
 #+begin_src emacs-lisp
-(use-package slime
-  :ensure t
-  :config
-  (setq inferior-lisp-program "/usr/local/bin/sbcl")
-  )
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+;; (use-package! slime-mode
+;;   :ensure t
+;;   :config
+;;   (setq inferior-lisp-program "/usr/local/bin/sbcl")
+;;   )
 (setq debug-on-error t)
 #+end_src
 

@@ -28,11 +28,12 @@
   :init
   (global-wakatime-mode))
 
-(use-package slime
-  :ensure t
-  :config
-  (setq inferior-lisp-program "/usr/local/bin/sbcl")
-  )
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+;; (use-package! slime-mode
+;;   :ensure t
+;;   :config
+;;   (setq inferior-lisp-program "/usr/local/bin/sbcl")
+;;   )
 (setq debug-on-error t)
 
 (provide 'config)
