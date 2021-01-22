@@ -3,6 +3,13 @@
 
 * HOW TO USE
 - ~org-babel-load-file~ this file
+#+begin_src emacs-lisp
+;;; package --- This is for the configuration
+;;; Commentary:
+;;; Code:
+#+end_src
+
+#+RESULTS:
 
 * PERSONAL INFORMATION
 #+begin_src emacs-lisp
@@ -41,7 +48,6 @@ Adding paths for LaTeX
 
 #+RESULTS:
 : relative
-
 * FONTS
 #+begin_src emacs-lisp
 (setq doom-font (font-spec :family "JetBrains Mono" :size 15)
@@ -74,6 +80,17 @@ Adding paths for LaTeX
 
 #+RESULTS:
 : t
+
+* PROGRAMMING LANGUAGE
+** Common Lisp
+#+begin_src emacs-lisp
+(use-package slime
+  :ensure t
+  :config
+  (setq inferior-lisp-program "/usr/local/bin/sbcl")
+  )
+(setq debug-on-error t)
+#+end_src
 
 * EOF
 #+begin_src emacs-lisp

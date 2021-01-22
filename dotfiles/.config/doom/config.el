@@ -1,3 +1,7 @@
+;;; package --- This is for the configuration
+;;; Commentary:
+;;; Code:
+
 (setq user-full-name "Kadoi Takemaru"
       user-mail-address "diohabara@gmail.com")
 
@@ -23,6 +27,13 @@
   :when (file-exists-p "~/.wakatime.cfg")
   :init
   (global-wakatime-mode))
+
+(use-package slime
+  :ensure t
+  :config
+  (setq inferior-lisp-program "/usr/local/bin/sbcl")
+  )
+(setq debug-on-error t)
 
 (provide 'config)
 ;;; config.el ends here
