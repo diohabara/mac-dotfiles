@@ -100,7 +100,6 @@ cask "spotify"
 cask "thunderbird"
 cask "typora"
 cask "visual-studio-code"
-cask "vscodium"
 cask "vlc"
 cask "zoom"
 
