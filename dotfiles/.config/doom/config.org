@@ -90,7 +90,6 @@ Adding paths for LaTeX
 ;;   :config
 ;;   (setq inferior-lisp-program "/usr/local/bin/sbcl")
 ;;   )
-(setq debug-on-error t)
 #+end_src
 
 * EOF

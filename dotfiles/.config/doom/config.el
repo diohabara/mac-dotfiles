@@ -34,7 +34,6 @@
 ;;   :config
 ;;   (setq inferior-lisp-program "/usr/local/bin/sbcl")
 ;;   )
-(setq debug-on-error t)
 
 (provide 'config)
 ;;; config.el ends here
