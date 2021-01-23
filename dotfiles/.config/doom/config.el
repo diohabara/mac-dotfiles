@@ -29,11 +29,6 @@
   (global-wakatime-mode))
 
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
-;; (use-package! slime-mode
-;;   :ensure t
-;;   :config
-;;   (setq inferior-lisp-program "/usr/local/bin/sbcl")
-;;   )
 
 (provide 'config)
 ;;; config.el ends here

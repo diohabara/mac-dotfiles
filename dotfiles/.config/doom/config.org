@@ -83,14 +83,15 @@ Adding paths for LaTeX
 
 * PROGRAMMING LANGUAGE
 ** Common Lisp
+First thing you need to do is type ~M-x slime~. You will start ~slime~ process, and you can interactively evaluate expressions and files.
+- ~C-c C-C~: evaluate an expression
+- ~C-c C-k~: evaluate a file
+- ~C-c C-z~: display a REPL buffer
 #+begin_src emacs-lisp
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
-;; (use-package! slime-mode
-;;   :ensure t
-;;   :config
-;;   (setq inferior-lisp-program "/usr/local/bin/sbcl")
-;;   )
 #+end_src
+* REFERENCES
+- [[http://dev.ariel-networks.com/wp/archives/462]]
 
 * EOF
 #+begin_src emacs-lisp
