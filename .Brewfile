@@ -51,6 +51,7 @@ brew "procs" # replacement of ps
 brew "pyenv"
 brew "python@3.9"
 brew "ripgrep" # replacement of grep
+brew "rlwrap"
 brew "roswell"
 brew "saml2aws"
 brew "sbcl"
