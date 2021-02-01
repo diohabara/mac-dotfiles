@@ -35,3 +35,5 @@
     syntax-theme = 'Solarized (dark)'
 [http]
 	cookiefile = /Users/jio/.gitcookies
+[pull]
+	ff = only
