@@ -14,6 +14,7 @@
 (setq display-line-numbers-type 'relative)
 
 (setq doom-font (font-spec :family "JetBrains Mono" :size 15)
+      doom-unicode-font (font-spec :family "Noto Serif CJK JP" :size 15)
       doom-big-font (font-spec :family "JetBrains Mono" :size 18)
       doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 18)
       doom-serif-font (font-spec :family "JetBrains Mono" :weight 'light))
