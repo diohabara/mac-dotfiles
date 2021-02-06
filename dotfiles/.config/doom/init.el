@@ -149,14 +149,13 @@
        ;;php               ; perl's insecure younger brother
        (org                         ; organize your plain life in plain text
         +pretty                     ; yessss my pretties! (nice unicode symbols)
-        +dragndrop                  ; drag & drop files/images into org buffers
-        +hugo                     ; use Emacs for hugo blogging
-        +jupyter                    ; ipython/jupyter support for babel
-        +pandoc                     ; export-with-pandoc support
-        +gnuplot                    ; who doesn't like pretty pictures
+        ;;+dragndrop                  ; drag & drop files/images into org buffers
+        ;;+hugo                     ; use Emacs for hugo blogging
+        ;;+jupyter                    ; ipython/jupyter support for babel
+        ;;+pandoc                     ; export-with-pandoc support
+        ;;+gnuplot                    ; who doesn't like pretty pictures
         ;;+pomodoro                 ; be fruitful with the tomato technique
-        +present                    ; using org-mode for presentations
-        +roam)                      ; wander around notes
+        +present)                    ; using org-mode for presentations
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
        ;python            ; beautiful is better than ugly
@@ -166,7 +165,7 @@
        ;;rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       (rust +lsp)              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        scheme            ; a fully conniving family of lisps
        sh                ; she sells {ba,z,fi}sh shells on the C xor

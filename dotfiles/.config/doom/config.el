@@ -23,6 +23,15 @@
   (setq org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿"))
   )
 
+(when (require 'org-tree-slide nil t)
+  (define-key org-tree-slide-mode-map (kbd "<f9>")
+    'org-tree-slide-move-previous-tree)
+  (define-key org-tree-slide-mode-map (kbd "<f10>")
+    'org-tree-slide-move-next-tree)
+  (define-key org-tree-slide-mode-map (kbd "<f11>")
+    'org-tree-slide-content)
+  )
+
 (use-package! wakatime-mode
   :ensure t
   :when (file-exists-p "~/.wakatime.cfg")

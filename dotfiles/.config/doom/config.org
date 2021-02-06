@@ -61,6 +61,7 @@ Adding paths for LaTeX
 : #<font-spec nil nil JetBrains\ Mono nil nil light nil nil nil nil nil nil nil>
 
 * ORG MODE
+** DESIGN
 #+begin_src emacs-lisp
 (after! org
   (setq org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿"))
@@ -69,6 +70,23 @@ Adding paths for LaTeX
 
 #+RESULTS:
 | ⁖ | ◉ | ○ | ✸ | ✿ |
+** ORG-TREE-SLIDE
+- While using org-tree-slide
+  + you can go to a previous page by ~<f9>~
+  + you can go to a next page by ~<f10>~.
+#+begin_src emacs-lisp
+(when (require 'org-tree-slide nil t)
+  (define-key org-tree-slide-mode-map (kbd "<f9>")
+    'org-tree-slide-move-previous-tree)
+  (define-key org-tree-slide-mode-map (kbd "<f10>")
+    'org-tree-slide-move-next-tree)
+  (define-key org-tree-slide-mode-map (kbd "<f11>")
+    'org-tree-slide-content)
+  )
+#+end_src
+
+#+RESULTS:
+: org-tree-slide-content
 
 * MONITORING
 #+begin_src emacs-lisp
@@ -80,7 +98,7 @@ Adding paths for LaTeX
 #+end_src
 
 #+RESULTS:
-: t
+: wakatime-mode
 
 * PROGRAMMING LANGUAGE
 ** Common Lisp
