@@ -71,6 +71,7 @@ Adding paths for LaTeX
 #+RESULTS:
 | ⁖ | ◉ | ○ | ✸ | ✿ |
 ** ORG-TREE-SLIDE
+- You can start =org-tree-slide= by typing ~<SPC> t p~
 - While using org-tree-slide
   + you can go to a previous page by ~<f9>~
   + you can go to a next page by ~<f10>~.
