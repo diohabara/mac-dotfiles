@@ -46,6 +46,7 @@ brew "neofetch"
 brew "neovim"
 brew "node"
 brew "openssl"
+brew "pandoc"
 brew "pkg-config"
 brew "procs" # replacement of ps
 brew "pyenv"
