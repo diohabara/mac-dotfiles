@@ -106,6 +106,4 @@ cask "vlc"
 cask "zoom"
 
 # ===mas===
-mas "befocuedpro", id: 961632517
-mas "pocket", id: 568494494
 mas "xcode", id: 497799835
