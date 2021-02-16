@@ -46,6 +46,12 @@ export PKG_CONFIG_PATH="$HOME/bin/convert"
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
+## Node.js
+### nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
 ## LaTeX
 export PATH="$PATH:/usr/local/texlive/2020/bin/x86_64-darwin/"
 export PATH="$PATH:/Library/TeX/texbin/"
