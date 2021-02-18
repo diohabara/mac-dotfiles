@@ -45,6 +45,7 @@ brew "mysql"
 brew "neofetch"
 brew "neovim"
 brew "node"
+brew "nvm"
 brew "openssl"
 brew "pandoc"
 brew "pkg-config"
@@ -86,6 +87,7 @@ cask "font-roboto"
 cask "font-source-code-pro"
 cask "google-backup-and-sync"
 cask "google-chrome"
+cask "google-cloud-sdk"
 cask "google-japanese-ime"
 cask "hhkb-pro-driver"
 cask "karabiner-elements"
@@ -107,6 +109,4 @@ cask "vlc"
 cask "zoom"
 
 # ===mas===
-mas "befocuedpro", id: 961632517
-mas "pocket", id: 568494494
 mas "xcode", id: 497799835
