@@ -18,6 +18,7 @@ brew "bat"
 brew "bazel"
 brew "buildifier"
 brew "clang-format"
+brew "cmake"
 brew "curl"
 brew "dust" # replacement of du
 brew "emacs-plus"
