@@ -7,6 +7,8 @@
 
 (setenv "PATH" (concat "/Library/TeX/texbin" (getenv "PATH")))
 (setq exec-path (append '("/Library/TeX/texbin") exec-path))
+(add-to-list 'exec-path (expand-file-name "~/Library/Application\ Support/Code/User/globalStorage/matklad.rust-analyzer"))
+(add-to-list 'exec-path (expand-file-name "~/.cargo/bin"))
 
 (setq doom-theme 'doom-one)
 
@@ -38,7 +40,23 @@
   :init
   (global-wakatime-mode))
 
+(use-package! lsp-mode
+  :ensure t
+  :init (yas-global-mode)
+  :hook (rust-mode . lsp)
+  :bind ("C-c h" . lsp-describe-thing-at-point)
+  :custom (lsp-rust-server 'rust-analyzer))
+(use-package! lsp-ui
+  :ensure t)
+
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
+
+(use-package! rust-mode
+  :ensure t
+  :custom rust-format-on-save t)
+(use-package! cargo
+  :ensure t
+  :hook (rust-mode . cargo-minor-mode))
 
 (provide 'config)
 ;;; config.el ends here
