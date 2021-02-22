@@ -26,6 +26,8 @@ Adding paths for LaTeX
 #+begin_src emacs-lisp
 (setenv "PATH" (concat "/Library/TeX/texbin" (getenv "PATH")))
 (setq exec-path (append '("/Library/TeX/texbin") exec-path))
+(add-to-list 'exec-path (expand-file-name "~/Library/Application\ Support/Code/User/globalStorage/matklad.rust-analyzer"))
+(add-to-list 'exec-path (expand-file-name "~/.cargo/bin"))
 #+end_src
 
 #+RESULTS:
@@ -102,6 +104,21 @@ Adding paths for LaTeX
 : wakatime-mode
 
 * PROGRAMMING LANGUAGE
+** LSP
++ references
+  - https://emacs-jp.github.io/env/rust
+  - https://rust-analyzer.github.io/manual.html
+
+#+begin_src emacs-lisp
+(use-package! lsp-mode
+  :ensure t
+  :init (yas-global-mode)
+  :hook (rust-mode . lsp)
+  :bind ("C-c h" . lsp-describe-thing-at-point)
+  :custom (lsp-rust-server 'rust-analyzer))
+(use-package! lsp-ui
+  :ensure t)
+#+end_src
 ** Common Lisp
 First thing you need to do is type ~M-x slime~. You will start ~slime~ process, and you can interactively evaluate expressions and files.
 - ~C-c C-C~: evaluate an expression
@@ -109,6 +126,19 @@ First thing you need to do is type ~M-x slime~. You will start ~slime~ process, 
 - ~C-c C-z~: display a REPL buffer
 #+begin_src emacs-lisp
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
+#+end_src
+** Rust
++ references
+  - https://emacs-jp.github.io/env/rust
+  - https://rust-analyzer.github.io/manual.html
+
+#+begin_src emacs-lisp
+(use-package! rust-mode
+  :ensure t
+  :custom rust-format-on-save t)
+(use-package! cargo
+  :ensure t
+  :hook (rust-mode . cargo-minor-mode))
 #+end_src
 * REFERENCES
 - [[http://dev.ariel-networks.com/wp/archives/462]]
