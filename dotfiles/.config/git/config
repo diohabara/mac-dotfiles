@@ -1,4 +1,3 @@
-
 # Doc: https://git-scm.com/docs/git-config
 [user]
     name = diohabara
@@ -11,6 +10,18 @@
     # Repo: https://github.com/dandavison/delta
     pager = delta --dark
     excludefile = ~/git/ignore
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
 
 [init]
     templatedir = ~/.config/git/templates
@@ -34,6 +45,6 @@
 [delta]
     syntax-theme = 'Solarized (dark)'
 [http]
-	cookiefile = /Users/jio/.gitcookies
+    cookiefile = /Users/jio/.gitcookies
 [pull]
-	ff = only
+    ff = only
