@@ -44,8 +44,8 @@ Adding paths for LaTeX
 
 * BETTER DEFAULT
 #+begin_src emacs-lisp
-(setq org-directory "~/org/")
 (setq display-line-numbers-type 'relative)
+(global-whitespace-mode +1)
 #+end_src
 
 #+RESULTS:
