@@ -21,7 +21,7 @@ brew "clang-format"
 brew "cmake"
 brew "curl"
 brew "dust" # replacement of du
-brew "emacs-mac", args: ["--with-modules"]
+brew "emacs-mac", args: ["with-modules"]
 brew "exa" # replacement of ls
 brew "fd" # replacement of find
 brew "ffmpeg"
