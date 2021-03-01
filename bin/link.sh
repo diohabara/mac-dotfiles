@@ -15,7 +15,7 @@ cd "${DOTFILES_HOME}"
   if [[ -L "$file" && -d "$file" ]]; then
     echo "Emacs already installed";
   else
-    ln -s "/usr/local/opt/emacs-plus/Emacs.app" "/Applications/Emacs.app"
+    ln -s "/usr/local/opt/emacs-mac/Emacs.app" "/Applications/Emacs.app"
   fi
 }
 

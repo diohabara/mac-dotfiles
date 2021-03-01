@@ -1,5 +1,5 @@
 # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
-tap "d12frosted/emacs-plus"
+cask_args appdir: "/Applications"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -8,8 +8,8 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "nrlquaker/createzap"
+tap "railwaycat/emacsmacport"
 tap "versent/homebrew-taps"
-cask_args appdir: "/Applications"
 
 # ===brew===
 brew "awscli"
@@ -21,7 +21,7 @@ brew "clang-format"
 brew "cmake"
 brew "curl"
 brew "dust" # replacement of du
-brew "emacs-plus"
+brew "emacs-mac --with-modules"
 brew "exa" # replacement of ls
 brew "fd" # replacement of find
 brew "ffmpeg"

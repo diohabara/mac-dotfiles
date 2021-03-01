@@ -6,9 +6,7 @@ XDG_DATA_HOME="${HOME}/.share"
 # Autocompletion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
-eval "$(gh completion -s zsh)
-
-"
+eval "$(gh completion -s zsh)"
 
 # Shell prompt
 eval "$(starship init zsh)"
