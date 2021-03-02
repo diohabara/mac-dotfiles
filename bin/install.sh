@@ -70,11 +70,6 @@ function already() {
     installing 'Rust'
     # Doc: https://www.rust-lang.org/tools/install
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
-    # Doc: https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion-for-bash-fish-zsh-or-powershell
-    rustup completions zsh > "${ZSH_FUNCCOMP_DIR}/_rustup"
-    # For rust-analyzer
-    # Doc: https://rust-analyzer.github.io/manual.html#installation
-    rustup component add rust-src
     installed 'Rust'
   else
     rustup update
@@ -88,9 +83,25 @@ function already() {
   fi
 }
 
+: "install rustup components" && {
+  # Doc: https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion-for-bash-fish-zsh-or-powershell
+  rustup completions zsh > "${ZSH_FUNCCOMP_DIR}/_rustup"
+  # For rust-analyzer
+  # Doc: https://rust-analyzer.github.io/manual.html#installation
+  rustup component add rust-src
+  # Doc: https://github.com/hlissner/doom-emacs/blob/d62c82ddbe0c9fa603be24f5eb8e563d16f5e45f/modules/lang/rust/README.org
+  rustup component add rustfmt-preview
+  rustup component add clippy-preview
+  # For rls
+  # Doc: https://github.com/rust-lang/rls
+  rustup component add rls rust-analysis rust-src
+}
+
 : "install cargo packages" && {
   if command_exists cargo; then
     already 'cargo'
+    cargo +nightly install racer
+    cargo install cargo-check
     cargo install cargo-raze
     cargo install cargo-vendor
     cargo install mdbook
@@ -106,7 +117,7 @@ function already() {
   else
     already 'Haskell-Stack'
   fi
-  
+
   if ! command_exists ghcup; then
     installing 'ghcup'
     # Doc: https://gitlab.haskell.org/haskell/ghcup-hs
@@ -114,6 +125,20 @@ function already() {
     installed 'ghcup'
   else
     already 'ghcup'
+  fi
+}
+
+: "install opam packages" && {
+  if ! command_exists opam; then
+    sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
+    installed 'opam'
+    opam install merlin
+    opam install utop
+    opam install ocp-indent
+    opam install dune
+    opam install ocamlformat
+  else
+    already 'opam'
   fi
 }
 
