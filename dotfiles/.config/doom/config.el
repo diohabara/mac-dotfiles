@@ -40,25 +40,19 @@
   :init
   (global-wakatime-mode))
 
-(use-package! lsp-mode
-  :ensure t
-  :init (yas-global-mode)
-  :hook (rust-mode . lsp)
-  :bind ("C-c h" . lsp-describe-thing-at-point)
-  :custom (lsp-rust-server 'rust-analyzer))
-(use-package! lsp-ui
-  :ensure t)
+;; (use-package! lsp-mode
+;;   :ensure t
+;;   :init (yas-global-mode)
+;;   :hook (rust-mode . lsp)
+;;   :bind ("C-c h" . lsp-describe-thing-at-point)
+;;   :custom (lsp-rust-server 'rust-analyzer))
+;; (use-package! lsp-ui
+;;   :ensure t)
 
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
 
 (after! lsp-rust
   (setq lsp-rust-server 'rust-analyzer))
-(use-package! rust-mode
-  :ensure t
-  :custom rust-format-on-save t)
-(use-package! cargo
-  :ensure t
-  :hook (rust-mode . cargo-minor-mode))
 
 (provide 'config)
 ;;; config.el ends here
