@@ -72,6 +72,9 @@ function already() {
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
     installed 'Rust'
   else
+    rustup default nightly
+    rustup update
+    rustup default stable
     rustup update
   fi
 }
