@@ -133,6 +133,8 @@ First thing you need to do is type ~M-x slime~. You will start ~slime~ process, 
   - https://rust-analyzer.github.io/manual.html
 
 #+begin_src emacs-lisp
+(after! lsp-rust
+  (setq lsp-rust-server 'rust-analyzer))
 (use-package! rust-mode
   :ensure t
   :custom rust-format-on-save t)

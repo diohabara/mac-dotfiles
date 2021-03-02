@@ -12,11 +12,11 @@
 
 (setq doom-theme 'doom-one)
 
-(setq org-directory "~/org/")
 (setq display-line-numbers-type 'relative)
+(global-whitespace-mode +1)
 
-(setq doom-font (font-spec :family "JetBrains Mono" :size 15)
-      doom-unicode-font (font-spec :family "Noto Serif CJK JP" :size 15)
+(setq doom-font (font-spec :family "JetBrains Mono" :size 18)
+      doom-unicode-font (font-spec :family "JetBrains Mono" :size 18)
       doom-big-font (font-spec :family "JetBrains Mono" :size 18)
       doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 18)
       doom-serif-font (font-spec :family "JetBrains Mono" :weight 'light))
@@ -51,6 +51,8 @@
 
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
 
+(after! lsp-rust
+  (setq lsp-rust-server 'rust-analyzer))
 (use-package! rust-mode
   :ensure t
   :custom rust-format-on-save t)
