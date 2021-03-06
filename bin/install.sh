@@ -164,7 +164,7 @@ function already() {
 }
 
 : "install npm packages" && {
-  if comand_exists npm; then
+  if command_exists npm; then
     sudo npm i -g bash-language-server
     sudo npm install -g pyright
   fi
