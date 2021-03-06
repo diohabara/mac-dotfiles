@@ -9,16 +9,10 @@
 ;;; Code:
 #+end_src
 
-#+RESULTS:
-
-* PERSONAL INFORMATION
 #+begin_src emacs-lisp
 (setq user-full-name "Kadoi Takemaru"
       user-mail-address "diohabara@gmail.com")
 #+end_src
-
-#+RESULTS:
-: diohabara@gmail.com
 
 * PATH
 Adding paths for LaTeX
@@ -30,26 +24,18 @@ Adding paths for LaTeX
 (add-to-list 'exec-path (expand-file-name "~/.cargo/bin"))
 #+end_src
 
-#+RESULTS:
-| /Library/TeX/texbin | /Library/TeX/texbin/latex | /Library/TeX/texbin/dvipng | /Library/TeX/texbin | /Users/jio/.cabal/bin/ | /Users/jio/.ghcup/bin/ | /Users/jio/.cabal/bin/ | /Users/jio/.ghcup/bin/ | /Users/jio/.cargo/bin/ | /Users/jio/.poetry/bin/ | /Users/jio/.pyenv/shims/ | /Users/jio/.pyenv/bin/ | /usr/local/opt/llvm/bin/ | /usr/local/bin/ | /usr/local/bin/ | /usr/bin/ | /bin/ | /usr/sbin/ | /sbin/ | /usr/local/share/dotnet/ | ~/.dotnet/tools/ | /Users/jio/.local/bin/ |
-
 * DOOM THEME
 #+begin_src emacs-lisp
 (setq doom-theme 'doom-one)
 #+end_src
 
-#+RESULTS:
-: doom-one
-
-
 * BETTER DEFAULT
 #+begin_src emacs-lisp
 (setq display-line-numbers-type 'relative)
 (global-whitespace-mode +1)
+(setq byte-compile-warnings '(cl-functions))
 #+end_src
 
-#+RESULTS:
-: relative
 * FONTS
 #+begin_src emacs-lisp
 (setq doom-font (font-spec :family "JetBrains Mono" :size 18)
@@ -59,9 +45,6 @@ Adding paths for LaTeX
       doom-serif-font (font-spec :family "JetBrains Mono" :weight 'light))
 #+end_src
 
-#+RESULTS:
-: #<font-spec nil nil JetBrains\ Mono nil nil light nil nil nil nil nil nil nil>
-
 * ORG MODE
 ** DESIGN
 #+begin_src emacs-lisp
@@ -70,8 +53,6 @@ Adding paths for LaTeX
   )
 #+end_src
 
-#+RESULTS:
-| ⁖ | ◉ | ○ | ✸ | ✿ |
 ** ORG-TREE-SLIDE
 - You can start =org-tree-slide= by typing ~<SPC> t p~
 - While using org-tree-slide
@@ -88,9 +69,6 @@ Adding paths for LaTeX
   )
 #+end_src
 
-#+RESULTS:
-: org-tree-slide-content
-
 * MONITORING
 #+begin_src emacs-lisp
 (use-package! wakatime-mode
@@ -99,9 +77,6 @@ Adding paths for LaTeX
   :init
   (global-wakatime-mode))
 #+end_src
-
-#+RESULTS:
-: wakatime-mode
 
 * PROGRAMMING LANGUAGE
 ** C/C++
@@ -163,6 +138,3 @@ First thing you need to do is type ~M-x slime~. You will start ~slime~ process, 
 (provide 'config)
 ;;; config.el ends here
 #+end_src
-
-#+RESULTS:
-: config

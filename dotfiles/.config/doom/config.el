@@ -14,6 +14,7 @@
 
 (setq display-line-numbers-type 'relative)
 (global-whitespace-mode +1)
+(setq byte-compile-warnings '(cl-functions))
 
 (setq doom-font (font-spec :family "JetBrains Mono" :size 18)
       doom-unicode-font (font-spec :family "JetBrains Mono" :size 18)
