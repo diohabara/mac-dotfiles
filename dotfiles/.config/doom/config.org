@@ -104,21 +104,35 @@ Adding paths for LaTeX
 : wakatime-mode
 
 * PROGRAMMING LANGUAGE
-** LSP
-+ references
-  - https://emacs-jp.github.io/env/rust
-  - https://rust-analyzer.github.io/manual.html
-
+** C/C++
++ ref
+  - https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/cc
 #+begin_src emacs-lisp
-;; (use-package! lsp-mode
-;;   :ensure t
-;;   :init (yas-global-mode)
-;;   :hook (rust-mode . lsp)
-;;   :bind ("C-c h" . lsp-describe-thing-at-point)
-;;   :custom (lsp-rust-server 'rust-analyzer))
-;; (use-package! lsp-ui
-;;   :ensure t)
+(after! ccls
+  (setq ccls-initialization-options '(:index (:comments 2) :completion (:detailedLabel t)))
+  (set-lsp-priority! 'ccls 2)) ; optional as ccls is the default in Doom
 #+end_src
+** Emacs Lisp
++ ref
+  -  https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/emacs-lisp
+** Go
++ ref
+  - https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/go
+** Haskell
++ ref
+  - https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/haskell
+** JavaScript/TypeScript
++ ref
+  - https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/javascript
+** LaTeX
++ ref
+  - https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/latex
+** OCaml
++ ref
+  - https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/ocaml
+** Python
++ ref
+  - https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/python
 ** Common Lisp
 First thing you need to do is type ~M-x slime~. You will start ~slime~ process, and you can interactively evaluate expressions and files.
 - ~C-c C-C~: evaluate an expression
@@ -128,14 +142,19 @@ First thing you need to do is type ~M-x slime~. You will start ~slime~ process, 
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
 #+end_src
 ** Rust
-+ references
-  - https://emacs-jp.github.io/env/rust
-  - https://rust-analyzer.github.io/manual.html
-
++ ref
+  - https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/rust
 #+begin_src emacs-lisp
 (after! lsp-rust
   (setq lsp-rust-server 'rust-analyzer))
 #+end_src
+** Scheme
++ ref
+  - https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/scheme
+** Shell Script
++ ref
+  - https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/sh
+
 * REFERENCES
 - [[http://dev.ariel-networks.com/wp/archives/462]]
 

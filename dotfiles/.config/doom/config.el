@@ -40,14 +40,9 @@
   :init
   (global-wakatime-mode))
 
-;; (use-package! lsp-mode
-;;   :ensure t
-;;   :init (yas-global-mode)
-;;   :hook (rust-mode . lsp)
-;;   :bind ("C-c h" . lsp-describe-thing-at-point)
-;;   :custom (lsp-rust-server 'rust-analyzer))
-;; (use-package! lsp-ui
-;;   :ensure t)
+(after! ccls
+  (setq ccls-initialization-options '(:index (:comments 2) :completion (:detailedLabel t)))
+  (set-lsp-priority! 'ccls 2)) ; optional as ccls is the default in Doom
 
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
 
