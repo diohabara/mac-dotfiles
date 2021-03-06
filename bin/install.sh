@@ -67,17 +67,6 @@ function already() {
 }
 
 : "install haskell" && {
-  : "install stack" && {
-    if ! command_exists stack; then
-      installing 'Haskell-Stack'
-      # Doc: https://docs.haskellstack.org/en/stable/README/
-      curl -sSL https://get.haskellstack.org/ | sh -s - -f
-      installed 'Haskell-Stack'
-    else
-      already 'Haskell-Stack'
-    fi
-  }
-
   : "install ghcup" && {
     if ! command_exists ghcup; then
       installing 'ghcup'
@@ -103,13 +92,6 @@ function already() {
 }
 
 : "install ocaml" && {
-  if ! command_exists opam; then
-    sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
-    installed 'opam'
-  else
-    already 'opam'
-  fi
-
   : "install opam packages" && {
     if command_exists opam; then
       opam install merlin
@@ -140,7 +122,6 @@ function already() {
       pip3 install pyflakes
       pip3 install isort
       pip3 install python-language-server[all]
-      pip3 install pyright
     fi
   }
 }
@@ -184,7 +165,8 @@ function already() {
 
 : "install npm packages" && {
   if comand_exists npm; then
-    npm i -g bash-language-server
+    sudo npm i -g bash-language-server
+    sudo npm install -g pyright
   fi
 }
 
