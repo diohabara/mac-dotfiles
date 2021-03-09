@@ -1,5 +1,3 @@
-# Ref: https://github.com/znppunfuv/dotfiles/blob/master/dotfiles/.config/git/templates/gitmessage.txt
-
 # <type>[(optional scope)]: <subject>
 # <BLANK LINE>
 # [optional body]
