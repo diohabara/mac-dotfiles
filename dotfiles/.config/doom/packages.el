@@ -12,10 +12,6 @@
 (when (file-exists-p "~/.wakatime.cfg")
   (package! wakatime-mode))
 (package! ac-slime)
-(package! cargo)
-(package! lsp-mode)
-(package! lsp-ui)
-(package! rust-mode)
 (package! slime)
 
 ;; To install a package directly from a remote git repo, you must specify a

@@ -77,7 +77,6 @@ function already() {
       already 'ghcup'
     fi
   }
-
   : "install haskell package" && {
     if ! command_exists stack; then
       stack setup
