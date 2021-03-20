@@ -121,6 +121,7 @@ function already() {
       pip3 install pyflakes
       pip3 install isort
       pip3 install python-language-server[all]
+      pip3 install online-judge-tools
     fi
   }
 }
