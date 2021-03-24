@@ -84,7 +84,7 @@ function already() {
       stack install hoogle
     fi
 
-    if ! command_exists ghcup; then
+    if command_exists ghcup; then
       ghcup install hls
     fi
   }
