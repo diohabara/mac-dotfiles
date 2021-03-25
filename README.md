@@ -9,7 +9,7 @@ For 🍎. Currently x86-64 only...(´；ω；｀)
 
 ```sh
 xcode-select --install
-sh -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup.sh)"
+bash -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup.sh)"
 ```
 
 - If you get the error below, then type `compaudit`
