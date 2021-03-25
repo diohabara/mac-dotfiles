@@ -78,7 +78,7 @@ function already() {
     fi
   }
   : "install haskell package" && {
-    if ! command_exists stack; then
+    if command_exists stack; then
       stack setup
       stack install ghc-mod
       stack install hoogle
