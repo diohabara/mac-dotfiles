@@ -4,7 +4,10 @@ XDG_CACHE_HOME="${HOME}/.cache"
 XDG_DATA_HOME="${HOME}/.share"
 
 # Autocompletion
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+compinit -u
+chmod 755 /usr/local/share/zsh
+chmod 755 /usr/local/share/zsh/site-functions
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 eval "$(gh completion -s zsh)"
 
