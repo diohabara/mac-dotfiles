@@ -31,11 +31,8 @@ bash -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup.sh)
 - change "Define a word"'s shortcut `d`
 - `defaults write -g ApplePressAndHoldEnabled -bool false` to enable key repeat
 - make "Key Repeat" and "Delay Until Repeat" fastest and shortest in "System Preferences" respectively
-- set up 
-  - AltTab
+- set up
   - Dropbox
-    - sign in
-  - Backup and Sync
     - sign in
   - Shiftit
     - change keyboard shortcuts
