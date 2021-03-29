@@ -54,6 +54,13 @@ function already() {
   }
 }
 
+: "install fzf settings" && {
+  if command_exists fzf && ! [ -d ~/.fzf.zsh ]; then
+    $(brew --prefix)/opt/fzf/install
+    source ~/.fzf.zsh
+  fi
+}
+
 : "install go packages" && {
   if command_exists go; then
     go get -u github.com/motemen/gore/cmd/gore
