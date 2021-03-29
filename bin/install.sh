@@ -20,7 +20,7 @@ REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
 command mkdir -p "${ZSH_FUNCCOMP_DIR}"
 
 function command_exists() {
-  type "$1" &> /dev/null ;
+  command "$1" -v &> /dev/null ;
 }
 
 function installing() {
@@ -57,7 +57,6 @@ function already() {
 : "install fzf settings" && {
   if command_exists fzf && ! [ -d ~/.fzf.zsh ]; then
     $(brew --prefix)/opt/fzf/install
-    source ~/.fzf.zsh
   fi
 }
 
