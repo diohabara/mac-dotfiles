@@ -9,7 +9,7 @@ GHQ_ROOT="${HOME}/repo"
 REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
 
 : "install CLT" && {
-  if ! type xcode-select &> /dev/null; then
+  if ! type xcode-select 2>&1 /dev/null; then
     xcode-install --install
   fi
 }

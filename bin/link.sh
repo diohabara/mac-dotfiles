@@ -12,7 +12,7 @@ cd "${DOTFILES_HOME}"
 
 : "link Emacs" && {
   file="/Applications/Emacs.app"
-  if [[ -L "${file}" && -d "${file}" ]]; then
+  if [ -L "${file}" ] && [ -d "${file}" ]; then
     echo "Emacs already installed";
   else
     ln -s "/usr/local/opt/emacs-mac/Emacs.app" "/Applications/Emacs.app"

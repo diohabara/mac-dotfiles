@@ -6,8 +6,8 @@ IFS="$(printf " \t\nx")"
 
 # XDG Base Directory Specification
 XDG_CONFIG_HOME="${HOME}/.config"
-XDG_CACHE_HOME="${HOME}/.cache"
-XDG_DATA_HOME="${HOME}/.share"
+## XDG_CACHE_HOME="${HOME}/.cache"
+# XDG_DATA_HOME="${HOME}/.share"
 
 # data direcotory for zsh
 ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
@@ -15,7 +15,7 @@ ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 ZSH_FUNCCOMP_DIR="${ZDOTDIR}/func_comp"
 GHQ_ROOT="${HOME}/repo"
 REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
-DOTFILES_HOME="${REPO_ROOT}/dotfiles"
+# DOTFILES_HOME="${REPO_ROOT}/dotfiles"
 
 command mkdir -p "${ZSH_FUNCCOMP_DIR}"
 
@@ -120,7 +120,7 @@ function already() {
       pip3 install black
       pip3 install pyflakes
       pip3 install isort
-      pip3 install python-language-server[all]
+      pip3 install 'python-language-server[all]'
       pip3 install online-judge-tools
       pip3 install atcoder-tools
     fi
