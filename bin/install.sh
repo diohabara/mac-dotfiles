@@ -20,7 +20,7 @@ REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
 command mkdir -p "${ZSH_FUNCCOMP_DIR}"
 
 function command_exists() {
-  command "$1" -v &> /dev/null ;
+  command -v "$1" &> /dev/null ;
 }
 
 function installing() {
