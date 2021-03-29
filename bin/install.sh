@@ -48,6 +48,7 @@ function already() {
   : "install packages by brew" && {
     echo "Installing packages by brew..."
     # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
+    brew upgrade
     brew bundle install --file "${REPO_ROOT}/.Brewfile" --no-lock
     echo "Installed packages by brew!"
   }
