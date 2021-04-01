@@ -55,7 +55,7 @@ function already() {
 }
 
 : "install fzf settings" && {
-  if command_exists fzf && ! [ -d ~/.fzf.zsh ]; then
+  if command_exists fzf && [ ! -d "${HOME}/.fzf.zsh" ]; then
     $(brew --prefix)/opt/fzf/install
   fi
 }
