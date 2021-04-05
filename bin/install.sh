@@ -81,6 +81,7 @@ function already() {
       curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
       installed 'ghcup'
     else
+      ghcup upgrade
       already 'ghcup'
     fi
   }
