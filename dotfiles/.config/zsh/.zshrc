@@ -23,7 +23,7 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 
 # PATH
 export PATH="${PATH}:/usr/local/bin"
-export PATH="${PATH}:~/.local/bin"
+export PATH="${PATH}:${HOME}/.local/bin"
 export PATH="${PATH}:${HOME}/.emacs.d/bin"
 
 ## LLVM
