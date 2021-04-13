@@ -54,12 +54,14 @@ brew "pkg-config"
 brew "procs" # replacement of ps
 brew "pyenv"
 brew "python@3.9"
+brew "readline"
 brew "ripgrep" # replacement of grep
 brew "rlwrap"
 brew "roswell"
 brew "sbcl"
 brew "sd" # replacement of sed
 brew "shellcheck"
+brew "sqlite3"
 brew "starship"
 brew "svn"
 brew "tealdeer"
@@ -68,8 +70,10 @@ brew "tmux"
 brew "tokei"
 brew "unzip"
 brew "wget"
+brew "xz"
 brew "yarn"
 brew "youtube-dl"
+brew "zlib"
 brew "zsh"
 
 # ===cask===
