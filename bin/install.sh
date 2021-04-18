@@ -173,8 +173,9 @@ function already() {
 
 : "install npm packages" && {
   if command_exists npm; then
-    sudo npm i -g bash-language-server
-    sudo npm install -g pyright
+    . source "${HOME}/.profile"
+    npm i -g bash-language-server
+    npm install -g pyright
   fi
 }
 
