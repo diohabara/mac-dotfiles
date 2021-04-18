@@ -60,6 +60,8 @@ export NVM_DIR="${HOME}/.nvm"
 
 ## Java
 export PATH="${PATH}:/usr/local/opt/openjdk/bin"
+export PATH="${PATH}:/usr/local/opt/openjdk@11/bin"
+
 
 ## LaTeX
 export PATH="${PATH}:/usr/local/texlive/2020/bin/x86_64-darwin/"

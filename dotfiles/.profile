@@ -11,3 +11,6 @@ NPM_CONFIG_PREFIX=~/.npm-global
 # Nix
 # shellckeck disable=SC1091
 if [ -e /Users/jio/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jio/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Java
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
