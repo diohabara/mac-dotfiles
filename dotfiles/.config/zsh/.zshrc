@@ -59,8 +59,28 @@ export NVM_DIR="${HOME}/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completio
 
 ## Java
-export PATH="${PATH}:/usr/local/opt/openjdk/bin"
-export PATH="${PATH}:/usr/local/opt/openjdk@11/bin"
+### jenv
+eval export PATH="${PATH}:${HOME}/.jenv/shims"
+export JENV_SHELL=zsh
+export JENV_LOADED=1
+unset JAVA_HOME
+. "/usr/local/Cellar/jenv/0.5.4/libexec/libexec/../completions/jenv.zsh"
+jenv rehash 2>/dev/null
+jenv refresh-plugins
+jenv() {
+  typeset command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  enable-plugin|rehash|shell|shell-options)
+    eval `jenv "sh-$command" "$@"`;;
+  *)
+    command jenv "$command" "$@";;
+  esac
+}
 
 
 ## LaTeX
