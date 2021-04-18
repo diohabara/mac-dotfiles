@@ -60,7 +60,7 @@ export NVM_DIR="${HOME}/.nvm"
 
 ## Java
 ### jenv
-eval "$(jevn init -)"
+eval "$(jenv init -)"
 
 ## LaTeX
 export PATH="${PATH}:/usr/local/texlive/2020/bin/x86_64-darwin/"
