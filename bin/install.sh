@@ -54,6 +54,12 @@ function already() {
   }
 }
 
+: "symlink Java" && {
+  if ! command_exists java; then
+    sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+  fi
+}
+
 : "install fzf settings" && {
   if command_exists fzf && [ ! -e "${HOME}/.fzf.zsh" ]; then
     $(brew --prefix)/opt/fzf/install
