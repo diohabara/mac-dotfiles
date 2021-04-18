@@ -60,6 +60,9 @@ export NVM_DIR="${HOME}/.nvm"
 
 ## Java
 ### jenv
+export PATH="${PATH}:/usr/local/opt/openjdk/bin"
+export PATH="${PATH}:/usr/local/opt/openjdk@11/bin"
+export PATH="${PATH}:/usr/local/opt/openjdk@8/bin"
 eval "$(jenv init -)"
 
 ## LaTeX
