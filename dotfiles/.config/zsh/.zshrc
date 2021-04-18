@@ -58,6 +58,9 @@ export NVM_DIR="${HOME}/.nvm"
 # shellcheck disable=SC1091
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completio
 
+## Java
+export PATH="${PATH}:/usr/local/opt/openjdk/bin"
+
 ## LaTeX
 export PATH="${PATH}:/usr/local/texlive/2020/bin/x86_64-darwin/"
 export PATH="${PATH}:/Library/TeX/texbin/"
