@@ -41,6 +41,7 @@ brew "grep"
 brew "haskell-stack"
 brew "hyperfine" # for benchmark
 brew "java"
+brew "openjdk@11"
 brew "jq" # json processor
 brew "llvm"
 brew "make"
