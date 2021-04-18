@@ -173,7 +173,7 @@ function already() {
 
 : "install npm packages" && {
   if command_exists npm; then
-    . source "${HOME}/.profile"
+    . "${HOME}/.profile"
     npm i -g bash-language-server
     npm install -g pyright
   fi
