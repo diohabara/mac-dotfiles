@@ -4,6 +4,7 @@
 XDG_CONFIG_HOME="${HOME}/.config"
 # XDG_CACHE_HOME="${HOME}/.cache"
 # XDG_DATA_HOME="${HOME}/.share"
+CASK_ROOM="/usr/local/Caskroom/"
 
 # Autocompletion
 autoload -Uz compinit
@@ -62,4 +63,12 @@ export PATH="${PATH}:/usr/local/texlive/2020/bin/x86_64-darwin/"
 export PATH="${PATH}:/Library/TeX/texbin/"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# shellcheck disable=SC1090
+[ -f "${HOME}/fzf.zsh" ] && . "${HOME}/fzf.zsh"
+
+# google-cloud-sdk
+# shellcheck disable=SC1090
+. "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+# shellcheck disable=SC1090
+. "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
