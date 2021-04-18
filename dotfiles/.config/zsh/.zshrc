@@ -60,28 +60,7 @@ export NVM_DIR="${HOME}/.nvm"
 
 ## Java
 ### jenv
-eval export PATH="${PATH}:${HOME}/.jenv/shims"
-export JENV_SHELL=zsh
-export JENV_LOADED=1
-unset JAVA_HOME
-. "/usr/local/Cellar/jenv/0.5.4/libexec/libexec/../completions/jenv.zsh"
-jenv rehash 2>/dev/null
-jenv refresh-plugins
-jenv() {
-  typeset command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  enable-plugin|rehash|shell|shell-options)
-    eval `jenv "sh-$command" "$@"`;;
-  *)
-    command jenv "$command" "$@";;
-  esac
-}
-
+eval "$(jevn init -)"
 
 ## LaTeX
 export PATH="${PATH}:/usr/local/texlive/2020/bin/x86_64-darwin/"
