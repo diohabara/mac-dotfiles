@@ -71,7 +71,7 @@ export PATH="${PATH}:/Library/TeX/texbin/"
 
 # fzf
 # shellcheck disable=SC1090
-[ -f "${HOME}/fzf.zsh" ] && . "${HOME}/fzf.zsh"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # google-cloud-sdk
 # shellcheck disable=SC1090
