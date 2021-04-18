@@ -40,6 +40,7 @@ brew "gradle"
 brew "grep"
 brew "haskell-stack"
 brew "hyperfine" # for benchmark
+brew "java"
 brew "jq" # json processor
 brew "llvm"
 brew "make"
