@@ -79,3 +79,7 @@ export PATH="${PATH}:/Library/TeX/texbin/"
 # shellcheck disable=SC1090
 . "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
+# for toolchain
+# Doc: https://github.com/riscv/riscv-gnu-toolchain
+export PATH="${PATH}:/opt/riscv/bin"
+
