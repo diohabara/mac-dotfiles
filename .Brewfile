@@ -26,7 +26,7 @@ brew "expat"
 brew "fd" # replacement of find
 brew "ffmpeg"
 brew "fzf"
-brew "gaws"
+brew "gawk"
 brew "gcc"
 brew "gh"
 brew "ghc"
