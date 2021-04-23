@@ -1,4 +1,5 @@
 # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
+tap "discoteq/discoteq"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
@@ -25,6 +26,7 @@ brew "exa" # replacement of ls
 brew "expat"
 brew "fd" # replacement of find
 brew "ffmpeg"
+brew "flock"
 brew "fzf"
 brew "gawk"
 brew "gcc"
