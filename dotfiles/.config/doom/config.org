@@ -34,6 +34,7 @@ Adding paths for LaTeX
 (setq display-line-numbers-type 'relative)
 (global-whitespace-mode +1)
 (setq byte-compile-warnings '(cl-functions))
+(setq tab-width 2)
 #+end_src
 
 * FONTS
