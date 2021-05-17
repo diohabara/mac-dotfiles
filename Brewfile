@@ -1,5 +1,5 @@
 # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
-brew tap "d12frosted/emacs-plus"
+tap "d12frosted/emacs-plus"
 tap "discoteq/discoteq"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -21,7 +21,7 @@ brew "ccls"
 brew "clang-format"
 brew "cmake"
 brew "curl"
-brew emacs-plus@28 --with-native-comp --with-modern-doom3-icon
+brew "emacs-plus@28", args: ["with-native-comp", "with-modern-doom3-icon"]
 brew "expat"
 brew "ffmpeg"
 brew "flock"

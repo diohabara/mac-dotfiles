@@ -23,34 +23,16 @@ function command_exists() {
   command -v "$1" &> /dev/null ;
 }
 
-function installing() {
-  echo "Installing $1..."
-}
-
-function installed() {
-  echo "$1 is installed!"
-}
-
-function already() {
-  echo "$1 is already installed"
-}
-
-
 : "install brew" && {
   if ! command_exists brew; then
-    installing 'brew'
     # Doc: https://brew.sh/
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    installed 'brew'
-  else
-    already 'brew'
   fi
+
   : "install packages by brew" && {
-    echo "Installing packages by brew..."
     # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
     brew upgrade
-    brew bundle install --file "${REPO_ROOT}/.Brewfile" --no-lock
-    echo "Installed packages by brew!"
+    brew bundle install --file "${REPO_ROOT}/Brewfile" --no-lock
   }
 }
 
@@ -64,7 +46,9 @@ function already() {
   }
 
   : "jenv" && {
-    mkdir -p "${HOME}/.jenv/versions"
+    if [ ! -d "${HOME}/.jenv/versions" ]; then
+      mkdir -p "${HOME}/.jenv/versions"
+    fi
   }
 }
 
@@ -92,13 +76,10 @@ function already() {
 : "install haskell" && {
   : "install ghcup" && {
     if ! command_exists ghcup; then
-      installing 'ghcup'
       # Doc: https://gitlab.haskell.org/haskell/ghcup-hs
       curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-      installed 'ghcup'
     else
       ghcup upgrade
-      already 'ghcup'
     fi
   }
   : "install haskell package" && {
@@ -128,16 +109,12 @@ function already() {
 : "install python" && {
   : "install poetry" && {
     if ! command_exists poetry; then
-        # Doc: https://python-poetry.org/docs/
+      # Doc: https://python-poetry.org/docs/
       curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
-      installed 'poetry'
-    else
-      already 'poetry'
     fi
   }
   : "install via pip3" && {
     if command_exists pip3; then
-      already 'pip3'
       pip3 install wakatime
       pip3 install pytest
       pip3 install black
@@ -152,10 +129,8 @@ function already() {
 
 : "install rust packages" && {
   if ! command_exists rustup; then
-    installing 'Rust'
     # Doc: https://www.rust-lang.org/tools/install
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
-    installed 'Rust'
   fi
   : "install rustup components" && {
     rustup toolchain install stable
@@ -178,7 +153,6 @@ function already() {
 
   : "install cargo packages" && {
     if command_exists cargo; then
-      already 'cargo'
       cargo install cargo-check
       cargo install cargo-raze
       cargo install cargo-vendor
