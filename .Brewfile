@@ -21,7 +21,7 @@ brew "ccls"
 brew "clang-format"
 brew "cmake"
 brew "curl"
-brew "emacs-plus@28", args: ["--with-native-comp", "--with-modern-doom3-icon"]
+brew "emacs-plus@28 --with-native-comp --with-modern-doom3-icon"
 brew "expat"
 brew "ffmpeg"
 brew "flock"
