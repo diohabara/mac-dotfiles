@@ -119,6 +119,7 @@ function command_exists() {
       pip3 install atcoder-tools
       pip3 install black
       pip3 install isort
+      pip3 install nose
       pip3 install online-judge-tools
       pip3 install pyflakes
       pip3 install pyls-spyder
