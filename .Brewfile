@@ -1,4 +1,5 @@
 # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
+brew tap "d12frosted/emacs-plus"
 tap "discoteq/discoteq"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -20,11 +21,9 @@ brew "ccls"
 brew "clang-format"
 brew "cmake"
 brew "curl"
-brew "dust" # replacement of du
 brew "emacs-mac", args: ["with-modules"]
-brew "exa" # replacement of ls
+brew "emacs-plus", args: ["--with-native-comp", "--with-modern-doom3-icon"]
 brew "expat"
-brew "fd" # replacement of find
 brew "ffmpeg"
 brew "flock"
 brew "fzf"
@@ -45,11 +44,11 @@ brew "golangci-lint"
 brew "gradle"
 brew "grep"
 brew "haskell-stack"
-brew "hyperfine" # for benchmark
+brew "hyperfine"
 brew "isl"
 brew "java"
 brew "jenv"
-brew "jq" # json processor
+brew "jq"
 brew "libmpc"
 brew "llvm"
 brew "make"
@@ -65,15 +64,12 @@ brew "openjdk@8"
 brew "openssl"
 brew "pandoc"
 brew "pkg-config"
-brew "procs" # replacement of ps
 brew "pyenv"
 brew "python@3.9"
 brew "readline"
-brew "ripgrep" # replacement of grep
 brew "rlwrap"
 brew "roswell"
 brew "sbcl"
-brew "sd" # replacement of sed
 brew "shellcheck"
 brew "sqlite3"
 brew "starship"
@@ -89,6 +85,13 @@ brew "yarn"
 brew "youtube-dl"
 brew "zlib"
 brew "zsh"
+# ===Replacement===
+brew "dust" # replacement of du
+brew "exa" # replacement of ls
+brew "fd" # replacement of find
+brew "procs" # replacement of ps
+brew "ripgrep" # replacement of grep
+brew "sd" # replacement of sed
 
 # ===cask===
 cask "alacritty"
