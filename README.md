@@ -21,6 +21,8 @@ bash -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup.sh)
 
 ## Mac
 
+TODO: Write AppleScript
+
 - put Dock left
 - remove useless Apps
 - hide Dock icons automatically
