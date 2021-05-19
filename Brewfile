@@ -96,6 +96,7 @@ brew "sd" # replacement of sed
 # ===cask===
 cask "alacritty"
 cask "alfred"
+cask "balenaetcher"
 cask "discord"
 cask "docker"
 cask "dotnet-sdk"
