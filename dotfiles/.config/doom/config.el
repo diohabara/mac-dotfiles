@@ -37,9 +37,9 @@
   )
 
 (use-package! wakatime-mode
-  :ensure t
   :when (file-exists-p "~/.wakatime.cfg")
   :init
+  :config
   (global-wakatime-mode))
 
 (after! ccls

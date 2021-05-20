@@ -73,9 +73,9 @@ Adding paths for LaTeX
 * MONITORING
 #+begin_src emacs-lisp
 (use-package! wakatime-mode
-  :ensure t
   :when (file-exists-p "~/.wakatime.cfg")
   :init
+  :config
   (global-wakatime-mode))
 #+end_src
 
