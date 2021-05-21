@@ -6,170 +6,172 @@ IFS="$(printf " \t\nx")"
 
 # XDG Base Directory Specification
 XDG_CONFIG_HOME="${HOME}/.config"
-## XDG_CACHE_HOME="${HOME}/.cache"
-# XDG_DATA_HOME="${HOME}/.share"
+XDG_CACHE_HOME="${HOME}/.cache"
+XDG_DATA_HOME="${HOME}/.share"
 
 # data direcotory for zsh
 ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
+# misc
 ZSH_FUNCCOMP_DIR="${ZDOTDIR}/func_comp"
 GHQ_ROOT="${HOME}/repo"
-REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/mac-dotfiles"
-# DOTFILES_HOME="${REPO_ROOT}/dotfiles"
+REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/dotfiles"
 
 command mkdir -p "${ZSH_FUNCCOMP_DIR}"
 
-function command_exists() {
-  command -v "$1" &> /dev/null ;
+command_exists() {
+	command -v "$1" >/dev/null 2>&1
 }
 
-: "install brew" && {
-  if ! command_exists brew; then
-    # Doc: https://brew.sh/
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
+case ${OSTYPE} in
+darwin*)
+	bash ./mac_install.sh
+	;;
+linux*)
+	if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
+		if [ -e /etc/lsb-release ]; then
+			bash ./ubuntu_install.sh
+		fi
+	fi
+	;;
+esac
 
-  : "install packages by brew" && {
-    # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
-    brew upgrade
-    brew bundle install --file "${REPO_ROOT}/Brewfile" --no-lock
-  }
+: "install nix" && {
+	if ! command_exists nix; then
+		# Doc: https://nixos.org/download.html
+		curl -L https://nixos.org/nix/install | sh
+		. "${HOME}/.nix-profile/etc/profile.d/nix.sh"
+	fi
+
+	if command_exists nix; then
+		# Doc: https://nixos.org/manual/nix/stable/#ch-upgrading-nix
+		nix-channel --update
+		nix-env -iA nixpkgs.nix
+	fi
+
+	: "install nixpkgs" && {
+		if command_exists nix-env; then
+			# Doc: https://nixos.org/manual/nixpkgs/stable/#sec-declarative-package-management
+			nix-env -iA nixpkgs.myPackages
+		fi
+	}
 }
 
-: "Java" && {
-  : "Java symlinking" && {
-    if ! command_exists java; then
-      sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk # java15
-      sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk # java11
-      sudo ln -sfn $(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk # java8
-    fi
-  }
-
-  : "jenv" && {
-    if [ ! -d "${HOME}/.jenv/versions" ]; then
-      mkdir -p "${HOME}/.jenv/versions"
-    fi
-  }
-}
-
-
-
-: "install fzf settings" && {
-  if command_exists fzf && [ ! -e "${HOME}/.fzf.zsh" ]; then
-    $(brew --prefix)/opt/fzf/install
-  fi
+: "install Doom Emacs" && {
+	if ! [ -d "$HOME/.emacs.d" ]; then
+		git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+		~/.emacs.d/bin/doom install
+	fi
 }
 
 : "install go packages" && {
-  if command_exists go; then
-    go get -u github.com/motemen/gore/cmd/gore
-    go get -u github.com/stamblerre/gocode
-    go get -u golang.org/x/tools/cmd/godoc
-    go get -u golang.org/x/tools/cmd/goimports
-    go get -u golang.org/x/tools/cmd/gorename
-    go get -u golang.org/x/tools/cmd/guru
-    go get -u github.com/cweill/gotests/...
-    go get -u github.com/fatih/gomodifytags
-  fi
-}
-
-: "install haskell" && {
-  : "install ghcup" && {
-    if ! command_exists ghcup; then
-      # Doc: https://gitlab.haskell.org/haskell/ghcup-hs
-      curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-    else
-      ghcup upgrade
-    fi
-  }
-  : "install haskell package" && {
-    if command_exists stack; then
-      stack setup
-      stack install hoogle
-    fi
-
-    if command_exists ghcup; then
-      ghcup install hls
-    fi
-  }
+	if command_exists go; then
+		go get -u -v github.com/bazelbuild/bazelisk
+		go get -u -v github.com/bazelbuild/buildtools/buildifier
+		go get -u -v github.com/cweill/gotests/...
+		go get -u -v github.com/fatih/gomodifytags
+		go get -u -v github.com/motemen/gore/cmd/gore
+		go get -u -v github.com/stamblerre/gocode
+		go get -u -v github.com/x-motemen/ghq
+		go get -u -v golang.org/x/tools/cmd/godoc
+		go get -u -v golang.org/x/tools/cmd/goimports
+		go get -u -v golang.org/x/tools/cmd/gorename
+		go get -u -v golang.org/x/tools/cmd/guru
+	fi
 }
 
 : "install ocaml" && {
-  : "install opam packages" && {
-    if command_exists opam; then
-      opam install merlin
-      opam install utop
-      opam install ocp-indent
-      opam install dune
-      opam install ocamlformat
-    fi
-  }
+	: "install opam packages" && {
+		if command_exists opam; then
+			opam install merlin
+			opam install utop
+			opam install ocp-indent
+			opam install dune
+			opam install ocamlformat
+		fi
+	}
 }
 
 : "install python" && {
-  : "install poetry" && {
-    if ! command_exists poetry; then
-      # Doc: https://python-poetry.org/docs/
-      curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
-    fi
-  }
-  : "install via pip3" && {
-    if command_exists pip3; then
-      pip3 install 'python-language-server[all]'
-      pip3 install atcoder-tools
-      pip3 install black
-      pip3 install isort
-      pip3 install nose
-      pip3 install online-judge-tools
-      pip3 install pyflakes
-      pip3 install pyls-spyder
-      pip3 install pytest
-      pip3 install wakatime
-    fi
-  }
+	: "install pyenv" && {
+		if ! command_exists pyenv; then
+			# Doc: https://github.com/pyenv/pyenv-installer
+			rm -rf ~/.pyenv
+			curl https://pyenv.run | bash
+			# Doc: https://github.com/pyenv/pyenv
+		fi
+	}
+	: "install via pip3" && {
+		if command_exists pip3; then
+			pip3 install --upgrade pip
+			pip3 install --user 'python-language-server[all]'
+			pip3 install --user atcoder-tools
+			pip3 install --user black
+			pip3 install --user isort
+			pip3 install --user nose
+			pip3 install --user online-judge-tools
+			pip3 install --user pyflakes
+			pip3 install --user pyls-spyder
+			pip3 install --user pytest
+			pip3 install --user wakatime
+		fi
+	}
+}
+
+: "install haskell package" && {
+	if command_exists stack; then
+		stack setup
+		stack install hoogle
+	fi
+
+	if command_exists ghcup; then
+		ghcup install hls
+	fi
 }
 
 : "install rust packages" && {
-  if ! command_exists rustup; then
-    # Doc: https://www.rust-lang.org/tools/install
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
-  fi
-  : "install rustup components" && {
-    rustup toolchain install stable
-    rustup toolchain install nightly
-    rustup update
-    # Doc: https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion-for-bash-fish-zsh-or-powershell
-    rustup completions zsh > "${ZSH_FUNCCOMP_DIR}/_rustup"
-    # For rust-analyzer
-    # Doc: https://rust-analyzer.github.io/manual.html#installation
-    rustup component add rust-src
-    # Doc: https://github.com/hlissner/doom-emacs/blob/d62c82ddbe0c9fa603be24f5eb8e563d16f5e45f/modules/lang/rust/README.org
-    rustup component add rustfmt-preview
-    rustup component add clippy-preview
-    # For rls
-    # Doc: https://github.com/rust-lang/rls
-    rustup component add rls
-    rustup component add rust-analysis
-    rustup component add rust-src
-  }
+	if ! command_exists rustup; then
+		# Doc: https://www.rust-lang.org/tools/install
+		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+		source "$HOME/.cargo/env"
+	fi
+	: "install rustup components" && {
+		rustup toolchain install stable
+		rustup toolchain install nightly
+		rustup update
+		# Doc: https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion-for-bash-fish-zsh-or-powershell
+		rustup completions zsh >"${ZSH_FUNCCOMP_DIR}/_rustup"
+		# For rust-analyzer
+		# Doc: https://rust-analyzer.github.io/manual.html#installation
+		rustup component add rust-src
+		# Doc: https://github.com/hlissner/doom-emacs/blob/d62c82ddbe0c9fa603be24f5eb8e563d16f5e45f/modules/lang/rust/README.org
+		rustup component add rustfmt-preview
+		rustup component add clippy-preview
+		# For rls
+		# Doc: https://github.com/rust-lang/rls
+		rustup component add rls
+		rustup component add rust-analysis
+		rustup component add rust-src
+	}
 
-  : "install cargo packages" && {
-    if command_exists cargo; then
-      cargo install cargo-check
-      cargo install cargo-raze
-      cargo install cargo-vendor
-      cargo install mdbook
-    fi
-  }
+	: "install cargo packages" && {
+		if command_exists cargo; then
+			cargo install cargo-check
+			cargo install cargo-raze
+			cargo install cargo-vendor
+			cargo install mdbook
+			cargo install git-delta
+		fi
+	}
 }
 
 : "install npm packages" && {
-  if command_exists npm; then
-    . "${HOME}/.profile"
-    npm i -g bash-language-server
-    npm install -g pyright
-    npm install -g prettier
-  fi
+	if command_exists npm; then
+		. "${HOME}/.profile"
+		npm i -g bash-language-server
+		npm install -g pyright
+		npm install -g prettier
+	fi
 }
 
 echo "Complete installation!"

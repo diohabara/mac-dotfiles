@@ -1,27 +1,18 @@
-# mac-dotfiles
+# dotfiles
 
-For 🍎. Currently x86-64 only...(´；ω；｀)
+For macOS and Linux(Ubuntu).
 
 ## setup
+
+### macOS
 
 - Before execute this command, sign in to App Store.
 - You may need to type `sudo xcodebuild -license accept`
 
 ```sh
 xcode-select --install
-bash -c "$(curl -fsSL raw.github.com/diohabara/mac-dotfiles/master/bin/setup.sh)"
+bash -c "$(curl -fsSL raw.github.com/diohabara/dotfiles/master/bin/setup.sh)"
 ```
-
-- connect GitHub via SSH
-  - First follow this link <https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>.
-  - After finishing the instructions, execute this command.
-  ```sh
-  git remote set-url origin git@github.com:diohabara/mac-dotfiles.git
-  ```
-
-## Mac
-
-TODO: Write AppleScript
 
 - put Dock left
 - remove useless Apps
@@ -51,3 +42,23 @@ TODO: Write AppleScript
     - make conversions in "Advanced" halfwidth
   - Visual Studio Code
     - turn on Sync
+
+### Ubuntu
+
+```sh
+sudo apt update && sudo apt upgrade -y && sudo apt install -y curl
+```
+
+### Common
+
+- change your shell: `chsh -s $(which zsh)`
+- connect GitHub via SSH
+  - First follow this link <https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>.
+  - After finishing the instructions, execute this command.
+  ```sh
+  git remote set-url origin git@github.com:diohabara/dotfiles.git
+  ```
+
+## Troubleshooting
+
+- If you having difficulty Doom Emacs font rendering, please refer to [this issue](https://github.com/hlissner/doom-emacs/issues/116).
