@@ -72,6 +72,7 @@ esac
 				nix-shell '<home-manager>' -A install
 			fi
 			nix-channel --update
+			nix-channel --update home-manager
 			home-manager switch
 		}
 	fi

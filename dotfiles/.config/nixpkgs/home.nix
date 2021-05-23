@@ -30,7 +30,6 @@ in {
       fcitx-engines.mozc
       fd
       ffmpeg
-      firefox
       flock
       fzf
       gawk
