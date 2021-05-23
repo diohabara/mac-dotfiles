@@ -80,6 +80,7 @@ command_exists() {
 		snapd \
 		software-properties-common \
 		xclip \
+		firefox \
 		zlib1g-deva \
 		fcitx-mozc \
 		zsh
