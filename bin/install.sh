@@ -72,7 +72,7 @@ esac
 			fi
 			nix-channel --update
 			nix-channel --update home-manager
-      nix-env  -f '<nixpkgs>' -iA myPackages
+			nix-env -f '<nixpkgs>' -iA myPackages
 			home-manager switch
 		}
 	fi
@@ -127,15 +127,8 @@ esac
 	: "install via pip3" && {
 		if command_exists pip3; then
 			pip3 install --user --upgrade pip
-			pip3 install --user 'python-language-server[all]'
 			pip3 install --user atcoder-tools
-			pip3 install --user black
-			pip3 install --user isort
-			pip3 install --user nose
 			pip3 install --user online-judge-tools
-			pip3 install --user pyflakes
-			pip3 install --user pyls-spyder
-      pip3 install --user pytest
 			pip3 install --user wakatime
 		fi
 	}
@@ -181,20 +174,8 @@ esac
 	: "install cargo packages" && {
 		if command_exists cargo; then
 			cargo install cargo-check
-			cargo install cargo-raze
-			cargo install cargo-vendor
 		fi
 	}
-}
-
-: "install npm packages" && {
-	if command_exists npm; then
-		# shellcheck disable=SC1091
-		. "${HOME}/.profile"
-		npm i -g bash-language-server
-		npm install -g pyright
-		npm install -g prettier
-	fi
 }
 
 echo "Complete installation!"

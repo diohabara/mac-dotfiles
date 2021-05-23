@@ -13,7 +13,8 @@ in {
           bat
           bazel
           bazel-buildtools
-          shfmt
+          black
+          cargo-raze
           ccls
           cmake
           coreutils
@@ -23,7 +24,6 @@ in {
           dust
           exa
           expat
-          #fcitx-engines.mozc
           fd
           ffmpeg
           flock
@@ -52,15 +52,23 @@ in {
           neofetch
           neovim
           nixfmt
+          nodePackages.bash-language-server
           nodePackages.npm
+          nodePackages.prettier
+          nodePackages.pyright
           nodejs
           openssl
           pandoc
           pkg-config
           poetry
           procs
+          python-language-server
           python39
+          python39Packages.isort
+          python39Packages.nose
           python39Packages.pip
+          python39Packages.pyflakes
+          python39Packages.pytest
           readline
           ripgrep
           rlwrap
@@ -69,6 +77,7 @@ in {
           sbcl
           sd
           shellcheck
+          shfmt
           stack
           starship
           tcl
@@ -78,6 +87,7 @@ in {
           tokei
           typora
           unzip
+          wakatime
           wget
           xz
           yarn
