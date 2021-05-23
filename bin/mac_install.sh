@@ -52,12 +52,6 @@ command_exists() {
 	}
 }
 
-: "install fzf settings" && {
-	if command_exists fzf && [ ! -e "${HOME}/.fzf.zsh" ]; then
-		"$(brew --prefix)/opt/fzf/install"
-	fi
-}
-
 : "AppleScript" && {
 	echo "TODO: AppleScript"
 	# . "${DOTFILES_HOME}/bin/init.scpt"
