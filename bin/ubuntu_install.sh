@@ -63,6 +63,7 @@ command_exists() {
 		libcanberra-gtk3-module \
 		libfontconfig1-dev \
 		libfreetype6-dev \
+		libgmp3-dev \
 		libgraphite2-dev \
 		libgtk-3-dev \
 		libharfbuzz-dev \
