@@ -25,12 +25,9 @@ brew "openjdk@8"
 brew "pyenv"
 
 # ===cask===
-cask "alacritty"
 cask "alfred"
 cask "balenaetcher"
 cask "discord"
-cask "docker"
-cask "dotnet-sdk"
 cask "dropbox"
 cask "google-cloud-sdk"
 cask "firefox"
