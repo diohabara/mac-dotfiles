@@ -81,7 +81,7 @@ command_exists() {
 		software-properties-common \
 		xclip \
 		firefox \
-		zlib1g-deva \
+		zlib1g-dev \
 		fcitx-mozc \
 		zsh
 
