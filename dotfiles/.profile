@@ -2,7 +2,7 @@
 # Doc: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME}:${HOME}/.config"
 
-export LC_ALL="C.UTF-8"
+export LANG="C.UTF-8"
 
 # Nix
 if [ -e /home/jio/.nix-profile/etc/profile.d/nix.sh ]; then

@@ -1,6 +1,5 @@
-#!/usr/bin/env sh
-set -eu
-export LANG="C.UTF-8"
+#!/usr/bin/env bash
+set -eu -o pipefail
 IFS="$(printf " \t\nx")"
 
 GHQ_ROOT="${HOME}/repo"

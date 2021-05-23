@@ -12,13 +12,14 @@ in {
     packages = with pkgs; [
       cascadia-code
       dejavu_fonts
+      emacs-all-the-icons-fonts
+      emacs-all-the-icons-fonts
+      hello
       jetbrains-mono
-      nerdfonts
       noto-fonts-cjk
       powerline-fonts
       roboto
       source-code-pro
-      emacs-all-the-icons-fonts
     ];
   };
 
