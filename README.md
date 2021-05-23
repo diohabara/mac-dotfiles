@@ -48,7 +48,6 @@ sudo apt update && sudo apt upgrade -y && sudo apt install -y curl
 - manually install
   - [Microsoft Edge](https://www.omgubuntu.co.uk/2021/01/how-to-install-edge-on-ubuntu-linux)
   - [Google Chrome](https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-20-04/)
-  - [Slack](https://slack.com/intl/ja-jp/downloads/linux)
 
 ### Common
 
