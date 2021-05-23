@@ -8,7 +8,6 @@ in {
   fonts.fontconfig.enable = true;
   programs.home-manager.enable = true;
   programs.zsh.enable = true;
-  targets.genericLinux.enable = true;
   home = {
     username = "${name}";
     packages = with pkgs; [ hello ];
