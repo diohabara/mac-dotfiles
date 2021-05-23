@@ -20,6 +20,7 @@ in {
           curl
           delta
           docker
+          pipenv
           dust
           exa
           expat
@@ -56,6 +57,7 @@ in {
           nodePackages.prettier
           nodePackages.pyright
           nodejs
+          opam
           openssl
           pandoc
           pkg-config
