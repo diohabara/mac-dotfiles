@@ -57,18 +57,3 @@ command_exists() {
 		"$(brew --prefix)/opt/fzf/install"
 	fi
 }
-
-: "install haskell" && {
-	: "install ghcup" && {
-		if ! command_exists ghcup; then
-			# Doc: https://gitlab.haskell.org/haskell/ghcup-hs
-			if [ "$(uname -m)" == "arm64" ]; then
-				curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | arch -x86_64 /bin/bash
-			elif [ "$(uname -m)" == "x86_64" ]; then
-				curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-			fi
-		else
-			ghcup upgrade
-		fi
-	}
-}

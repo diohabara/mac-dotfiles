@@ -10,7 +10,7 @@ tap "homebrew/core"
 tap "nrlquaker/createzap"
 tap "railwaycat/emacsmacport"
 tap "versent/homebrew-taps"
-cask_args appdir: "/Applications", require_sha: true
+cask_args appdir: "/Applications"
 
 # ===brew===
 brew "clang-format"
@@ -35,6 +35,7 @@ cask "dropbox"
 cask "google-cloud-sdk"
 cask "firefox"
 cask "google-japanese-ime"
+cask "google-chrome"
 cask "hhkb-pro-driver"
 cask "karabiner-elements"
 cask "keybase"

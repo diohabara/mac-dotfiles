@@ -30,7 +30,7 @@ darwin*)
 linux*)
 	if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
 		if [ -e /etc/lsb-release ]; then
-			bash "${REPO_ROOT}bin//ubuntu_install.sh"
+			bash "${REPO_ROOT}/bin/ubuntu_install.sh"
 		fi
 	fi
 	;;
@@ -62,7 +62,7 @@ esac
 		: "install cachix" && {
 			# nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 			nix-channel --update
-			# nix-env -iA nixpkgs.cachix
+			nix-env -iA nixpkgs.cachix
 		}
 		: "install home manager" && {
 			if ! command_exists home-manager; then
@@ -72,6 +72,7 @@ esac
 			fi
 			nix-channel --update
 			nix-channel --update home-manager
+      nix-env  -f '<nixpkgs>' -iA myPackages
 			home-manager switch
 		}
 	fi
@@ -94,7 +95,6 @@ esac
 		go get -u -v github.com/fatih/gomodifytags
 		go get -u -v github.com/motemen/gore/cmd/gore
 		go get -u -v github.com/stamblerre/gocode
-		go get -u -v github.com/x-motemen/ghq
 		go get -u -v golang.org/x/tools/cmd/godoc
 		go get -u -v golang.org/x/tools/cmd/goimports
 		go get -u -v golang.org/x/tools/cmd/gorename
@@ -122,7 +122,6 @@ esac
 			# Doc: https://github.com/pyenv/pyenv-installer
 			rm -rf ~/.pyenv
 			curl https://pyenv.run | bash
-			# Doc: https://github.com/pyenv/pyenv
 		fi
 	}
 	: "install via pip3" && {
@@ -136,7 +135,7 @@ esac
 			pip3 install --user online-judge-tools
 			pip3 install --user pyflakes
 			pip3 install --user pyls-spyder
-			pip3 install --user pytest
+      pip3 install --user pytest
 			pip3 install --user wakatime
 		fi
 	}

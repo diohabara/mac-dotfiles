@@ -74,7 +74,8 @@ command_exists() {
 		snapd \
 		software-properties-common \
 		xclip \
-		zlib1g-dev
+		zlib1g-deva \
+    zsh \
 
 }
 
