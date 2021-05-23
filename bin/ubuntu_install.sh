@@ -35,7 +35,9 @@ command_exists() {
 	# https://askubuntu.com/questions/462094/unable-to-install-libssl1-0-0i386-due-to-unmet-dependencies/462471#462471
 	echo "deb http://security.ubuntu.com/ubuntu bionic-security main" |
 		sudo tee -a /etc/apt/sources.list.d/bionic.list
-	sudo apt --purge remove emacs
+	if [ apt list -a emacs ]; then
+		sudo apt --purge remove emacs
+	fi
 	sudo apt update
 	sudo apt upgrade -y
 	sudo apt purge -y --autoremove
@@ -67,10 +69,7 @@ command_exists() {
 		libvterm-dev \
 		libxcb-xfixes0-dev \
 		lsb-release \
-		neovim \
 		ninja-build \
-		pkg-config \
-		rlwrap \
 		snapd \
 		software-properties-common \
 		xclip \

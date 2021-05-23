@@ -46,7 +46,6 @@ in {
       gnused
       go
       golangci-lint
-      google-chrome
       gradle
       gzip
       haskellPackages.ghcup
