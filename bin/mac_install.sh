@@ -59,5 +59,6 @@ command_exists() {
 }
 
 : "AppleScript" && {
+	echo "TODO: AppleScript"
 	# . "${DOTFILES_HOME}/bin/init.scpt"
 }
