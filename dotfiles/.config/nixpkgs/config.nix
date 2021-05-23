@@ -4,6 +4,7 @@
   allowBroken = true;
   allowUnfree = true;
   allowUnsupportedSystem = true;
+  nixpkgs.config.allowUnfree = true;
 
   # Fonts!
   fonts.fonts = with pkgs; [
