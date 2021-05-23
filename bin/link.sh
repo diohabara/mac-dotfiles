@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -eu
-export LC_ALL=C
-export LANG=C
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 IFS="$(printf " \t\nx")"
 
 GHQ_ROOT="${HOME}/repo"
