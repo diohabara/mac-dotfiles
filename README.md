@@ -11,18 +11,14 @@ For macOS and Linux(Ubuntu).
 
 ```sh
 xcode-select --install
-bash -c "$(curl -fsSL raw.github.com/diohabara/dotfiles/master/bin/setup.sh)"
 ```
 
 - put Dock left
-- remove useless Apps
 - hide Dock icons automatically
 - connect HHKB via Bluetooth
 - disable Spotlight in "Keyboard shortcuts" in "System Preferences"
-- turn caps lock key into control key in "Modifier Keys" in "Keyboard" in "System Preferences"
 - change Alfred's shortcut `command + space`
 - change "Define a word"'s shortcut `d`
-- `defaults write -g ApplePressAndHoldEnabled -bool false` to enable key repeat
 - make "Key Repeat" and "Delay Until Repeat" fastest and shortest in "System Preferences" respectively
 - set up
   - Dropbox
@@ -55,6 +51,10 @@ sudo apt update && sudo apt upgrade -y && sudo apt install -y curl
   - [Slack](https://slack.com/intl/ja-jp/downloads/linux)
 
 ### Common
+
+```sh
+bash -c "$(curl -fsSL raw.github.com/diohabara/dotfiles/master/bin/setup.sh)"
+```
 
 - change your shell: `chsh -s $(which zsh)`
 - connect GitHub via SSH

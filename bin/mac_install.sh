@@ -57,3 +57,7 @@ command_exists() {
 		"$(brew --prefix)/opt/fzf/install"
 	fi
 }
+
+: "AppleScript" && {
+	. "${DOTFILES_HOME}/bin/init.scpt"
+}
