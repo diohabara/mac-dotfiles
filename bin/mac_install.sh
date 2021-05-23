@@ -39,9 +39,9 @@ command_exists() {
 : "Java" && {
 	: "Java symlinking" && {
 		if ! command_exists java; then
-			sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk             # java15
-			sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk # java11
-			sudo ln -sfn $(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk   # java8
+			sudo ln -sfn "/usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk"             # java15
+			sudo ln -sfn "$(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk" # java11
+			sudo ln -sfn "$(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk"   # java8
 		fi
 	}
 
@@ -54,7 +54,7 @@ command_exists() {
 
 : "install fzf settings" && {
 	if command_exists fzf && [ ! -e "${HOME}/.fzf.zsh" ]; then
-		$(brew --prefix)/opt/fzf/install
+		"$(brew --prefix)/opt/fzf/install"
 	fi
 }
 
@@ -62,9 +62,9 @@ command_exists() {
 	: "install ghcup" && {
 		if ! command_exists ghcup; then
 			# Doc: https://gitlab.haskell.org/haskell/ghcup-hs
-			if [ $(uname -m) == "arm64" ]; then
+			if [ "$(uname -m)" == "arm64" ]; then
 				curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | arch -x86_64 /bin/bash
-			elif [ $(uname -m) == "x86_64" ]; then
+			elif [ "$(uname -m)" == "x86_64" ]; then
 				curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 			fi
 		else

@@ -44,11 +44,12 @@ esac
 	if ! command_exists nix; then
 		# Doc: https://nixos.org/manual/nix/stable/#sect-single-user-installation
 		# Doc: https://nixos.org/manual/nix/stable/#sect-macos-installation
-		if $(uname) == "Darwin"; then
-			sh <(curl -L https://nixos.org/nix/install) --no-daemon
+		if [ "$(uname)" == "Darwin" ]; then
+			sh <(curl -L https://nixos.org/nix/install) --no-daemon --no-modify-profile
 		else
-			sh <(curl -L https://nixos.org/nix/install) --no-daemon --darwin-use-unencrypted-nix-store-volume
+			sh <(curl -L https://nixos.org/nix/install) --no-daemon --darwin-use-unencrypted-nix-store-volume --no-modify-profile
 		fi
+    # shellcheck disable=SC1091
 		. "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 	fi
 
@@ -157,7 +158,8 @@ esac
 	if ! command_exists rustup; then
 		# Doc: https://www.rust-lang.org/tools/install
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
-		source "$HOME/.cargo/env"
+    # shellcheck disable=SC1091
+		source "${HOME}/.cargo/env"
 	fi
 	: "install rustup components" && {
 		rustup toolchain install stable
@@ -191,6 +193,7 @@ esac
 
 : "install npm packages" && {
 	if command_exists npm; then
+    # shellcheck disable=SC1091
 		. "${HOME}/.profile"
 		npm i -g bash-language-server
 		npm install -g pyright
