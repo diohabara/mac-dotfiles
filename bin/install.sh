@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eu
+set -eu -o pipefail
 export LC_ALL=C
 export LANG=C
 IFS="$(printf " \t\nx")"
@@ -34,33 +34,55 @@ linux*)
 		fi
 	fi
 	;;
+*)
+	echo "This operating system is not supported by this dotfiles"
+	exit 1
+	;;
 esac
 
 : "install nix" && {
 	if ! command_exists nix; then
-		# Doc: https://nixos.org/download.html
-		curl -L https://nixos.org/nix/install | sh
+		# Doc: https://nixos.org/manual/nix/stable/#sect-single-user-installation
+		# Doc: https://nixos.org/manual/nix/stable/#sect-macos-installation
+		if $(uname) == "Darwin"; then
+			sh <(curl -L https://nixos.org/nix/install) --no-daemon
+		else
+			sh <(curl -L https://nixos.org/nix/install) --no-daemon --darwin-use-unencrypted-nix-store-volume
+		fi
 		. "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 	fi
 
 	if command_exists nix; then
-		# Doc: https://nixos.org/manual/nix/stable/#ch-upgrading-nix
-		nix-channel --update
-		nix-env -iA nixpkgs.nix
-	fi
-
-	: "install nixpkgs" && {
-		if command_exists nix-env; then
+		: "upgrade nix" && {
+			# Doc: https://nixos.org/manual/nix/stable/#ch-upgrading-nix
+			nix-channel --update
+			nix-env -iA nixpkgs.nix
+		}
+		: "install cachix" && {
+			# cachixをインストール
+			nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+			nix-channel --update
+			nix-env -iA nixpkgs.cachix
+		}
+		: "install home manager" && {
+			nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+			nix-channel --update
+			nix-shell '<home-manager>' -A install
+		}
+		: "install nixpkgs" && {
 			# Doc: https://nixos.org/manual/nixpkgs/stable/#sec-declarative-package-management
-			nix-env -iA nixpkgs.myPackages
-		fi
-	}
+			nix-channel --update
+			home-manager switch
+		}
+	fi
 }
 
 : "install Doom Emacs" && {
 	if ! [ -d "$HOME/.emacs.d" ]; then
 		git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 		~/.emacs.d/bin/doom install
+	else
+		~/.emacs.d/bin/doom sync
 	fi
 }
 
@@ -83,11 +105,13 @@ esac
 : "install ocaml" && {
 	: "install opam packages" && {
 		if command_exists opam; then
-			opam install merlin
-			opam install utop
-			opam install ocp-indent
+			opam update
+			opam upgrade
 			opam install dune
+			opam install merlin
 			opam install ocamlformat
+			opam install ocp-indent
+			opam install utop
 		fi
 	}
 }
@@ -103,7 +127,7 @@ esac
 	}
 	: "install via pip3" && {
 		if command_exists pip3; then
-			pip3 install --upgrade pip
+			pip3 install --user --upgrade pip
 			pip3 install --user 'python-language-server[all]'
 			pip3 install --user atcoder-tools
 			pip3 install --user black
@@ -144,7 +168,7 @@ esac
 		# For rust-analyzer
 		# Doc: https://rust-analyzer.github.io/manual.html#installation
 		rustup component add rust-src
-		# Doc: https://github.com/hlissner/doom-emacs/blob/d62c82ddbe0c9fa603be24f5eb8e563d16f5e45f/modules/lang/rust/README.org
+		# Doc: https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/rust/README.org
 		rustup component add rustfmt-preview
 		rustup component add clippy-preview
 		# For rls
