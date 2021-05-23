@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 set -eu
-export LANG="en_US.UTF-8"
+export LANG="C.UTF-8"
 IFS="$(printf " \t\nx")"
 
 GHQ_ROOT="${HOME}/repo"

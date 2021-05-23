@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
-export LANG="en_US.UTF-8"
+export LANG="C.UTF-8"
 IFS="$(printf " \t\nx")"
 
 # XDG Base Directory Specification
