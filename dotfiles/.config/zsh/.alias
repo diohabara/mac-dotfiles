@@ -36,6 +36,6 @@ alias gd='git diff'
 alias gp='git push origin HEAD'
 alias gc='git commit'
 ### misc
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
 	alias typora='open -a Typora'
 fi

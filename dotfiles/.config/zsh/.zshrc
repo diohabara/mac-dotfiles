@@ -9,7 +9,7 @@ CASK_ROOM="/usr/local/Caskroom/"
 # Autocompletion
 autoload -Uz compinit
 compinit -u
-if [ ${OSTYPE} == "Darwin" ]; then
+if [ "${uname}" = "Darwin" ]; then
 	chmod 755 /usr/local/share/zsh
 	chmod 755 /usr/local/share/zsh/site-functions
 fi
@@ -76,13 +76,19 @@ export PATH="${PATH}:/usr/local/texlive/2020/bin/x86_64-darwin/"
 export PATH="${PATH}:/Library/TeX/texbin/"
 
 # fzf
-# shellcheck disable=SC1090
-[ -f "${HOME}/.fzf.zsh" ] && source "${HOME}/.fzf.zsh"
+# Doc: https://nixos.wiki/wiki/Fzf
+# shllcheck disable=SC3054
+if [ -n "$(which fzf-share)" ]; then
+	# shellcheck disable=SC1091
+	. "$(fzf-share)/key-bindings.zsh"
+	# shellcheck disable=SC1091
+	. "$(fzf-share)/completion.zsh"
+fi
 
 # google-cloud-sdk
-# shellcheck disable=SC1090
+# shellcheck disable=SC1091
 . "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-# shellcheck disable=SC1090
+# shellcheck disable=SC1091
 . "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # for toolchain

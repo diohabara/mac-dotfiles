@@ -31,13 +31,19 @@ command_exists() {
 	sudo dpkg --add-architecture i386
 }
 
+: "uninstall packages by apt" && {
+	if [ apt list -a emacs ]; then
+		sudo apt --purge -y remove emacs
+	fi
+  if [ apt list -a ibus ]; then
+    sudo apt --purge -y remove ibus
+  fi
+}
+
 : "install packages by apt" && {
 	# https://askubuntu.com/questions/462094/unable-to-install-libssl1-0-0i386-due-to-unmet-dependencies/462471#462471
 	echo "deb http://security.ubuntu.com/ubuntu bionic-security main" |
 		sudo tee -a /etc/apt/sources.list.d/bionic.list
-	if [ apt list -a emacs ]; then
-		sudo apt --purge remove emacs
-	fi
 	sudo apt update
 	sudo apt upgrade -y
 	sudo apt purge -y --autoremove
@@ -75,6 +81,7 @@ command_exists() {
 		software-properties-common \
 		xclip \
 		zlib1g-deva \
+    fcitx-mozc \
     zsh \
 
 }

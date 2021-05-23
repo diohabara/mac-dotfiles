@@ -13,6 +13,7 @@ in {
           bat
           bazel
           bazel-buildtools
+          shfmt
           ccls
           cmake
           coreutils
