@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
 export LC_ALL=C
+
 export LANG=C
 IFS="$(printf " \t\nx")"
 
@@ -128,7 +129,6 @@ esac
 		if command_exists pip3; then
 			pip3 install --user --upgrade pip
 			pip3 install --user atcoder-tools
-			pip3 install --user online-judge-tools
 		fi
 	}
 }
