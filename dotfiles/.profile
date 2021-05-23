@@ -6,7 +6,7 @@ export XDG_CONFIG_HOME="${XDG_CONFIG_HOME}:${HOME}/.config"
 if [ -e /home/jio/.nix-profile/etc/profile.d/nix.sh ]; then
 	. /home/jio/.nix-profile/etc/profile.d/nix.sh
 fi
-if [ "${OSTYPE}" == "linux" ]; then
+if [ "${OSTYPE}" == "linux-gnu" ]; then
 	export XDG_DATA_DIRS="${XDG_DATA_DIRS}:${HOME}/.nix-profile/share"
 
 	# Doc: https://danielmangum.com/posts/vivado-2020-x-ubuntu-20-04/
