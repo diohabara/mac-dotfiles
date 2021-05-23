@@ -9,7 +9,7 @@ CASK_ROOM="/usr/local/Caskroom/"
 # Autocompletion
 autoload -Uz compinit
 compinit -u
-if [ $OSTYPE == "Darwin" ]; then
+if [ ${OSTYPE} == "Darwin" ]; then
 	chmod 755 /usr/local/share/zsh
 	chmod 755 /usr/local/share/zsh/site-functions
 fi

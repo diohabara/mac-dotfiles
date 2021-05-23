@@ -60,10 +60,9 @@ esac
 			nix-env -iA nixpkgs.nix
 		}
 		: "install cachix" && {
-			# cachixをインストール
-			nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+			# nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 			nix-channel --update
-			nix-env -iA nixpkgs.cachix
+			# nix-env -iA nixpkgs.cachix
 		}
 		: "install home manager" && {
 			if ! command_exists home-manager; then
@@ -185,8 +184,6 @@ esac
 			cargo install cargo-check
 			cargo install cargo-raze
 			cargo install cargo-vendor
-			cargo install mdbook
-			cargo install git-delta
 		fi
 	}
 }

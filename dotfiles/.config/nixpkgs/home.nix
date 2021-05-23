@@ -7,7 +7,7 @@ let
   githubUsername = "diohabara";
 in {
   fonts.fontconfig.enable = true;
-  programs = { home-manager = { enable = true; }; };
+  programs.home-manager.enable = true;
   home = {
     username = "${name}";
     packages = with pkgs; [
@@ -33,7 +33,6 @@ in {
       gawk
       gdb
       gh
-      ghc
       ghq
       gibo
       git
