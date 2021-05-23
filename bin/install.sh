@@ -109,13 +109,13 @@ esac
 			if [ ! -d "${HOME}/.opam" ]; then
 				opam init
 			fi
-			opam update
-			opam upgrade
-			opam install dune
-			opam install merlin
-			opam install ocamlformat
-			opam install ocp-indent
-			opam install utop
+			opam update -y
+			opam upgrade -y
+			opam install -y dune
+			opam install -y merlin
+			opam install -y ocamlformat
+			opam install -y ocp-indent
+			opam install -y utop
 		fi
 	}
 }
