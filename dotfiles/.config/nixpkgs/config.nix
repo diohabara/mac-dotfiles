@@ -5,7 +5,7 @@ in {
   allowUnsupportedSystem = true;
   nixpkgs.config.allowUnfree = true;
   packageOverrides = pkgs:
-    with pkgs; {
+    with pkgs; rec {
       myPackages = pkgs.buildEnv {
         name = "my-packages";
         paths = [
@@ -96,16 +96,16 @@ in {
           zlib
         ];
       };
+      fonts.fonts = with pkgs; [
+        cascadia-code
+        dejavu_fonts
+        jetbrains-mono
+        nerdfonts
+        noto-fonts-cjk
+        powerline-fonts
+        roboto
+        source-code-pro
+        emacs-all-the-icons-fonts
+      ];
     };
-  fonts.fonts = with pkgs; [
-    cascadia-code
-    dejavu_fonts
-    jetbrains-mono
-    nerdfonts
-    noto-fonts-cjk
-    powerline-fonts
-    roboto
-    source-code-pro
-    emacs-all-the-icons-fonts
-  ];
 }
