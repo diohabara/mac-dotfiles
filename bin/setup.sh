@@ -8,9 +8,13 @@ REPO_URI='https://github.com/diohabara/dotfiles.git'
 GHQ_ROOT="${HOME}/repo"
 REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/dotfiles"
 
-if [ "$(uname)" = "Darwin" ] && [ ! "$(command -v xcode-select >/dev/null 2>&1)" ]; then
+command_exists() {
+	command -v "$1" >/dev/null 2>&1
+}
+
+if [ "$(uname)" = "Darwin" ] && [ ! command_exists xcode-select ]; then
 	xcode-select --install
-elif [ -e /etc/lsb-release ] && [ ! "$(command -v git >/dev/null 2>&1)" ]; then
+elif [ -e /etc/lsb-release ] && [ ! command_exists git ]; then
 	sudo apt update
 	sudo apt upgrade -y
 	sudo apt install -y git
