@@ -11,18 +11,6 @@ in
     home-manager = {
       enable = true;
     };
-    tmux = {
-      enable = true;
-      clock24 = true;
-      keyMode = "vi";
-      shortcut = "x";
-      terminal = "screen-256color";
-      extraConfig = ''
-        unbind C-b
-        set-option -g prefix C-x
-        bind-key C-x send-prefix
-      '';
-    };
   };
 
   home = {
