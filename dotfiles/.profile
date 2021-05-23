@@ -3,7 +3,7 @@
 if [ -e /home/jio/.nix-profile/etc/profile.d/nix.sh ]; then 
   . /home/jio/.nix-profile/etc/profile.d/nix.sh; 
 fi 
-if [ "${OS_TYPE}" == "linux" ]; then
+if [ "${OSTYPE}" == "linux" ]; then
   export XDG_DATA_DIRS="${HOME}/.nix-profile/share:$XDG_DATA_DIRS"
 fi
 
