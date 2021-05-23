@@ -30,9 +30,6 @@ command_exists() {
 }
 
 : "uninstall packages by apt" && {
-	if apt list -a emacs; then
-		sudo apt --purge -y remove emacs
-	fi
 	if apt list -a ibus; then
 		sudo apt --purge -y remove ibus
 	fi
@@ -57,7 +54,6 @@ command_exists() {
 		libblkid-dev \
 		libbz2-1.0:i386 \
 		libc6:i386 \
-    "libcanberra-gtk*" \
 		libfontconfig1-dev \
 		libfreetype6-dev \
 		libgmp3-dev \
@@ -70,6 +66,8 @@ command_exists() {
 		libstdc++6:i386 \
 		libtinfo-dev \
 		libtool \
+    "libcanberra-gtk*" \
+    emacs \
 		libtool-bin \
 		libvterm-dev \
 		libxcb-xfixes0-dev \
