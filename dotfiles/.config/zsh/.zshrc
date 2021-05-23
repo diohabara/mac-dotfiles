@@ -2,29 +2,33 @@
 
 # XDG Base Directory Specification
 XDG_CONFIG_HOME="${HOME}/.config"
-# XDG_CACHE_HOME="${HOME}/.cache"
-# XDG_DATA_HOME="${HOME}/.share"
+XDG_CACHE_HOME="${HOME}/.cache"
+XDG_DATA_HOME="${HOME}/.share"
 CASK_ROOM="/usr/local/Caskroom/"
 
 # Autocompletion
 autoload -Uz compinit
 compinit -u
-chmod 755 /usr/local/share/zsh
-chmod 755 /usr/local/share/zsh/site-functions
+if [ $OSTYPE == "Darwin" ]; then
+	chmod 755 /usr/local/share/zsh
+	chmod 755 /usr/local/share/zsh/site-functions
+fi
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 eval "$(gh completion -s zsh)"
-
-# Shell prompt
-eval "$(starship init zsh)"
-export STARSHIP_CONFIG=~/.config/starship.toml
 
 # divided files
 # shellcheck disable=SC1090
 . "${XDG_CONFIG_HOME}/zsh/.alias"
 
+# Shell prompt
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship.toml
+
 # PATH
 export PATH="${PATH}:/usr/local/bin"
 export PATH="${PATH}:${HOME}/.local/bin"
+
+# Doom Emacs
 export PATH="${PATH}:${HOME}/.emacs.d/bin"
 
 ## LLVM
@@ -39,7 +43,9 @@ export PATH="${PATH}:${PYENV_ROOT}/bin"
 eval "$(pyenv init -)"
 ### poetry
 # shellcheck disable=SC1090
-. "${HOME}/.poetry/env"
+if [ -e "${HOME}/.poetry" ]; then
+	. "${HOME}/.poetry/env"
+fi
 
 ## Rust
 export PATH="${PATH}:${HOME}/.cargo/bin"
@@ -54,9 +60,9 @@ export PATH="${PATH}:${HOME}/.cabal/bin:${HOME}/.ghcup/bin"
 ### nvm
 export NVM_DIR="${HOME}/.nvm"
 # shellcheck disable=SC1091
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
 # shellcheck disable=SC1091
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completio
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completio
 
 ## Java
 ### jenv
@@ -71,7 +77,7 @@ export PATH="${PATH}:/Library/TeX/texbin/"
 
 # fzf
 # shellcheck disable=SC1090
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "${HOME}/.fzf.zsh" ] && source "${HOME}/.fzf.zsh"
 
 # google-cloud-sdk
 # shellcheck disable=SC1090
@@ -82,4 +88,3 @@ export PATH="${PATH}:/Library/TeX/texbin/"
 # for toolchain
 # Doc: https://github.com/riscv/riscv-gnu-toolchain
 export PATH="${PATH}:/opt/riscv/bin"
-
