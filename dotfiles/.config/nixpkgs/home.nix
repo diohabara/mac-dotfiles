@@ -48,7 +48,6 @@ in {
       golangci-lint
       google-chrome
       gradle
-      grep
       gzip
       haskellPackages.ghcup
       hyperfine
