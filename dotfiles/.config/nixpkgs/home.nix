@@ -5,6 +5,9 @@ let
   email = "diohabara@gmail.com";
   githubUsername = "diohabara";
 in {
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome3.enable = true;
   fonts.fontconfig.enable = true;
   programs.home-manager.enable = true;
   home = {
