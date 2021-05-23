@@ -94,5 +94,5 @@ command_exists() {
 	sudo snap install --classic flutter
 	sudo snap install --classic intellij-idea-community
 	sudo snap install --classic code
-	sudo snap isntall spotify
+	sudo snap install spotify
 }
