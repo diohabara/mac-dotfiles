@@ -32,10 +32,10 @@ command_exists() {
 }
 
 : "uninstall packages by apt" && {
-	if [ apt list -a emacs ]; then
+	if apt list -a emacs; then
 		sudo apt --purge -y remove emacs
 	fi
-	if [ apt list -a ibus ]; then
+	if apt list -a ibus; then
 		sudo apt --purge -y remove ibus
 	fi
 }
