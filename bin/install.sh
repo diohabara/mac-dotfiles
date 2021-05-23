@@ -49,7 +49,7 @@ esac
 		else
 			sh <(curl -L https://nixos.org/nix/install) --no-daemon --darwin-use-unencrypted-nix-store-volume --no-modify-profile
 		fi
-    # shellcheck disable=SC1091
+		# shellcheck disable=SC1091
 		. "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 	fi
 
@@ -66,12 +66,11 @@ esac
 			nix-env -iA nixpkgs.cachix
 		}
 		: "install home manager" && {
-			nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-			nix-channel --update
-			nix-shell '<home-manager>' -A install
-		}
-		: "install nixpkgs" && {
-			# Doc: https://nixos.org/manual/nixpkgs/stable/#sec-declarative-package-management
+			if ! command_exists home-manager; then
+				nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+				nix-channel --update
+				nix-shell '<home-manager>' -A install
+			fi
 			nix-channel --update
 			home-manager switch
 		}
@@ -158,7 +157,7 @@ esac
 	if ! command_exists rustup; then
 		# Doc: https://www.rust-lang.org/tools/install
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
-    # shellcheck disable=SC1091
+		# shellcheck disable=SC1091
 		source "${HOME}/.cargo/env"
 	fi
 	: "install rustup components" && {
@@ -193,7 +192,7 @@ esac
 
 : "install npm packages" && {
 	if command_exists npm; then
-    # shellcheck disable=SC1091
+		# shellcheck disable=SC1091
 		. "${HOME}/.profile"
 		npm i -g bash-language-server
 		npm install -g pyright

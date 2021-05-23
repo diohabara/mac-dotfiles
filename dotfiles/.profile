@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 # Nix
-if [ -e /home/jio/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jio/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-export XDG_DATA_DIRS="${HOME}/.nix-profile/share:$XDG_DATA_DIRS"
+if [ -e /home/jio/.nix-profile/etc/profile.d/nix.sh ]; then 
+  . /home/jio/.nix-profile/etc/profile.d/nix.sh; 
+fi 
+if [ "${OS_TYPE}" == "linux" ]; then
+  export XDG_DATA_DIRS="${HOME}/.nix-profile/share:$XDG_DATA_DIRS"
+fi
 
 # Doc: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"${HOME}/.config"}"
