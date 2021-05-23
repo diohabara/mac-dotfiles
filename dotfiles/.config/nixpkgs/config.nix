@@ -1,8 +1,9 @@
 { pkgs, ... }:
 
 {
-  allowUnsupportedSystem = true;
+  allowBroken = true;
   allowUnfree = true;
+  allowUnsupportedSystem = true;
 
   # Fonts!
   fonts.fonts = with pkgs; [
