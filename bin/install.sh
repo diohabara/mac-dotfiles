@@ -23,23 +23,6 @@ command_exists() {
 	command -v "$1" >/dev/null 2>&1
 }
 
-case ${OSTYPE} in
-darwin*)
-	bash "${REPO_ROOT}/bin/mac_install.sh"
-	;;
-linux*)
-	if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
-		if [ -e /etc/lsb-release ]; then
-			bash "${REPO_ROOT}/bin/ubuntu_install.sh"
-		fi
-	fi
-	;;
-*)
-	echo "This operating system is not supported by this dotfiles"
-	exit 1
-	;;
-esac
-
 : "install nix" && {
 	if ! command_exists nix; then
 		# Doc: https://nixos.org/manual/nix/stable/#sect-single-user-installation
@@ -77,6 +60,23 @@ esac
 		}
 	fi
 }
+
+case ${OSTYPE} in
+darwin*)
+	bash "${REPO_ROOT}/bin/mac_install.sh"
+	;;
+linux*)
+	if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
+		if [ -e /etc/lsb-release ]; then
+			bash "${REPO_ROOT}/bin/ubuntu_install.sh"
+		fi
+	fi
+	;;
+*)
+	echo "This operating system is not supported by this dotfiles"
+	exit 1
+	;;
+esac
 
 : "install Doom Emacs" && {
 	if ! [ -d "$HOME/.emacs.d" ]; then
@@ -129,7 +129,6 @@ esac
 			pip3 install --user --upgrade pip
 			pip3 install --user atcoder-tools
 			pip3 install --user online-judge-tools
-			pip3 install --user wakatime
 		fi
 	}
 }

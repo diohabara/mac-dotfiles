@@ -61,7 +61,7 @@ in {
           pkg-config
           poetry
           procs
-          python-language-server
+          python38Packages.python-language-server
           python39
           python39Packages.isort
           python39Packages.nose
