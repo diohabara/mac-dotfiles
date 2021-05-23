@@ -25,12 +25,12 @@ command_exists() {
 
 case ${OSTYPE} in
 darwin*)
-	bash ./mac_install.sh
+	bash "${REPO_ROOT}/bin/mac_install.sh"
 	;;
 linux*)
 	if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
 		if [ -e /etc/lsb-release ]; then
-			bash ./ubuntu_install.sh
+			bash "${REPO_ROOT}bin//ubuntu_install.sh"
 		fi
 	fi
 	;;
