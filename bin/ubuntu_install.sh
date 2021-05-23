@@ -35,9 +35,9 @@ command_exists() {
 	if [ apt list -a emacs ]; then
 		sudo apt --purge -y remove emacs
 	fi
-  if [ apt list -a ibus ]; then
-    sudo apt --purge -y remove ibus
-  fi
+	if [ apt list -a ibus ]; then
+		sudo apt --purge -y remove ibus
+	fi
 }
 
 : "install packages by apt" && {
@@ -81,15 +81,17 @@ command_exists() {
 		software-properties-common \
 		xclip \
 		zlib1g-deva \
-    fcitx-mozc \
-    zsh \
+		fcitx-mozc \
+		zsh
 
 }
 
 : "install packages by snap" && {
 	sudo snap set system experimental.parallel-instances=true
 	sudo snap refresh
-	sudo snap install --classic flutter
 	sudo snap install --classic android-studio
+	sudo snap install --classic flutter
 	sudo snap install --classic intellij-idea-community
+	sudo snap install --classic code
+	sudo snap isntall spotify
 }
