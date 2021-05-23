@@ -6,6 +6,10 @@ XDG_CACHE_HOME="${HOME}/.cache"
 XDG_DATA_HOME="${HOME}/.share"
 CASK_ROOM="/usr/local/Caskroom/"
 
+command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
 # Autocompletion
 autoload -Uz compinit
 compinit -u
@@ -40,7 +44,7 @@ export CPPFLAGS="-I/usr/local/opt/llvm/include"
 ## Python
 export PYENV_ROOT="${HOME}/.pyenv"
 export PATH="${PATH}:${PYENV_ROOT}/bin"
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 ### poetry
 # shellcheck disable=SC1090
 if [ -e "${HOME}/.poetry" ]; then
@@ -66,10 +70,12 @@ export NVM_DIR="${HOME}/.nvm"
 
 ## Java
 ### jenv
-export PATH="${PATH}:/usr/local/opt/openjdk/bin"
-export PATH="${PATH}:/usr/local/opt/openjdk@11/bin"
-export PATH="${PATH}:/usr/local/opt/openjdk@8/bin"
-eval "$(jenv init -)"
+if command_exists jenv; then
+  export PATH="${PATH}:/usr/local/opt/openjdk/bin"
+  export PATH="${PATH}:/usr/local/opt/openjdk@11/bin"
+  export PATH="${PATH}:/usr/local/opt/openjdk@8/bin"
+  eval "$(jenv init -)"
+fi
 
 ## OCaml
 ### opam
@@ -90,10 +96,12 @@ if [ -n "$(which fzf-share)" ]; then
 fi
 
 # google-cloud-sdk
-# shellcheck disable=SC1091
-. "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-# shellcheck disable=SC1091
-. "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+if [ -d "${CASK_ROOM}" ]; then
+  # shellcheck disable=SC1091
+  . "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+  # shellcheck disable=SC1091
+  . "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+fi
 
 # for toolchain
 # Doc: https://github.com/riscv/riscv-gnu-toolchain
