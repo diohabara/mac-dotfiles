@@ -106,6 +106,9 @@ esac
 : "install ocaml" && {
 	: "install opam packages" && {
 		if command_exists opam; then
+      if [ ! -f "${HOME}/.opam" ]; then
+        opam init
+      fi
 			opam update
 			opam upgrade
 			opam install dune

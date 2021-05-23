@@ -71,6 +71,10 @@ export PATH="${PATH}:/usr/local/opt/openjdk@11/bin"
 export PATH="${PATH}:/usr/local/opt/openjdk@8/bin"
 eval "$(jenv init -)"
 
+## OCaml
+### opam
+eval "$(opam env)"
+
 ## LaTeX
 export PATH="${PATH}:/usr/local/texlive/2020/bin/x86_64-darwin/"
 export PATH="${PATH}:/Library/TeX/texbin/"
