@@ -1,10 +1,8 @@
 { pkgs, ... }:
 
 {
-  nixpkgs.config = {
-    allowUnsupportedSystem = true;
-    allowUnfree = true;
-  };
+  allowUnsupportedSystem = true;
+  allowUnfree = true;
 
   # Fonts!
   fonts.fonts = with pkgs; [
