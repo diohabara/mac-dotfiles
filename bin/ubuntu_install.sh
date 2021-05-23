@@ -45,6 +45,7 @@ command_exists() {
 		apt-transport-https \
 		build-essential \
 		ca-certificates \
+		clang \
 		clang-format \
 		gnupg \
 		grep \

@@ -17,23 +17,20 @@ in {
       bazel
       bazel-buildtools
       ccls
-      clang_12
       cmake
       coreutils
       curl
       delta
       docker
-      du-dust
       dust
       exa
       expat
-      fcitx-engines.mozc
+      #fcitx-engines.mozc
       fd
       ffmpeg
       flock
       fzf
       gawk
-      gcc
       gdb
       gh
       ghc
@@ -55,10 +52,8 @@ in {
       jq
       libgccjit
       libmpc
-      llvm
       mdbook
       mpfr
-      mysql
       neofetch
       neovim
       nixfmt
@@ -79,7 +74,6 @@ in {
       sbcl
       sd
       shellcheck
-      sqlite
       stack
       starship
       tcl
