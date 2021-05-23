@@ -6,20 +6,7 @@ let
   email = "diohabara@gmail.com";
   githubUsername = "diohabara";
 in {
-  fonts = {
-    fontconfig.enable = true;
-    fonts = with pkgs; [
-      cascadia-code
-      dejavu_fonts
-      jetbrains-mono
-      nerdfonts
-      noto-fonts-cjk
-      powerline-fonts
-      roboto
-      source-code-pro
-      emacs-all-the-icons-fonts
-    ];
-  };
+  fonts.fontconfig.enable = true;
   programs = { home-manager = { enable = true; }; };
   home = {
     username = "${name}";
@@ -63,6 +50,7 @@ in {
       gradle
       grep
       gzip
+      haskellPackages.ghcup
       hyperfine
       hyperfine
       isl
