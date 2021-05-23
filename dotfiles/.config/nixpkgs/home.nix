@@ -9,7 +9,17 @@ in {
   programs.home-manager.enable = true;
   home = {
     username = "${name}";
-    packages = with pkgs; [ hello ];
+    packages = with pkgs; [
+      cascadia-code
+      dejavu_fonts
+      jetbrains-mono
+      nerdfonts
+      noto-fonts-cjk
+      powerline-fonts
+      roboto
+      source-code-pro
+      emacs-all-the-icons-fonts
+    ];
   };
 
   nixpkgs.overlays = [
