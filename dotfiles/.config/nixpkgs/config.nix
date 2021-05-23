@@ -14,7 +14,6 @@ in {
           bazel
           bazel-buildtools
           black
-          cargo-raze
           ccls
           cmake
           coreutils
