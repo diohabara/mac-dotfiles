@@ -59,7 +59,7 @@ command_exists() {
 		libblkid-dev \
 		libbz2-1.0:i386 \
 		libc6:i386 \
-    "libcanberra-gtk*"
+    "libcanberra-gtk*" \
 		libfontconfig1-dev \
 		libfreetype6-dev \
 		libgmp3-dev \
