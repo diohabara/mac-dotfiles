@@ -54,9 +54,9 @@ in {
       hyperfine
       isl
       jdk8_headless
-      jibmpc
       jq
       libgccjit
+      libmpc
       llvm
       mdbook
       mpfr
