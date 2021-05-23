@@ -81,7 +81,6 @@ in {
       sbcl
       sd
       shellcheck
-      shellck
       sqlite
       stack
       starship
