@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eu -o pipeline
+set -eu -o pipefail
 export LC_ALL=C
 export LANG=C
 IFS="$(printf " \t\nx")"
