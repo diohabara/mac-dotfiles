@@ -66,8 +66,8 @@ command_exists() {
 		libstdc++6:i386 \
 		libtinfo-dev \
 		libtool \
-    "libcanberra-gtk*" \
-    emacs \
+		"libcanberra-gtk*" \
+		emacs \
 		libtool-bin \
 		libvterm-dev \
 		libxcb-xfixes0-dev \
@@ -90,6 +90,7 @@ command_exists() {
 	sudo snap install --classic code
 	sudo snap install --classic flutter
 	sudo snap install --classic intellij-idea-community
+	sudo snap install docker
+	sudo snap install slack --classic
 	sudo snap install spotify
-  sudo snap install slack --classic
 }

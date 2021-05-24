@@ -19,7 +19,6 @@ in {
           coreutils
           curl
           delta
-          docker
           pipenv
           dust
           exa
