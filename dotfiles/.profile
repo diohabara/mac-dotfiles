@@ -15,7 +15,6 @@ if [ "${OSTYPE}" == "linux-gnu" ]; then
 	VIVADO_PATH="/tools/Xilinx/Vivado/2020.3/bin"
 	if [ -d "${VIVADO_PATH}" ]; then
 		export PATH="${PATH}:${VIVADO_PATH}"
-		sudo ln -s /lib/x86_64-linux-gnu/libtinfo.so.6 /lib/x86_64-linux-gnu/libtinfo.so.5
 	fi
 fi
 
