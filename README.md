@@ -56,9 +56,9 @@ sudo apt update && sudo apt upgrade -y && sudo apt install -y curl
       - `chmod +x` the installer
       - execute with `sudo`
         - do not check _installation options_
-      - sudo ln -s /lib/x86_64-linux-gnu/libtinfo.so.6 /lib/x86_64-linux-gnu/libtinfo.so.5
+      - `sudo ln -s /lib/x86_64-linux-gnu/libtinfo.so.6 /lib/x86_64-linux-gnu/libtinfo.so.5`
       - `source` `settings64.sh` in `/tools/Xilinx/`
-      - Then, you can execute start `vivado`
+      - Then, you can start `vivado`
     - (refer to [this link](https://danielmangum.com/posts/vivado-2020-x-ubuntu-20-04/))
 
 ### Common
