@@ -43,11 +43,15 @@ command_exists() {
 	sudo apt upgrade -y
 	sudo apt purge -y --autoremove
 	sudo apt install -y \
+		"libcanberra-gtk*" \
 		apt-transport-https \
 		build-essential \
 		ca-certificates \
 		clang \
 		clang-format \
+		emacs \
+		fcitx-mozc \
+		firefox \
 		gnupg \
 		grep \
 		lib32z1 \
@@ -66,8 +70,6 @@ command_exists() {
 		libstdc++6:i386 \
 		libtinfo-dev \
 		libtool \
-		"libcanberra-gtk*" \
-		emacs \
 		libtool-bin \
 		libvterm-dev \
 		libxcb-xfixes0-dev \
@@ -75,10 +77,9 @@ command_exists() {
 		ninja-build \
 		snapd \
 		software-properties-common \
+		verilator \
 		xclip \
-		firefox \
 		zlib1g-dev \
-		fcitx-mozc \
 		zsh
 
 }
