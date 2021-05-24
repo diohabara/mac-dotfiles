@@ -46,11 +46,20 @@ sudo apt update && sudo apt upgrade -y && sudo apt install -y curl
 ```
 
 - manually install
+
   - [Microsoft Edge](https://www.microsoftedgeinsider.com/en-us/)
   - [Google Chrome](https://www.google.com/chrome/)
   - [Vivado](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html)
+
     - install the latest version of Vivado
-    - refer to [this link](https://danielmangum.com/posts/vivado-2020-x-ubuntu-20-04/)
+      - download 2020.3 version
+      - `chmod +x` the installer
+      - execute with `sudo`
+        - do not check _installation options_
+      - sudo ln -s /lib/x86_64-linux-gnu/libtinfo.so.6 /lib/x86_64-linux-gnu/libtinfo.so.5
+      - `source` `settings64.sh` in `/tools/Xilinx/`
+      - Then, you can execute start `vivado`
+    - (refer to [this link](https://danielmangum.com/posts/vivado-2020-x-ubuntu-20-04/))
 
 ### Common
 
