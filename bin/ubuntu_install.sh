@@ -73,8 +73,10 @@ command_exists() {
 		libtool-bin \
 		libvterm-dev \
 		libxcb-xfixes0-dev \
+		libreadline6 \
+		libreadline6-dev \
 		lsb-release \
-    libedit-dev \
+		libedit-dev \
 		ninja-build \
 		snapd \
 		software-properties-common \
