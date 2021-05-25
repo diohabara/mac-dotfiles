@@ -46,6 +46,7 @@ command_exists() {
 		"libcanberra-gtk*" \
 		apt-transport-https \
 		build-essential \
+		bzip2 \
 		ca-certificates \
 		clang \
 		clang-format \
@@ -57,15 +58,26 @@ command_exists() {
 		lib32z1 \
 		libblkid-dev \
 		libbz2-1.0:i386 \
+		libbz2-dev \
 		libc6:i386 \
+		libdb-dev \
+		libedit-dev \
+		libexpat1-dev \
+		libffi-dev \
 		libfontconfig1-dev \
 		libfreetype6-dev \
+		libgdbm-dev \
 		libgmp3-dev \
 		libgraphite2-dev \
 		libgtk-3-dev \
 		libharfbuzz-dev \
 		liblzma-dev \
+		libmpdec-dev \
 		libncurses5:i386 \
+		libncursesw5-dev \
+		libreadline-dev \
+		libreadline6-dev \
+		libsqlite3-dev \
 		libssl-dev \
 		libstdc++6:i386 \
 		libtinfo-dev \
@@ -73,15 +85,14 @@ command_exists() {
 		libtool-bin \
 		libvterm-dev \
 		libxcb-xfixes0-dev \
-		libreadline6 \
-		libreadline6-dev \
 		lsb-release \
-		libedit-dev \
 		ninja-build \
 		snapd \
 		software-properties-common \
+		sqlite3 \
 		verilator \
 		xclip \
+		zlib1g-dev \
 		zlib1g-dev \
 		zsh
 
