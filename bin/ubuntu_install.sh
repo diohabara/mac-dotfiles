@@ -74,6 +74,7 @@ command_exists() {
 		libvterm-dev \
 		libxcb-xfixes0-dev \
 		lsb-release \
+    libedit-dev \
 		ninja-build \
 		snapd \
 		software-properties-common \
