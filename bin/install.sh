@@ -129,10 +129,6 @@ esac
 		if command_exists pip3; then
 			pip3 install --user --upgrade pip
 			pip3 install --user atcoder-tools
-			pip3 install --user torch
-			pip3 install --user torchvision
-			pip3 install --user brevitas
-			pip3 install --user pyverilator
 		fi
 	}
 }
