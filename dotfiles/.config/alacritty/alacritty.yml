@@ -1,21 +1,21 @@
 font:
   normal:
-    family: "JetBrains Mono"
+    family: Cascadia Code
     style: Regular
 
   bold:
-    family: "JetBrains Mono"
+    family: Cascadia Code
     style: Bold
 
   italic:
-    family: "JetBrains Mono"
+    family: Cascadia Code
     style: Italic
 
   bold_italic:
-    family: "JetBrains Mono"
+    family: Cascadia Code
     style: Bold Italic
 
-  size: 18.0
+  size: 22.0
 
 scrolling:
   # How many lines of scrollback to keep,
