@@ -95,20 +95,5 @@ in {
           zlib
         ];
       };
-      # fonts = {
-      #   fontconfig.enable = true;
-      #   fonts = with pkgs; [
-      #     cascadia-code
-      #     dejavu_fonts
-      #     jetbrains-mono
-      #     nerdfonts
-      #     noto-fonts-cjk
-      #     powerline-fonts
-      #     roboto
-      #     source-code-pro
-      #     emacs-all-the-icons-fonts
-      #     nerdfonts
-      #   ];
-      # };
     };
 }
