@@ -23,6 +23,7 @@ brew "nvm"
 brew "openjdk@11"
 brew "openjdk@8"
 brew "pyenv"
+brew "reattach-to-user-namespace"
 
 # ===cask===
 cask "alfred"
