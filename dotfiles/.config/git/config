@@ -25,6 +25,7 @@
 
 [init]
     templatedir = ~/.config/git/templates
+    defaultBranch = "main"
 
 [diff]
     tool = nvimdiff
