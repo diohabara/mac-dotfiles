@@ -19,7 +19,6 @@ in {
           coreutils
           curl
           delta
-          pipenv
           dust
           exa
           expat
@@ -41,6 +40,7 @@ in {
           gradle
           gzip
           haskellPackages.ghcup
+          htop
           hyperfine
           isl
           jdk8_headless
@@ -59,6 +59,7 @@ in {
           opam
           openssl
           pandoc
+          pipenv
           pkg-config
           poetry
           procs
@@ -92,6 +93,7 @@ in {
           xz
           yarn
           youtube-dl
+          ytop
           zlib
         ];
       };
