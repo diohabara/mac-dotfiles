@@ -14,6 +14,7 @@ in {
           bazel
           bazel-buildtools
           black
+          bottom
           ccls
           cmake
           coreutils
@@ -93,7 +94,6 @@ in {
           xz
           yarn
           youtube-dl
-          ytop
           zlib
         ];
       };
