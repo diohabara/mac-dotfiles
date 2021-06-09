@@ -12,29 +12,18 @@ alias cf='cargo fmt'
 alias ct='cargo test'
 alias cr='cargo run'
 alias e='emacs -nw'
-### ls
-if command -v exa >/dev/null 2>&1; then
-	alias l='exa --git'
-	alias la='exa -a --git'
-	alias ll='exa -lab --git'
-	alias tree='exa --tree'
-else
-	alias l='ls'
-	alias la='ls -a'
-	alias ll='ls -al'
-fi
 ### ghq
 alias gr='cd $(ghq root)'
 alias gf='cd $(ghq list -p | fzf)'
 alias gg="ghq get $*"
-### fzf
-alias fh='history -E 1 | fzf'
-## git
+### git
 alias ga='git add'
 alias gs='git status'
 alias gd='git diff'
 alias gp='git push origin HEAD'
 alias gc='git commit'
+### exa
+alias e='exa'
 ### misc
 if [ "$(uname)" = "Darwin" ]; then
 	alias typora='open -a Typora'
