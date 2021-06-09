@@ -10,6 +10,7 @@ in {
         name = "my-packages";
         paths = [
           alacritty
+          aspell
           bat
           bazel
           bazel-buildtools
@@ -19,8 +20,14 @@ in {
           cmake
           coreutils
           curl
+          gocode
+          gomodifytags
+          gotests
+          gore
           delta
           dust
+          editorconfig-checker
+          editorconfig-core-c
           exa
           expat
           fd
@@ -41,10 +48,8 @@ in {
           gradle
           gzip
           haskellPackages.ghcup
-          htop
           hyperfine
           isl
-          jdk8_headless
           jq
           libmpc
           mdbook
@@ -53,9 +58,11 @@ in {
           neovim
           nixfmt
           nodePackages.bash-language-server
+          nodePackages.js-beautify
           nodePackages.npm
           nodePackages.prettier
           nodePackages.pyright
+          nodePackages.stylelint
           nodejs
           opam
           openssl
@@ -76,6 +83,7 @@ in {
           rlwrap
           roswell
           rufo
+          rust-analyzer
           sbcl
           sd
           shellcheck
