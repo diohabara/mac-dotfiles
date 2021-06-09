@@ -68,6 +68,11 @@ export NVM_DIR="${HOME}/.nvm"
 # shellcheck disable=SC1091
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completio
 
+## Golang
+export PATH="${PATH}:${HOME}/go/bin"
+export PATH="${PATH}:${HOME}/.go/bin"
+export PATH="${PATH}:$(go env GOPATH)/bin"
+
 ## Java
 ### jenv
 if command_exists jenv; then
