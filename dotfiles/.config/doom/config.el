@@ -17,11 +17,11 @@
 (setq byte-compile-warnings '(cl-functions))
 (setq tab-width 2)
 
-(setq doom-font (font-spec :family "JetBrains Nerd Font" :size 18)
-      doom-unicode-font (font-spec :family "JetBrains Nerd Font" :size 18)
-      doom-big-font (font-spec :family "JetBrains Nerd Font" :size 18)
-      doom-variable-pitch-font (font-spec :family "JetBrains Nerd Font" :size 18)
-      doom-serif-font (font-spec :family "JetBrains Nerd Font" :weight 'light))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 18)
+      doom-unicode-font (font-spec :family "JetBrainsMono Nerd Font" :size 18)
+      doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 18)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 18)
+      doom-serif-font (font-spec :family "JetBrainsMono Nerd Font" :weight 'light))
 (after! doom-themes
   (setq  doom-themes-enable-bold t
          doom-themes-enable-italic t))
