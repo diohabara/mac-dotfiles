@@ -13,11 +13,12 @@ tap "versent/homebrew-taps"
 cask_args appdir: "/Applications"
 
 # ===brew===
+#brew "emacs-plus", args: ["with-modern-doom3-icon"]
 brew "boost"
 brew "clang-format"
 brew "coreutils"
-#brew "emacs-plus", args: ["with-modern-doom3-icon"]
 brew "glslang"
+brew "icarus-verilog"
 brew "java"
 brew "jenv"
 brew "make"
