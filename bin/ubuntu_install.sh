@@ -100,12 +100,17 @@ command_exists() {
 
 : "install packages by snap" && {
 	sudo snap set system experimental.parallel-instances=true
+  : "install with classic" && {
+    sudo snap install --classic android-studio
+    sudo snap install --classic code
+    sudo snap install --classic flutter
+    sudo snap install --classic intellij-idea-community
+    sudo snap install --classic slack
+    sudo snap install --classic clion
+  }
+  : "install without classic" && {
+    sudo snap install docker
+    sudo snap install spotify
+  }
 	sudo snap refresh
-	sudo snap install --classic android-studio
-	sudo snap install --classic code
-	sudo snap install --classic flutter
-	sudo snap install --classic intellij-idea-community
-	sudo snap install docker
-	sudo snap install slack --classic
-	sudo snap install spotify
 }
