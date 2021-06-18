@@ -83,6 +83,7 @@ in {
           ripgrep
           rlwrap
           roswell
+          rsync
           rufo
           rust-analyzer
           sbcl
