@@ -20,10 +20,6 @@ in {
           cmake
           coreutils
           curl
-          gocode
-          gomodifytags
-          gotests
-          gore
           delta
           dust
           editorconfig-checker
@@ -44,7 +40,11 @@ in {
           gmp
           gnused
           go
+          gocode
           golangci-lint
+          gomodifytags
+          gore
+          gotests
           gradle
           gzip
           haskellPackages.ghcup
@@ -52,6 +52,7 @@ in {
           isl
           jq
           libmpc
+          libtelnet
           mdbook
           mpfr
           neofetch
