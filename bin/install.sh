@@ -89,10 +89,6 @@ esac
 	if command_exists go; then
 		go get -u -v github.com/bazelbuild/bazelisk
 		go get -u -v github.com/bazelbuild/buildtools/buildifier
-		#go get -u -v github.com/cweill/gotests/...
-		#go get -u -v github.com/fatih/gomodifytags
-		#go get -u -v github.com/motemen/gore/cmd/gore
-		#go get -u -v github.com/stamblerre/gocode
 		go get -u -v golang.org/x/tools/cmd/godoc
 		go get -u -v golang.org/x/tools/cmd/goimports
 		go get -u -v golang.org/x/tools/cmd/gorename
