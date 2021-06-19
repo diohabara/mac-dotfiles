@@ -31,7 +31,10 @@ command_exists() {
 
 : "uninstall packages by apt" && {
 	if apt list -a ibus; then
-		sudo apt --purge -y remove ibus
+		sudo apt --purge -y remove \
+      ibus \
+      emacs \
+
 	fi
 }
 
@@ -102,11 +105,12 @@ command_exists() {
 	sudo snap set system experimental.parallel-instances=true
   : "install with classic" && {
     sudo snap install --classic android-studio
+    sudo snap install --classic clion
     sudo snap install --classic code
+    sudo snap install --classic emacs
     sudo snap install --classic flutter
     sudo snap install --classic intellij-idea-community
     sudo snap install --classic slack
-    sudo snap install --classic clion
   }
   : "install without classic" && {
     sudo snap install docker
