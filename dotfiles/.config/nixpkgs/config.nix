@@ -17,6 +17,7 @@ in {
           nodePackages.pyright
           nodePackages.stylelint
           nodejs
+
           # Python packages
           python38Packages.python-language-server
           python39
@@ -26,6 +27,7 @@ in {
           python39Packages.pyflakes
           python39Packages.pytest
           pipenv
+
           # Rust packages
           alacritty
           bat
@@ -34,6 +36,7 @@ in {
           hyperfine
           tokei
           procs
+
           # Go packages
           fzf
           ghq
@@ -43,10 +46,12 @@ in {
           gomodifytags
           gore
           gotests
+
           # Haskell packages
           ghc
           haskellPackages.ghcup
           stack
+
           # others
           aspell
           bazel
@@ -78,6 +83,7 @@ in {
           libmpc
           libtelnet
           mdbook
+          meson
           mpfr
           neofetch
           neovim
