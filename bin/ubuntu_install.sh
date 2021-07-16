@@ -53,7 +53,6 @@ command_exists() {
 		ca-certificates \
 		clang \
 		clang-format \
-		emacs \
 		fcitx-mozc \
 		firefox \
 		gnupg \
