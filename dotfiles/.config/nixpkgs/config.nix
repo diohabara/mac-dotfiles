@@ -28,6 +28,7 @@ in {
           python39Packages.pyflakes
           python39Packages.pytest
           wakatime
+
           # Rust packages
           alacritty
           bat
@@ -43,6 +44,7 @@ in {
           rust-analyzer
           sd
           tokei
+
           # Go packages
           fzf
           ghq
@@ -52,6 +54,7 @@ in {
           gomodifytags
           gore
           gotests
+
           # Haskell packages
           ghc
           haskellPackages.ghcup
@@ -77,6 +80,7 @@ in {
           gh
           gibo
           git
+          glslang
           gmp
           gnused
           gradle
