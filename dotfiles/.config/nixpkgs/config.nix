@@ -19,6 +19,7 @@ in {
           nodejs
 
           # Python packages
+          pipenv
           python38Packages.python-language-server
           python39
           python39Packages.isort
@@ -26,17 +27,22 @@ in {
           python39Packages.pip
           python39Packages.pyflakes
           python39Packages.pytest
-          pipenv
-
+          wakatime
           # Rust packages
           alacritty
           bat
+          bottom
+          delta
+          dust
           exa
           fd
           hyperfine
-          tokei
+          mdbook
           procs
-
+          ripgrep
+          rust-analyzer
+          sd
+          tokei
           # Go packages
           fzf
           ghq
@@ -46,10 +52,10 @@ in {
           gomodifytags
           gore
           gotests
-
           # Haskell packages
           ghc
           haskellPackages.ghcup
+          pandoc
           stack
 
           # others
@@ -57,13 +63,10 @@ in {
           bazel
           bazel-buildtools
           black
-          bottom
           ccls
           cmake
           coreutils
           curl
-          delta
-          dust
           editorconfig-checker
           editorconfig-core-c
           expat
@@ -82,36 +85,28 @@ in {
           jq
           libmpc
           libtelnet
-          mdbook
-          meson
           mpfr
           neofetch
           neovim
           nixfmt
           opam
           openssl
-          pandoc
           pkg-config
           poetry
           readline
-          ripgrep
           rlwrap
           roswell
           rsync
           rufo
-          rust-analyzer
           sbcl
-          sd
           shellcheck
           shfmt
           starship
           tcl
-          tectonic
           tldr
           tmux
           typora
           unzip
-          wakatime
           wget
           xz
           yarn
