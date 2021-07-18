@@ -30,9 +30,8 @@ command_exists() {
 }
 
 : "uninstall packages by apt" && {
-  if apt list -a ibus; then
+  if apt list -a emacs; then
     sudo apt --purge -y remove \
-      ibus \
       emacs
 
   fi
@@ -61,6 +60,7 @@ command_exists() {
     firefox \
     gnupg \
     grep \
+    ibus-mozc \
     lib32z1 \
     libblkid-dev \
     libbz2-1.0:i386 \
