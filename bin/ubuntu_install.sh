@@ -38,7 +38,9 @@ command_exists() {
 }
 
 : "add apt repositories" && {
-  sudo add-apt-repository ppa:obsproject/obs-studio
+  if ! command_exists obs; then
+    sudo add-apt-repository ppa:obsproject/obs-studio
+  fi
 }
 
 : "install packages by apt" && {
