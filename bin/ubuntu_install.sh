@@ -82,6 +82,7 @@ command_exists() {
     libharfbuzz-dev \
     liblzma-dev \
     libmpdec-dev \
+    libncurses5-dev \
     libncurses5:i386 \
     libncursesw5-dev \
     libreadline-dev \
