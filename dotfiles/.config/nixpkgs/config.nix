@@ -67,6 +67,7 @@ in {
           bazel-buildtools
           bison
           black
+          broot
           ccls
           cmake
           coreutils
@@ -117,6 +118,7 @@ in {
           yarn
           youtube-dl
           zlib
+          zoxide
         ];
       };
     };

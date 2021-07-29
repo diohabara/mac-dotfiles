@@ -100,6 +100,9 @@ if [ -n "$(which fzf-share)" ]; then
 	. "$(fzf-share)/completion.zsh"
 fi
 
+# zoxide
+eval "$(zoxide init zsh --cmd cd)"
+
 # google-cloud-sdk
 if [ -d "${CASK_ROOM}" ]; then
   # shellcheck disable=SC1091
