@@ -64,6 +64,7 @@ command_exists() {
     grep \
     ibus-mozc \
     lib32z1 \
+    libaio-dev \
     libblkid-dev \
     libbz2-1.0:i386 \
     libbz2-dev \
