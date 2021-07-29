@@ -65,6 +65,7 @@ in {
           aspell
           bazel
           bazel-buildtools
+          bison
           black
           ccls
           cmake
