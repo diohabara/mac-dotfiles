@@ -124,6 +124,7 @@ command_exists() {
   : "install without classic" && {
     sudo snap install docker
     sudo snap install spotify
+    sudo snap install zulip
   }
   sudo snap refresh
 }
