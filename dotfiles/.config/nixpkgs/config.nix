@@ -94,6 +94,7 @@ in {
           mpfr
           neofetch
           neovim
+          ninja
           nixfmt
           opam
           openssl
