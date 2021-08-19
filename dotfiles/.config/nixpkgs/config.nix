@@ -43,6 +43,7 @@ in {
           ripgrep
           rust-analyzer
           sd
+          tectonic
           tokei
 
           # Go packages
