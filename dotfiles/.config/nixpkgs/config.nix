@@ -62,6 +62,11 @@ in {
           pandoc
           stack
 
+          # Git tools
+          gh
+          git
+          git-lfs
+
           # others
           aspell
           bazel
@@ -80,9 +85,7 @@ in {
           flock
           gawk
           gdb
-          gh
           gibo
-          git
           glslang
           gmp
           gnused
