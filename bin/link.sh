@@ -9,7 +9,6 @@ DOTFILES_HOME="${REPO_ROOT}/dotfiles"
 cd "${DOTFILES_HOME}"
 
 echo 'Symlinking dotfiles...'
-find . -type d | xargs -I '{}' mkdir -p "${HOME}/{}"
-find . -type f |
-	xargs -I '{}' ln -snf "${DOTFILES_HOME}/{}" "${HOME}/{}"
+find . -type d -print0 | xargs -I '{}' mkdir -p "${HOME}/{}"
+find . -type f -print0 | xargs -I '{}' ln -snf "${DOTFILES_HOME}/{}" "${HOME}/{}"
 echo 'Symlinking dotfiles complete.'

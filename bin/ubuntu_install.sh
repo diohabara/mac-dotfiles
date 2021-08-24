@@ -4,7 +4,9 @@ IFS="$(printf " \t\nx")"
 
 # XDG Base Directory Specification
 XDG_CONFIG_HOME="${HOME}/.config"
+# shellcheck disable=SC2034
 XDG_CACHE_HOME="${HOME}/.cache"
+# shellcheck disable=SC2034
 XDG_DATA_HOME="${HOME}/.share"
 
 # data direcotory for zsh
@@ -13,6 +15,7 @@ ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 # misc
 ZSH_FUNCCOMP_DIR="${ZDOTDIR}/func_comp"
 GHQ_ROOT="${HOME}/repo"
+# shellcheck disable=SC2034
 REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/dotfiles"
 
 command mkdir -p "${ZSH_FUNCCOMP_DIR}"

@@ -4,7 +4,9 @@ IFS="$(printf " \t\nx")"
 
 # XDG Base Directory Specification
 XDG_CONFIG_HOME="${HOME}/.config"
+# shellcheck disable=SC2034
 XDG_CACHE_HOME="${HOME}/.cache"
+# shellcheck disable=SC2034
 XDG_DATA_HOME="${HOME}/.share"
 
 # data direcotory for zsh
@@ -18,39 +20,39 @@ REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/dotfiles"
 command mkdir -p "${ZSH_FUNCCOMP_DIR}"
 
 command_exists() {
-	command -v "$1" >/dev/null 2>&1
+  command -v "$1" >/dev/null 2>&1
 }
 
 : "install brew" && {
-	if ! command_exists brew; then
-		# Doc: https://brew.sh/
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	fi
+  if ! command_exists brew; then
+    # Doc: https://brew.sh/
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
 
-	: "install packages by brew" && {
-		# Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
-		brew upgrade
-		brew bundle install --file "${REPO_ROOT}/Brewfile" --no-lock
-	}
+  : "install packages by brew" && {
+    # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
+    brew upgrade
+    brew bundle install --file "${REPO_ROOT}/Brewfile" --no-lock
+  }
 }
 
 : "Java" && {
-	: "Java symlinking" && {
-		if ! command_exists java; then
-			sudo ln -sfn "/usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk"             # java15
-			sudo ln -sfn "$(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk" # java11
-			sudo ln -sfn "$(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk"   # java8
-		fi
-	}
+  : "Java symlinking" && {
+    if ! command_exists java; then
+      sudo ln -sfn "/usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk"             # java15
+      sudo ln -sfn "$(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk" # java11
+      sudo ln -sfn "$(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk"   # java8
+    fi
+  }
 
-	: "jenv" && {
-		if [ ! -d "${HOME}/.jenv/versions" ]; then
-			mkdir -p "${HOME}/.jenv/versions"
-		fi
-	}
+  : "jenv" && {
+    if [ ! -d "${HOME}/.jenv/versions" ]; then
+      mkdir -p "${HOME}/.jenv/versions"
+    fi
+  }
 }
 
 : "AppleScript" && {
-	echo "TODO: AppleScript"
-	# . "${DOTFILES_HOME}/bin/apple.scpt"
+  echo "TODO: AppleScript"
+  # . "${DOTFILES_HOME}/bin/apple.scpt"
 }
