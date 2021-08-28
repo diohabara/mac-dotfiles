@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
+# load zplug
+source "${HOME}/.zplug/init.zsh"
 
 # XDG Base Directory Specification
 XDG_CONFIG_HOME="${HOME}/.config"
@@ -118,3 +120,4 @@ export PATH="${PATH}:/opt/riscv/bin"
 # zplug
 zplug "sobolevn/wakatime-zsh-plugin", from:github
 
+zplug load
