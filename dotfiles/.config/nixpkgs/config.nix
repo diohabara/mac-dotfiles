@@ -20,8 +20,8 @@ in {
 
           # Python packages
           pipenv
+          poetry
           python38Packages.python-language-server
-          python39
           python39Packages.isort
           python39Packages.nose
           python39Packages.pip
@@ -45,6 +45,8 @@ in {
           sd
           tectonic
           tokei
+          starship
+          zoxide
 
           # Go packages
           fzf
@@ -66,6 +68,10 @@ in {
           gh
           git
           git-lfs
+
+          # editor
+          neovim
+          typora
 
           # others
           aspell
@@ -97,13 +103,11 @@ in {
           libtelnet
           mpfr
           neofetch
-          neovim
           ninja
           nixfmt
           opam
           openssl
           pkg-config
-          poetry
           readline
           rlwrap
           roswell
@@ -112,18 +116,15 @@ in {
           sbcl
           shellcheck
           shfmt
-          starship
           tcl
           tldr
           tmux
-          typora
           unzip
           wget
           xz
           yarn
           youtube-dl
           zlib
-          zoxide
         ];
       };
     };
