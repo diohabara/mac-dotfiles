@@ -88,6 +88,12 @@ esac
   fi
 }
 
+: "install zplug" && {
+  if ! command_exists zplug; then
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+  fi
+}
+
 : "install go packages" && {
   if command_exists go; then
     go get -u -v github.com/bazelbuild/bazelisk
