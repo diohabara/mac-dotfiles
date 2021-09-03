@@ -122,6 +122,14 @@ esac
   }
 }
 
+: "install nodejs" && {
+  : "install node packages" && {
+    if command_exists npm; then
+      npm install -g clang-format
+    fi
+  }
+}
+
 : "install python" && {
   : "install pyenv" && {
     if ! command_exists pyenv; then

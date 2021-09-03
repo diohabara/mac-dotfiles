@@ -15,7 +15,6 @@ cask_args appdir: "/Applications"
 # ===brew===
 #brew "emacs-plus", args: ["with-modern-doom3-icon"]
 brew "boost"
-brew "clang-format"
 brew "coreutils"
 brew "icarus-verilog"
 brew "java"
