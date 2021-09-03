@@ -182,4 +182,8 @@ esac
   }
 }
 
+"update font cache" && {
+  fc-cache -fv
+}
+
 echo "Complete installation!"
