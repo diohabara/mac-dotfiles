@@ -101,6 +101,7 @@ in {
           jq
           libmpc
           libtelnet
+          llvm
           mpfr
           neofetch
           ninja
