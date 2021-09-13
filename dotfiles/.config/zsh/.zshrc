@@ -9,7 +9,7 @@ XDG_DATA_HOME="${HOME}/.share"
 CASK_ROOM="/usr/local/Caskroom/"
 
 command_exists() {
-  command -v "$1" >/dev/null 2>&1
+	command -v "$1" >/dev/null 2>&1
 }
 
 # Autocompletion
@@ -78,10 +78,10 @@ export PATH="${PATH}:$(go env GOPATH)/bin"
 ## Java
 ### jenv
 if command_exists jenv; then
-  export PATH="${PATH}:/usr/local/opt/openjdk/bin"
-  export PATH="${PATH}:/usr/local/opt/openjdk@11/bin"
-  export PATH="${PATH}:/usr/local/opt/openjdk@8/bin"
-  eval "$(jenv init -)"
+	export PATH="${PATH}:/usr/local/opt/openjdk/bin"
+	export PATH="${PATH}:/usr/local/opt/openjdk@11/bin"
+	export PATH="${PATH}:/usr/local/opt/openjdk@8/bin"
+	eval "$(jenv init -)"
 fi
 
 ## OCaml
@@ -107,10 +107,10 @@ eval "$(zoxide init zsh --cmd cd)"
 
 # google-cloud-sdk
 if [ -d "${CASK_ROOM}" ]; then
-  # shellcheck disable=SC1091
-  . "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-  # shellcheck disable=SC1091
-  . "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+	# shellcheck disable=SC1091
+	. "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+	# shellcheck disable=SC1091
+	. "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 fi
 
 # for toolchain
@@ -121,3 +121,8 @@ export PATH="${PATH}:/opt/riscv/bin"
 zplug "sobolevn/wakatime-zsh-plugin", from:github
 
 zplug load
+
+# start tmux when log in
+if [ "$TMUX" = "" ]; then
+	tmux
+fi
