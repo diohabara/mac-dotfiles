@@ -71,7 +71,6 @@ in {
 
           # editor
           neovim
-          typora
 
           # others
           aspell
