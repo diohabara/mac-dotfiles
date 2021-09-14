@@ -122,7 +122,3 @@ zplug "sobolevn/wakatime-zsh-plugin", from:github
 
 zplug load
 
-# start tmux when log in
-if [ "$TMUX" = "" ]; then
-	tmux
-fi
