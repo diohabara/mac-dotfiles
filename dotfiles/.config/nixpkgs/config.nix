@@ -21,7 +21,7 @@ in {
           # Python packages
           pipenv
           poetry
-          python38Packages.python-language-server
+          python39Packages.python-lsp-server
           python39Packages.isort
           python39Packages.nose
           python39Packages.pip
@@ -95,6 +95,7 @@ in {
           gmp
           gnused
           gradle
+          graphviz
           gzip
           isl
           jq
