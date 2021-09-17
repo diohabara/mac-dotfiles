@@ -96,12 +96,12 @@ esac
 
 : "install go packages" && {
   if command_exists go; then
-    go get -u -v github.com/bazelbuild/bazelisk
-    go get -u -v github.com/bazelbuild/buildtools/buildifier
-    go get -u -v golang.org/x/tools/cmd/godoc
-    go get -u -v golang.org/x/tools/cmd/goimports
-    go get -u -v golang.org/x/tools/cmd/gorename
-    go get -u -v golang.org/x/tools/cmd/guru
+    go install github.com/bazelbuild/bazelisk
+    go install github.com/bazelbuild/buildtools/buildifier
+    go install golang.org/x/tools/cmd/godoc
+    go install golang.org/x/tools/cmd/goimports
+    go install golang.org/x/tools/cmd/gorename
+    go install golang.org/x/tools/cmd/guru
   fi
 }
 
