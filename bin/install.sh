@@ -174,7 +174,7 @@ esac
   }
 }
 
-"update font cache" && {
+: "update font cache" && {
   fc-cache -fv
 }
 
