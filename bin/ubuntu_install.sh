@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eu -o pipefail
+set -euo pipefail
 IFS="$(printf " \t\nx")"
 
 # XDG Base Directory Specification

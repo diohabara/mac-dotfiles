@@ -21,7 +21,8 @@ in {
           # Python packages
           pipenv
           poetry
-          python39Packages.python-lsp-server
+          # python39Packages.python-lsp-server
+          # python38Packages.python-language-server
           python39Packages.isort
           python39Packages.nose
           python39Packages.pip
@@ -59,10 +60,23 @@ in {
           gotests
 
           # Haskell packages
-          ghc
-          haskellPackages.ghcup
-          pandoc
-          stack
+          # haskellPackages.ghc_8_10_2
+          # haskellPackages.ghcup
+          # haskellPackages.hls
+          haskellPackages.hoogle
+          haskellPackages.pandoc
+          haskellPackages.stack
+
+          # OCaml package
+          dune_2
+          ocamlPackages.async
+          ocamlPackages.core
+          ocamlPackages.js_of_ocaml
+          ocamlPackages.js_of_ocaml-ppx
+          ocamlPackages.merlin
+          ocamlPackages.ocp-indent
+          ocamlPackages.utop
+          ocamlformat
 
           # Git tools
           gh
@@ -80,6 +94,7 @@ in {
           black
           broot
           ccls
+          clang-tools
           cmake
           coreutils
           curl

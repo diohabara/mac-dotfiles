@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
-set -eu -o pipefail
+set -euo pipefail
 IFS="$(printf " \t\nx")"
 
 # XDG Base Directory Specification
 XDG_CONFIG_HOME="${HOME}/.config"
-# shellcheck disable=SC2034
-XDG_CACHE_HOME="${HOME}/.cache"
-# shellcheck disable=SC2034
-XDG_DATA_HOME="${HOME}/.share"
 
 # data direcotory for zsh
 ZDOTDIR="${XDG_CONFIG_HOME}/zsh"

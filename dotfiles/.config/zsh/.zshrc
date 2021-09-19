@@ -59,8 +59,9 @@ export PKG_CONFIG_PATH="${HOME}/bin/convert"
 
 ## Haskell
 export PATH="${PATH}:${HOME}/.cabal/bin:${HOME}/.ghcup/bin"
-# shellcheck disable=SC1090
-[ -f "${HOME}/.ghcup/env" ] && . "${HOME}/.ghcup/env" # ghcup-env
+if [ -f "${HOME}/.ghcup/env" ]; then
+  . "${HOME}/.ghcup/env"
+fi
 
 ## Node.js
 ### nvm

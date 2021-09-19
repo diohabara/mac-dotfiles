@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
-set -eu -o pipefail
+set -euo pipefail
 IFS="$(printf " \t\nx")"
 
 # XDG Base Directory Specification
 XDG_CONFIG_HOME="${HOME}/.config"
-# shellcheck disable=SC2034
-XDG_CACHE_HOME="${HOME}/.cache"
-# shellcheck disable=SC2034
-XDG_DATA_HOME="${HOME}/.share"
 
 # data direcotory for zsh
 ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
@@ -57,6 +53,7 @@ command_exists() {
       nix-channel --update
       nix-channel --update home-manager
       nix-env -f '<nixpkgs>' -iA myPackages
+      nix-env -u
       home-manager switch
     }
   fi
@@ -96,13 +93,24 @@ esac
 
 : "install go packages" && {
   if command_exists go; then
-    go install github.com/bazelbuild/bazelisk
-    go install github.com/bazelbuild/buildtools/buildifier
-    go install golang.org/x/tools/cmd/godoc
-    go install golang.org/x/tools/cmd/goimports
-    go install golang.org/x/tools/cmd/gorename
-    go install golang.org/x/tools/cmd/guru
+    go install github.com/bazelbuild/bazelisk@latest
+    go install github.com/bazelbuild/buildtools/buildifier@latest
+    go install golang.org/x/tools/cmd/godoc@latest
+    go install golang.org/x/tools/cmd/goimports@latest
+    go install golang.org/x/tools/cmd/gorename@latest
+    go install golang.org/x/tools/cmd/guru@latest
   fi
+}
+
+: "install haskell" && {
+  : "install haskell packages" && {
+    if ! command_exists ghcup; then
+      curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+    else
+      ghcup upgrade -n
+      ghcup install ghc
+    fi
+  }
 }
 
 : "install ocaml" && {
@@ -113,19 +121,6 @@ esac
       fi
       opam update -y
       opam upgrade -y
-      opam install -y dune
-      opam install -y merlin
-      opam install -y ocamlformat
-      opam install -y ocp-indent
-      opam install -y utop
-    fi
-  }
-}
-
-: "install nodejs" && {
-  : "install node packages" && {
-    if command_exists npm; then
-      npm install -g clang-format
     fi
   }
 }
@@ -144,17 +139,6 @@ esac
       pip3 install --user atcoder-tools
     fi
   }
-}
-
-: "install haskell package" && {
-  if command_exists stack; then
-    stack setup
-    stack install hoogle
-  fi
-
-  if command_exists ghcup; then
-    ghcup install hls
-  fi
 }
 
 : "install rust packages" && {
