@@ -121,6 +121,7 @@ esac
       fi
       opam update -y
       opam upgrade -y
+      opam install ocaml -y
     fi
   }
 }

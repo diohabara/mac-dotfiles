@@ -69,7 +69,6 @@ in {
 
           # OCaml package
           dune_2
-          ocaml
           ocamlPackages.async
           ocamlPackages.core
           ocamlPackages.js_of_ocaml
