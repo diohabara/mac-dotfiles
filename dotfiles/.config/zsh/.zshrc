@@ -85,6 +85,9 @@ if command_exists jenv; then
 	eval "$(jenv init -)"
 fi
 
+## Haksell
+export PATH="${PATH}:${HOME}/.cabal/bin"
+
 ## OCaml
 ### opam
 eval "$(opam env)"
