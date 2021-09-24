@@ -25,3 +25,9 @@ command_exists() {
     npm ls -g --depth=0 | awk -F/ '/node_modules/ && !/\/npm$/ {print $NF}' | xargs npm -g rm
   fi
 }
+
+: "nix uninstall all store paths unused by current generations" && {
+  if command_exists nix-collect-garbage; then
+    sudo nix-collect-garbage -d
+  fi
+}
