@@ -12,6 +12,7 @@ command_exists() {
 
 if [ "$(uname)" = "Darwin" ] && ! command_exists xcode-select; then
   xcode-select --install
+  softwareupdate --all --install --force
 elif [ -e /etc/lsb-release ] && ! command_exists git; then
   sudo apt update
   sudo apt upgrade -y

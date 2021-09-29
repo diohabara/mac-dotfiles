@@ -52,5 +52,3 @@ cask "spotify"
 cask "visual-studio-code"
 cask "vlc"
 
-# ===mas===
-mas "xcode", id: 497799835
