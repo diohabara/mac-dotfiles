@@ -44,9 +44,10 @@ in {
           ripgrep
           rust-analyzer
           sd
+          starship
           tectonic
           tokei
-          starship
+          zellij
           zoxide
 
           # Go packages
