@@ -74,7 +74,7 @@ in {
           ocamlPackages.core
           ocamlPackages.js_of_ocaml
           ocamlPackages.js_of_ocaml-ppx
-          ocamlPackages.merlin
+          # ocamlPackages.merlin
           ocamlPackages.ocaml-lsp
           ocamlPackages.ocp-indent
           ocamlPackages.utop
