@@ -107,14 +107,6 @@ fi
 # zoxide
 eval "$(zoxide init zsh --cmd cd)"
 
-# google-cloud-sdk
-if [ -d "${CASK_ROOM}" ]; then
-	# shellcheck disable=SC1091
-	. "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-	# shellcheck disable=SC1091
-	. "${CASK_ROOM}/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-fi
-
 # for toolchain
 # Doc: https://github.com/riscv/riscv-gnu-toolchain
 export PATH="${PATH}:/opt/riscv/bin"

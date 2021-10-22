@@ -97,7 +97,6 @@ in {
           binutils
           bison
           black
-          boost
           broot
           ccls
           clang-tools
