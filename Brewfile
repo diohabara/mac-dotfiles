@@ -14,18 +14,14 @@ cask_args appdir: "/Applications"
 
 # ===brew===
 #brew "emacs-plus", args: ["with-modern-doom3-icon"]
-brew "boost"
-brew "coreutils"
 brew "icarus-verilog"
 brew "java"
 brew "jenv"
 brew "make"
-brew "mas"
 brew "nvm"
 brew "openjdk@11"
 brew "openjdk@8"
 brew "pyenv"
-brew "reattach-to-user-namespace"
 brew "telnet"
 brew "vcpkg"
 

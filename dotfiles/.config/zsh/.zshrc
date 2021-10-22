@@ -33,6 +33,7 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 # PATH
 export PATH="${PATH}:/usr/local/bin"
 export PATH="${PATH}:${HOME}/.local/bin"
+export PATH="${PATH}:/usr/local/opt/binutils/bin"
 
 # Doom Emacs
 export PATH="${PATH}:${HOME}/.emacs.d/bin"

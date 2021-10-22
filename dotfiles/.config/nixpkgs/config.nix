@@ -94,12 +94,15 @@ in {
           aspell
           bazel
           bazel-buildtools
+          binutils
           bison
           black
+          boost
           broot
           ccls
           clang-tools
           cmake
+          coreutils
           coreutils
           curl
           editorconfig-checker
@@ -128,6 +131,7 @@ in {
           openssl
           pkg-config
           readline
+          reattach-to-user-namespace
           rlwrap
           roswell
           rsync
