@@ -130,7 +130,6 @@ in {
           openssl
           pkg-config
           readline
-          reattach-to-user-namespace
           rlwrap
           roswell
           rsync
