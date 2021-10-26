@@ -34,7 +34,8 @@ command_exists() {
 
 : "uninstall packages by apt" && {
   if apt list -a emacs; then
-    sudo apt --purge -y remove emacs emacs23 emacs24 emacs25 emacs26
+    sudo apt --purge -y remove emacs emacs23 emacs24 emacs25 emacs26 \
+      emacs26-common emacs-common apel flim w3m-el emacs-el emacs-bin-common
   fi
 }
 
