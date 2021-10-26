@@ -65,8 +65,6 @@ command_exists() {
     firefox \
     gnupg \
     grep \
-    emacs27 \
-    emacs27-common \
     ibus-mozc \
     lib32z1 \
     libaio-dev \
@@ -118,6 +116,9 @@ command_exists() {
 : "install packages by snap" && {
   echo "You may not use Japanese Input in Apps installed by snap"
   sudo snap set system experimental.parallel-instances=true
+  : "install emacs" && {
+    sudo snap install emacs --bet --classic
+  }
   # : "install with classic" && {
   #   sudo snap install --classic android-studio
   #   sudo snap install --classic clion
