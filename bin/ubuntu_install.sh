@@ -32,12 +32,12 @@ command_exists() {
   sudo dpkg --add-architecture i386
 }
 
-# : "uninstall packages by apt" && {
-#   if apt list -a emacs; then
-#     sudo apt --purge -y emacs
-# 
-#   fi
-# }
+: "uninstall packages by apt" && {
+  if apt list -a emacs; then
+    sudo apt --purge -y emacs
+
+  fi
+}
 
 : "add apt repositories" && {
   if ! command_exists obs; then
@@ -114,16 +114,16 @@ command_exists() {
 
 : "install packages by snap" && {
   echo "You may not use Japanese Input in Apps installed by snap"
-  # sudo snap set system experimental.parallel-instances=true
-  # : "install with classic" && {
+  sudo snap set system experimental.parallel-instances=true
+  : "install with classic" && {
   #   sudo snap install --classic android-studio
   #   sudo snap install --classic clion
   #   sudo snap install --classic code
-  #   sudo snap install --classic emacs
+    sudo snap install --classic emacs
   #   sudo snap install --classic flutter
   #   sudo snap install --classic intellij-idea-community
   #   sudo snap install --classic slack
-  # }
+  }
   # : "install without classic" && {
   #   sudo snap install docker
   #   sudo snap install spotify
