@@ -32,12 +32,12 @@ command_exists() {
   sudo dpkg --add-architecture i386
 }
 
-: "uninstall packages by apt" && {
-  if apt list -a emacs; then
-    sudo apt --purge -y emacs
-
-  fi
-}
+# : "uninstall packages by apt" && {
+#   if apt list -a emacs; then
+#     sudo apt --purge -y emacs
+# 
+#   fi
+# }
 
 : "add apt repositories" && {
   if ! command_exists obs; then
@@ -59,6 +59,7 @@ command_exists() {
     bzip2 \
     ca-certificates \
     clang \
+    emacs \
     fcitx-mozc \
     firefox \
     gnupg \
