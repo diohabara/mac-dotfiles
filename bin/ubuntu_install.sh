@@ -115,7 +115,7 @@ command_exists() {
   echo "You may not use Japanese Input in Apps installed by snap"
   sudo snap set system experimental.parallel-instances=true
   : "install emacs" && {
-    sudo snap install emacs --bet --classic
+    sudo snap install emacs --beta --classic
   }
   # : "install with classic" && {
   #   sudo snap install --classic android-studio
