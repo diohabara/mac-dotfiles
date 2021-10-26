@@ -60,7 +60,6 @@ command_exists() {
     bzip2 \
     ca-certificates \
     clang \
-    emacs \
     fcitx-mozc \
     firefox \
     gnupg \
