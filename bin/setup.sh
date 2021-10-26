@@ -29,6 +29,5 @@ fi
 cd "${REPO_ROOT}"
 
 # main
-./bin/format.sh
 ./bin/link.sh
 ./bin/install.sh
