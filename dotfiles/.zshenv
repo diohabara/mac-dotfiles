@@ -6,4 +6,4 @@ export ZDOTDIR="${HOME}/.config/zsh"
 # Doc: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"${HOME}/.config"}"
 
-if [ -e /Users/jio/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jio/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then . "${HOME}/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
