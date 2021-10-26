@@ -66,6 +66,7 @@ command_exists() {
     gnupg \
     grep \
     emacs27 \
+    emacs27-common \
     ibus-mozc \
     lib32z1 \
     libaio-dev \
