@@ -34,7 +34,7 @@ command_exists() {
 
 : "uninstall packages by apt" && {
   if apt list -a emacs; then
-    sudo apt --purge -y emacs
+    sudo apt --purge -y remove emacs
 
   fi
 }
