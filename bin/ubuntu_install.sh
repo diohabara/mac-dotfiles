@@ -115,7 +115,7 @@ command_exists() {
 
 : "install packages by snap" && {
   echo "You may not use Japanese Input in Apps installed by snap"
-  sudo snap set system experimental.parallel-instances=true
+  # sudo snap set system experimental.parallel-instances=true
   # : "install emacs" && {
   #   sudo snap install emacs --beta --classic
   # }
