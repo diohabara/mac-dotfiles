@@ -99,7 +99,6 @@ in {
           black
           broot
           ccls
-          clang-tools
           cmake
           coreutils
           coreutils

@@ -60,6 +60,7 @@ command_exists() {
     bzip2 \
     ca-certificates \
     clang \
+    clang-format \
     emacs27 \
     fcitx-mozc \
     firefox \
