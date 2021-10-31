@@ -102,6 +102,7 @@ command_exists() {
     lsb-release \
     ninja-build \
     obs-studio \
+    python-is-python3 \
     snapd \
     software-properties-common \
     sqlite3 \
