@@ -123,6 +123,7 @@ esac
       opam upgrade -y
       opam install ocaml -y
       opam install ocamlformat-rpc -y
+      opam install user-setup -y
     fi
   }
 }

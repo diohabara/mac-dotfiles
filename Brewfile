@@ -29,7 +29,7 @@ brew "telnet"
 brew "tidy-viewer"
 brew "vcpkg"
 # ===GNU===
-brew "gxargs"
+brew "findutils"
 
 # ===cask===
 cask "alfred"
