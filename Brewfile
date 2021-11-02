@@ -28,6 +28,8 @@ brew "reattach-to-user-namespace"
 brew "telnet"
 brew "tidy-viewer"
 brew "vcpkg"
+# ===GNU===
+brew "gxargs"
 
 # ===cask===
 cask "alfred"

@@ -46,6 +46,7 @@ in {
           sd
           starship
           tectonic
+          tidy-viewer
           tokei
           zellij
           zoxide

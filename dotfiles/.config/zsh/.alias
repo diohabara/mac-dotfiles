@@ -4,6 +4,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 alias sudo='sudo -E'
+## macOS -> GNU
+alias xargs="gxargs"
 ## for convenience
 ### cargo
 alias c='cargo'

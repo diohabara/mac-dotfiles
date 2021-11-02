@@ -109,7 +109,7 @@ eval "$(zoxide init zsh --cmd cd)"
 
 # for toolchain
 # Doc: https://github.com/riscv/riscv-gnu-toolchain
-export PATH="${PATH}:/opt/riscv/bin"
+# export PATH="${PATH}:/opt/riscv/bin"
 
 # zplug
 zplug "sobolevn/wakatime-zsh-plugin", from:github
