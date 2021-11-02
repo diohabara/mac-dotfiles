@@ -10,6 +10,7 @@ tap "homebrew/core"
 tap "nrlquaker/createzap"
 tap "railwaycat/emacsmacport" # emacs-mac
 tap "versent/homebrew-taps"
+tap "alexhallam/tidy-viewer"
 cask_args appdir: "/Applications"
 
 # ===brew===
@@ -25,6 +26,7 @@ brew "openjdk@8"
 brew "pyenv"
 brew "reattach-to-user-namespace"
 brew "telnet"
+brew "tidy-viewer"
 brew "vcpkg"
 
 # ===cask===
