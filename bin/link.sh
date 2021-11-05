@@ -10,6 +10,12 @@ DOTFILES_HOME="${REPO_ROOT}/dotfiles"
 cd "${DOTFILES_HOME}"
 
 echo 'Symlinking dotfiles...'
-find . -type d -print0 | xargs --null -I '{}' mkdir -p "${HOME}/{}"
-find . -type f -print0 | xargs --null -I '{}' ln -snf "${DOTFILES_HOME}/{}" "${HOME}/{}"
+if [[ $OSTYPE == 'darwin'* ]]
+then
+  find . -type d -print0 | xargs -I '{}' mkdir -p "${HOME}/{}"
+  find . -type f -print0 | xargs -I '{}' ln -snf "${DOTFILES_HOME}/{}" "${HOME}/{}"
+else
+  find . -type d -print0 | xargs --null -I '{}' mkdir -p "${HOME}/{}"
+  find . -type f -print0 | xargs --null -I '{}' ln -snf "${DOTFILES_HOME}/{}" "${HOME}/{}"
+fi
 echo 'Symlinking dotfiles complete.'
