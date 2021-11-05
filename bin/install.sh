@@ -119,11 +119,21 @@ esac
       if [ ! -d "${HOME}/.opam" ]; then
         opam init
       fi
+      opam install async -y
+      opam install core -y
+      opam install dune -y
+      opam install js_of_ocaml -y
+      opam install js_of_ocaml-ppx -y
+      opam install merlin -y 
+      opam install ocaml -y
+      opam install ocaml-lsp -y
+      opam install ocamlformat -y
+      opam install ocamlformat-rpc -y
+      opam install ocp-indent -y
+      opam install user-setup -y
+      opam install utop -y 
       opam update -y
       opam upgrade -y
-      opam install ocaml -y
-      opam install ocamlformat-rpc -y
-      opam install user-setup -y
     fi
   }
 }
