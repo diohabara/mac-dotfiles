@@ -126,7 +126,7 @@ esac
       opam install js_of_ocaml-ppx -y
       opam install merlin -y 
       opam install ocaml -y
-      opam install ocaml-lsp -y
+      opam install ocaml-lsp-server -y
       opam install ocamlformat -y
       opam install ocamlformat-rpc -y
       opam install ocp-indent -y
