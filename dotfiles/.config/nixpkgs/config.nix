@@ -81,7 +81,7 @@ in {
           # ocamlPackages.ocp-indent
           # ocamlPackages.utop
           # ocamlformat
-          # opam
+          opam
 
           # Git tools
           gh
