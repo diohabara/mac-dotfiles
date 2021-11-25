@@ -14,7 +14,7 @@ tap "alexhallam/tidy-viewer"
 cask_args appdir: "/Applications"
 
 # ===brew===
-#brew "emacs-plus", args: ["with-modern-doom3-icon"]
+brew "emacs-plus", args: ["with-modern-doom3-icon"]
 brew "clang-format"
 brew "icarus-verilog"
 brew "java"
