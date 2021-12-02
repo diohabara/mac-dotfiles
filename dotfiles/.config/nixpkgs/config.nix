@@ -21,8 +21,7 @@ in {
           # Python packages
           pipenv
           poetry
-          # python39Packages.python-lsp-server
-          # python38Packages.python-language-server
+          python39Packages.python-lsp-server
           python39Packages.isort
           python39Packages.nose
           python39Packages.pip
@@ -99,9 +98,8 @@ in {
           bison
           black
           broot
-          ccls
+          #ccls
           cmake
-          coreutils
           coreutils
           curl
           editorconfig-checker

@@ -14,7 +14,7 @@ tap "alexhallam/tidy-viewer"
 cask_args appdir: "/Applications"
 
 # ===brew===
-brew "emacs-plus", args: ["with-modern-doom3-icon"]
+# brew "emacs-plus", args: ["with-modern-doom3-icon"]
 brew "clang-format"
 brew "icarus-verilog"
 brew "java"
@@ -26,7 +26,6 @@ brew "openjdk@8"
 brew "pyenv"
 brew "reattach-to-user-namespace"
 brew "telnet"
-brew "tidy-viewer"
 brew "vcpkg"
 # ===GNU===
 brew "findutils"
@@ -37,8 +36,7 @@ cask "balenaetcher"
 cask "discord"
 cask "docker"
 cask "dropbox"
-cask "emacs-mac"
-cask "fig"
+# cask "emacs-mac"
 cask "firefox"
 cask "google-chrome"
 cask "google-japanese-ime"
