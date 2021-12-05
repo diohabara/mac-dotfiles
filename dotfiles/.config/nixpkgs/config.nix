@@ -69,17 +69,6 @@ in {
           haskellPackages.stack
 
           # OCaml package
-          # ocamlPackages.merlin
-          # dune_2
-          # ocamlPackages.async
-          # ocamlPackages.core
-          # ocamlPackages.js_of_ocaml
-          # ocamlPackages.js_of_ocaml-ppx
-          # ocamlPackages.ocaml-lsp
-          # ocamlPackages.ocamlformat-rpc-lib
-          # ocamlPackages.ocp-indent
-          # ocamlPackages.utop
-          # ocamlformat
           opam
 
           # Git tools
