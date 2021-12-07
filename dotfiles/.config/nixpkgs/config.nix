@@ -131,7 +131,7 @@ in {
           wget
           xz
           yarn
-          youtube-dl
+          yt-dlp
           zlib
         ];
       };
