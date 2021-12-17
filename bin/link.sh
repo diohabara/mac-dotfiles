@@ -11,8 +11,8 @@ cd "${DOTFILES_HOME}"
 
 echo 'Symlinking dotfiles...'
 if [[ $OSTYPE == 'darwin'* ]]; then
-  find . -type d -print0 | xargs -I '{}' mkdir -p "${HOME}/{}"
-  find . -type f -print0 | xargs -I '{}' ln -snf "${DOTFILES_HOME}/{}" "${HOME}/{}"
+  find . -type d | xargs -I '{}' mkdir -p "${HOME}/{}"
+  find . -type f | xargs -I '{}' ln -snf "${DOTFILES_HOME}/{}" "${HOME}/{}"
 else
   find . -type d -print0 | xargs --null -I '{}' mkdir -p "${HOME}/{}"
   find . -type f -print0 | xargs --null -I '{}' ln -snf "${DOTFILES_HOME}/{}" "${HOME}/{}"
