@@ -28,5 +28,5 @@ alias gc='git commit'
 alias e='exa'
 ### misc
 if [ "$(uname)" = "Darwin" ]; then
-	alias typora='open -a Typora'
+  alias typora='open -a Typora'
 fi

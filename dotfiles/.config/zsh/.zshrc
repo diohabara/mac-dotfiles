@@ -9,15 +9,15 @@ XDG_DATA_HOME="${HOME}/.share"
 CASK_ROOM="/usr/local/Caskroom/"
 
 command_exists() {
-	command -v "$1" >/dev/null 2>&1
+  command -v "$1" >/dev/null 2>&1
 }
 
 # Autocompletion
 autoload -Uz compinit
 compinit -u
 if [ "${uname}" = "Darwin" ]; then
-	chmod 755 /usr/local/share/zsh
-	chmod 755 /usr/local/share/zsh/site-functions
+  chmod 755 /usr/local/share/zsh
+  chmod 755 /usr/local/share/zsh/site-functions
 fi
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 eval "$(gh completion -s zsh)"
@@ -51,7 +51,7 @@ eval "$(pyenv init --path)"
 ### poetry
 # shellcheck disable=SC1090
 if [ -e "${HOME}/.poetry" ]; then
-	. "${HOME}/.poetry/env"
+  . "${HOME}/.poetry/env"
 fi
 
 ## Rust
@@ -80,10 +80,10 @@ export PATH="${PATH}:$(go env GOPATH)/bin"
 ## Java
 ### jenv
 if command_exists jenv; then
-	export PATH="${PATH}:/usr/local/opt/openjdk/bin"
-	export PATH="${PATH}:/usr/local/opt/openjdk@11/bin"
-	export PATH="${PATH}:/usr/local/opt/openjdk@8/bin"
-	eval "$(jenv init -)"
+  export PATH="${PATH}:/usr/local/opt/openjdk/bin"
+  export PATH="${PATH}:/usr/local/opt/openjdk@11/bin"
+  export PATH="${PATH}:/usr/local/opt/openjdk@8/bin"
+  eval "$(jenv init -)"
 fi
 
 ## OCaml
@@ -98,10 +98,10 @@ export PATH="${PATH}:/Library/TeX/texbin/"
 # Doc: https://nixos.wiki/wiki/Fzf
 # shllcheck disable=SC3054
 if [ -n "$(which fzf-share)" ]; then
-	# shellcheck disable=SC1091
-	. "$(fzf-share)/key-bindings.zsh"
-	# shellcheck disable=SC1091
-	. "$(fzf-share)/completion.zsh"
+  # shellcheck disable=SC1091
+  . "$(fzf-share)/key-bindings.zsh"
+  # shellcheck disable=SC1091
+  . "$(fzf-share)/completion.zsh"
 fi
 
 # zoxide
@@ -115,4 +115,3 @@ eval "$(zoxide init zsh --cmd cd)"
 zplug "sobolevn/wakatime-zsh-plugin", from:github
 
 zplug load
-
