@@ -5,8 +5,9 @@ export XDG_CONFIG_HOME="${XDG_CONFIG_HOME}:${HOME}/.config"
 export LANG="C.UTF-8"
 
 # Nix
-if [ -e /home/jio/.nix-profile/etc/profile.d/nix.sh ]; then
-  . /home/jio/.nix-profile/etc/profile.d/nix.sh
+if [ -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then
+  # shellcheck source=/dev/null
+  source "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 fi
 if [ "${OSTYPE}" = "linux-gnu" ]; then
   export XDG_DATA_DIRS="${XDG_DATA_DIRS}:${HOME}/.nix-profile/share"
@@ -24,7 +25,7 @@ export PATH="${PATH}:/Library/TeX/texbin/"
 
 # npm
 # Doc: https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
-NPM_CONFIG_PREFIX=~/.npm-global
+export NPM_CONFIG_PREFIX=~/.npm-global
 
 # Python
 export PATH="${PATH}:${HOME}/.poetry/bin"
@@ -33,4 +34,5 @@ export PATH="${PATH}:${HOME}/.poetry/bin"
 # https://golang.org/doc/install#install
 export PATH="${PATH}:${HOME}/go/bin"
 export PATH="${PATH}:${HOME}/.go/bin"
-export PATH="${PATH}:$(go env GOPATH)/bin"
+goenv="$(go env GOPATH)/bin"
+export PATH="${PATH}:${goenv}"
