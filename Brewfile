@@ -32,7 +32,6 @@ brew "findutils"
 
 # ===cask===
 cask "alfred"
-cask "balenaetcher"
 cask "discord"
 cask "docker"
 cask "dropbox"
