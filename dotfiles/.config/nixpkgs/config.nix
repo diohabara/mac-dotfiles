@@ -121,7 +121,6 @@ in {
           roswell
           rsync
           rufo
-          sbcl
           shellcheck
           shfmt
           tcl
