@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 ## for security
 alias cp='cp -i'
 alias mv='mv -i'
@@ -17,7 +17,7 @@ alias e='emacs -nw'
 ### ghq
 alias gr='cd $(ghq root)'
 alias gf='cd $(ghq list -p | fzf)'
-alias gg="ghq get $*"
+gg() { ghq get "$@"; }
 ### git
 alias ga='git add'
 alias gs='git status'
@@ -26,6 +26,8 @@ alias gp='git push origin HEAD'
 alias gc='git commit'
 ### exa
 alias e='exa'
+alias ea='exa -a'
+alias et='exa -T'
 ### misc
 if [ "$(uname)" = "Darwin" ]; then
   alias typora='open -a Typora'

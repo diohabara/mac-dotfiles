@@ -1,5 +1,6 @@
 let pkgs = import <nixpkgs> { };
-in {
+in
+{
   allowBroken = true;
   allowUnfree = true;
   allowUnsupportedSystem = true;
@@ -61,9 +62,9 @@ in {
           gotests
 
           # Haskell packages
-          # haskellPackages.ghc_8_10_2
-          # haskellPackages.ghcup
-          # haskellPackages.hls
+          #haskellPackages.ghc_8_10_2
+          #haskellPackages.ghcup
+          #haskellPackages.hls
           haskellPackages.hoogle
           haskellPackages.pandoc
           haskellPackages.stack
@@ -114,6 +115,7 @@ in {
           neofetch
           ninja
           nixfmt
+          nixpkgs-fmt
           openssl
           pkg-config
           readline

@@ -1,6 +1,7 @@
 self: super:
 let lib = super.lib;
-in rec {
+in
+rec {
   python39 = super.python39.override {
     packageOverrides = self: super: {
       beautifulsoup4 = super.beautifulsoup4.overrideAttrs (old: {
