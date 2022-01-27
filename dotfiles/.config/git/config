@@ -1,6 +1,6 @@
 # Doc: https://git-scm.com/docs/git-config
 [user]
-    name = diohabara
+	name = TKadoi
     email = diohabara@gmail.com
 
 [core]

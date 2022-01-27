@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   name = "diohabara";
@@ -6,18 +6,188 @@ let
   githubUsername = "diohabara";
 in
 {
-  fonts.fontconfig.enable = true;
+  # config
   programs.home-manager.enable = true;
+  fonts.fontconfig.enable = true;
+
   home = {
     username = "${name}";
     packages = with pkgs; [
-      dejavu_fonts
-      emacs-all-the-icons-fonts
-      nerdfonts
+      # fonts
+      # (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      # nerdfonts
+      jetbrains-mono
       noto-fonts-cjk
-      powerline-fonts
-      roboto
-      source-code-pro
+      ubuntu_font_family
+
+      # node packages
+      nodePackages.bash-language-server
+      nodePackages.js-beautify
+      nodePackages.npm
+      nodePackages.prettier
+      nodePackages.pyright
+      nodePackages.stylelint
+      nodejs
+
+      # Python packages
+      pipenv
+      poetry
+      python39Packages.python-lsp-server
+      python39Packages.isort
+      python39Packages.nose
+      python39Packages.pip
+      python39Packages.pyflakes
+      python39Packages.pytest
+      wakatime
+
+      # Rust packages
+      alacritty
+      bat
+      bottom
+      delta
+      dust
+      exa
+      fd
+      hyperfine
+      mdbook
+      procs
+      ripgrep
+      rust-analyzer
+      sd
+      starship
+      tectonic
+      tidy-viewer
+      tokei
+      zellij
+      zoxide
+
+      # Go packages
+      fzf
+      ghq
+      go
+      gocode
+      golangci-lint
+      gomodifytags
+      gore
+      gotests
+
+      # Haskell packages
+      #haskellPackages.ghc_8_10_2
+      #haskellPackages.ghcup
+      #haskellPackages.hls
+      haskellPackages.hoogle
+      haskellPackages.pandoc
+      haskellPackages.stack
+
+      # OCaml package
+      opam
+
+      # Git tools
+      gh
+      git
+      git-lfs
+
+      # editor
+      #neovim
+
+      # others
+      #ccls
+      aspell
+      bazel
+      bazel-buildtools
+      binutils
+      bison
+      black
+      broot
+      cachix
+      cmake
+      coreutils
+      curl
+      editorconfig-checker
+      editorconfig-core-c
+      expat
+      ffmpeg
+      flock
+      gawk
+      gdb
+      gibo
+      glslang
+      gmp
+      gnused
+      gradle
+      graphviz
+      gzip
+      isl
+      jq
+      libmpc
+      libtelnet
+      llvm
+      mpfr
+      neofetch
+      ninja
+      nixfmt
+      nixpkgs-fmt
+      openssl
+      pkg-config
+      readline
+      rlwrap
+      roswell
+      rsync
+      rufo
+      shellcheck
+      shfmt
+      tcl
+      tldr
+      tmux
+      unzip
+      wget
+      xz
+      yarn
+      yt-dlp
+      zlib
     ];
   };
+
+  # programs.bat = {
+  #   enable = true;
+  #   config = {
+  #     theme = "GitHub";
+  #     italic text = "always";
+  #   };
+  # };
+
+  # programs.git = {
+  #   enable = true;
+  #   userName = "diohabara";
+  #   userEmail = "diohabara@gmail.com";
+  #   extraConfig = {
+  #     core = {
+  #       editor = "nvim";
+  #       quotepath = "false";
+  #       excludefile = "~/.git/ignore";
+  #     };
+  #     color = {
+  #       ui = "auto";
+  #     };
+  #     push = {
+  #       default = "simple";
+  #     };
+  #     pull = {
+  #       ff = "only";
+  #     };
+  #     init = {
+  #       templatedir = "~/.config/git/templates";
+  #       defaultBranch = "main";
+  #     };
+  #   };
+  #   ignores = [
+  #     ".DS_Store"
+  #   ];
+  #   delta = {
+  #     navigate = true;
+  #     line numbers = true;
+  #     syntax theme = "GitHub";
+  #   };
+  # };
 }
+

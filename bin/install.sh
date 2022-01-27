@@ -24,36 +24,20 @@ command_exists() {
     # Doc: https://nixos.org/manual/nix/stable/#sect-single-user-installation
     # Doc: https://nixos.org/manual/nix/stable/#sect-macos-installation
     if [ "$(uname)" == "Darwin" ]; then
-      sh <(curl -L https://nixos.org/nix/install) --no-daemon --no-modify-profile
+      sh <(curl -L https://nixos.org/nix/install)
     else
-      sh <(curl -L https://nixos.org/nix/install) --no-daemon --darwin-use-unencrypted-nix-store-volume --no-modify-profile
+      sh <(curl -L https://nixos.org/nix/install) --daemon
     fi
-    # shellcheck disable=SC1091
-    . "${HOME}/.nix-profile/etc/profile.d/nix.sh"
   fi
 
   if command_exists nix; then
-    : "upgrade nix" && {
-      # Doc: https://nixos.org/manual/nix/stable/#ch-upgrading-nix
-      nix upgrade-nix
-      nix-channel --update
-      nix-env -iA nixpkgs.nix
-    }
-    : "install cachix" && {
-      # nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-      nix-channel --update
-      nix-env -iA nixpkgs.cachix
-    }
+    # Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
     : "install home manager" && {
       if ! command_exists home-manager; then
         nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
         nix-channel --update
         nix-shell '<home-manager>' -A install
       fi
-      nix-channel --update
-      nix-channel --update home-manager
-      nix-env -f '<nixpkgs>' -iA myPackages
-      nix-env -u
       home-manager switch
     }
   fi
@@ -75,15 +59,6 @@ linux*)
   exit 1
   ;;
 esac
-
-#: "install Doom Emacs" && {
-#  if ! [ -d "$HOME/.emacs.d" ]; then
-#    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-#    ~/.emacs.d/bin/doom install
-#  else
-#    ~/.emacs.d/bin/doom sync
-#  fi
-#}
 
 : "install zplug" && {
   if ! [ -d "${HOME}/.zplug" ]; then
@@ -113,30 +88,30 @@ esac
   }
 }
 
-: "install ocaml" && {
-  : "install opam packages" && {
-    if command_exists opam; then
-      if [ ! -d "${HOME}/.opam" ]; then
-        opam init
-      fi
-      opam install async -y
-      opam install core -y
-      opam install dune -y
-      opam install js_of_ocaml -y
-      opam install js_of_ocaml-ppx -y
-      opam install merlin -y
-      opam install ocaml -y
-      opam install ocaml-lsp-server -y
-      opam install ocamlformat -y
-      opam install ocamlformat-rpc -y
-      opam install ocp-indent -y
-      opam install user-setup -y
-      opam install utop -y
-      opam update -y
-      opam upgrade -y
-    fi
-  }
-}
+# : "install ocaml" && {
+#   : "install opam packages" && {
+#     if command_exists opam; then
+#       if [ ! -d "${HOME}/.opam" ]; then
+#         opam init
+#       fi
+#       opam install async -y
+#       opam install core -y
+#       opam install dune -y
+#       opam install js_of_ocaml -y
+#       opam install js_of_ocaml-ppx -y
+#       opam install merlin -y
+#       opam install ocaml -y
+#       opam install ocaml-lsp-server -y
+#       opam install ocamlformat -y
+#       opam install ocamlformat-rpc -y
+#       opam install ocp-indent -y
+#       opam install user-setup -y
+#       opam install utop -y
+#       opam update -y
+#       opam upgrade -y
+#     fi
+#   }
+# }
 
 : "install python" && {
   : "install pyenv" && {

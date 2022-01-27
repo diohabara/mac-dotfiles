@@ -9,9 +9,11 @@ if [ -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then
   # shellcheck source=/dev/null
   source "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 fi
-if [ "${OSTYPE}" = "linux-gnu" ]; then
-  export XDG_DATA_DIRS="${XDG_DATA_DIRS}:${HOME}/.nix-profile/share"
+# Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
+export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
 
+# Vivado
+if [ "${OSTYPE}" = "linux-gnu" ]; then
   # Doc: https://danielmangum.com/posts/vivado-2020-x-ubuntu-20-04/
   VIVADO_PATH="/tools/Xilinx/Vivado/2020.3/bin"
   if [ -d "${VIVADO_PATH}" ]; then
@@ -31,7 +33,7 @@ export NPM_CONFIG_PREFIX=~/.npm-global
 export PATH="${PATH}:${HOME}/.poetry/bin"
 
 # Golang
-# https://golang.org/doc/install#install
+# Doc: https://golang.org/doc/install#install
 export PATH="${PATH}:${HOME}/go/bin"
 export PATH="${PATH}:${HOME}/.go/bin"
 goenv="$(go env GOPATH)/bin"
