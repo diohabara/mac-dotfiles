@@ -14,11 +14,17 @@ in
     username = "${name}";
     packages = with pkgs; [
       # fonts
-      # (nerdfonts.override { fonts = [ "FiraCode" ]; })
-      # nerdfonts
-      jetbrains-mono
-      noto-fonts-cjk
-      ubuntu_font_family
+      # Docs: https://github.com/ryanoasis/nerd-fonts/blob/master/bin/scripts/lib/fonts.json
+      (nerdfonts.override {
+        fonts = [
+          "AnonymousPro"
+          "FiraCode"
+          "JetBrainsMono"
+          "Noto"
+          "Ubuntu"
+          "UbuntuMono"
+        ];
+      })
 
       # node packages
       nodePackages.bash-language-server

@@ -1,22 +1,24 @@
+# Doc: https://github.com/tmcdonell/config-alacritty/blob/master/alacritty.yml
 window:
+  startup_mode: Maximized
   decorations: none
   opacity: 0.9
 
 font:
   normal:
-    family: Ubuntu Mono
+    family: UbuntuMono Nerd Font
     style: Regular
 
   bold:
-    family: Ubuntu Mono
+    family: UbuntuMono Nerd Font
     style: Bold
 
   italic:
-    family: Ubuntu Mono
+    family: UbuntuMono Nerd Font
     style: Italic
 
   bold_italic:
-    family: Ubuntu Mono
+    family: UbuntuMono Nerd Font
     style: Bold Italic
 
   size: 22.0
