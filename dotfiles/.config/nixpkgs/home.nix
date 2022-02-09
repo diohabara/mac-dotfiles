@@ -101,11 +101,12 @@ in
       aspell
       bazel
       bazel-buildtools
-      binutils
+      #binutils
       bison
       black
       broot
       cachix
+      clang-tools
       cmake
       coreutils
       curl
@@ -113,6 +114,7 @@ in
       editorconfig-core-c
       expat
       ffmpeg
+      findutils
       flock
       gawk
       gdb
@@ -123,7 +125,11 @@ in
       gradle
       graphviz
       gzip
+      imagemagick
+      inkscape
       isl
+      jdk11
+      jdk8
       jq
       libmpc
       libtelnet
@@ -136,16 +142,20 @@ in
       openssl
       pkg-config
       readline
+      reattach-to-user-namespace
       rlwrap
+      rnix-lsp
       roswell
       rsync
       rufo
       shellcheck
       shfmt
       tcl
+      tikzit
       tldr
       tmux
       unzip
+      verilog
       wget
       xz
       yarn

@@ -12,20 +12,11 @@ tap "alexhallam/tidy-viewer"
 cask_args appdir: "/Applications"
 
 # ===brew===
-brew "clang-format"
-brew "icarus-verilog"
-brew "java"
-brew "jenv"
-brew "make"
 brew "nvm"
-brew "openjdk@11"
-brew "openjdk@8"
 brew "pyenv"
-brew "reattach-to-user-namespace"
 brew "telnet"
 brew "vcpkg"
 # ===GNU===
-brew "findutils"
 
 # ===cask===
 cask "alfred"
