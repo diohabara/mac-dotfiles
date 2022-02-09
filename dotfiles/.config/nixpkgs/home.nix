@@ -129,7 +129,7 @@ in
       inkscape
       isl
       #jdk11
-      jdk8
+      #jdk8
       jq
       libmpc
       libtelnet
