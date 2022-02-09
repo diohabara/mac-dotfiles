@@ -152,6 +152,7 @@ in
       shfmt
       tcl
       tikzit
+      texlive.combined.scheme-minimal
       tldr
       tmux
       unzip
