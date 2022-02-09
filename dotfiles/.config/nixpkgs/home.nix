@@ -128,7 +128,7 @@ in
       imagemagick
       inkscape
       isl
-      jdk11
+      #jdk11
       jdk8
       jq
       libmpc
