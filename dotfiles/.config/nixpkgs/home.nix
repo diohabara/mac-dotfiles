@@ -106,7 +106,7 @@ in
       black
       broot
       cachix
-      clang-tools
+      #clang-tools
       cmake
       coreutils
       curl
@@ -116,6 +116,7 @@ in
       ffmpeg
       findutils
       flock
+      fontconfig
       gawk
       gdb
       gibo
