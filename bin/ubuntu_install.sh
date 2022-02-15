@@ -32,6 +32,11 @@ command_exists() {
   sudo dpkg --add-architecture i386
 }
 
+: "install tailscale" && {
+  # Doc: https://login.tailscale.com/admin/welcome
+  curl -fsSL https://tailscale.com/install.sh | sh
+}
+
 : "uninstall packages by apt" && {
   if apt list -a emacs; then
     sudo apt --purge -y remove emacs emacs23 emacs24 emacs25 emacs26 \

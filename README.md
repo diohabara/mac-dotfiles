@@ -29,6 +29,7 @@ xcode-select --install
   - Google Japanese Input
     - change "Keymap" to "ATOK" in "General"
     - make conversions in "Advanced" halfwidth
+- manually install [Tailscale](https://apps.apple.com/ca/app/tailscale/id1475387142)
 
 ### Ubuntu
 
