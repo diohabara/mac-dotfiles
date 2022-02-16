@@ -1,56 +1,56 @@
 # Doc: https://git-scm.com/docs/git-config
 [user]
-	name = TKadoi
-    email = diohabara@gmail.com
+  name = TKadoi
+  email = diohabara@gmail.com
 
 [core]
-    # Repo: https://github.com/neovim/neovim
-    editor = nvim
-    quotepath = false
-    # Repo: https://github.com/dandavison/delta
-    pager = delta --dark
-    excludefile = ~/git/ignore
+  # Repo: https://github.com/neovim/neovim
+  editor = nvim
+  quotepath = false
+  # Repo: https://github.com/dandavison/delta
+  pager = delta --dark
+  excludefile = ~/git/ignore
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [delta]
-    features = side-by-side line-numbers decorations
-    whitespace-error-style = 22 reverse
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
 
 [delta "decorations"]
-    commit-decoration-style = bold yellow box ul
-    file-style = bold yellow ul
-    file-decoration-style = none
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
 
 [init]
-    templatedir = ~/.config/git/templates
-    defaultBranch = "main"
+  templatedir = ~/.config/git/templates
+  defaultBranch = "main"
 
 [diff]
-    tool = nvimdiff
+  tool = nvimdiff
 
 [difftool "nvimdiff"]
-    cmd = "nvim -R -d -c \"wincmd l\" -d \"${LOCAL}\" \"${REMOTE}\""
+  cmd = "nvim -R -d -c \"wincmd l\" -d \"${LOCAL}\" \"${REMOTE}\""
 
 [mergetool "nvimdiff"]
-    cmd = "nvim -d -c \"4wincmd w | wincmd J\" \"${LOCAL}\" \"${BASE}\" \"${REMOTE}\"  \"${MERGED}\""
+  cmd = "nvim -d -c \"4wincmd w | wincmd J\" \"${LOCAL}\" \"${BASE}\" \"${REMOTE}\"  \"${MERGED}\""
 
 [commit]
-    template = ~/.config/git/templates/gitmessage.txt
+  template = ~/.config/git/templates/gitmessage.txt
 
 [ghq]
-    root = ~/repo
+  root = ~/repo
 
 # Repo: https://github.com/dandavison/delta
 [delta]
-    syntax-theme = 'Solarized (dark)'
+  syntax-theme = 'Solarized (dark)'
 [http]
-    cookiefile = /Users/jio/.gitcookies
+  cookiefile = /Users/jio/.gitcookies
 [pull]
-    ff = only
+  ff = only
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
