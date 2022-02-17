@@ -34,7 +34,9 @@ command_exists() {
 
 : "install tailscale" && {
   # Doc: https://login.tailscale.com/admin/welcome
-  curl -fsSL https://tailscale.com/install.sh | sh
+  if ! command_exists tailscale; then
+    curl -fsSL https://tailscale.com/install.sh | sh
+  fi
 }
 
 : "uninstall packages by apt" && {
