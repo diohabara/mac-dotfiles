@@ -103,13 +103,15 @@ in
       bazel-buildtools
       #binutils
       bison
+      #clang-tools
       black
       broot
       cachix
-      #clang-tools
       cmake
       coreutils
       curl
+      docker
+      docker-compose
       editorconfig-checker
       editorconfig-core-c
       expat
