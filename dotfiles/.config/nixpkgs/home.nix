@@ -145,7 +145,7 @@ in
       openssl
       pkg-config
       readline
-      reattach-to-user-namespace
+      #reattach-to-user-namespace
       rlwrap
       rnix-lsp
       roswell
