@@ -89,6 +89,7 @@ in
       opam
 
       # Git tools
+      act
       gh
       git
       git-lfs
