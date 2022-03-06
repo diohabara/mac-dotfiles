@@ -115,3 +115,8 @@ eval "$(zoxide init zsh --cmd cd)"
 zplug "sobolevn/wakatime-zsh-plugin", from:github
 
 zplug load
+
+# Doc: https://nixos.wiki/wiki/Locales
+# fix nix locale
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+
