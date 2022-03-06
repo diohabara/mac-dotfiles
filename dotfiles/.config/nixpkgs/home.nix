@@ -89,6 +89,7 @@ in
       opam
 
       # Git tools
+      act
       gh
       git
       git-lfs
@@ -145,7 +146,7 @@ in
       openssl
       pkg-config
       readline
-      reattach-to-user-namespace
+      #reattach-to-user-namespace
       rlwrap
       rnix-lsp
       roswell
