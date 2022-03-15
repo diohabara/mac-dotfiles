@@ -11,6 +11,7 @@ if [ -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then
 fi
 # Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
 export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
 
 # Vivado
 if [ "${OSTYPE}" = "linux-gnu" ]; then
@@ -39,4 +40,3 @@ export PATH="${PATH}:${HOME}/.go/bin"
 goenv="$(go env GOPATH)/bin"
 export PATH="${PATH}:${goenv}"
 
-export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
