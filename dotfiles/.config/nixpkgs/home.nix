@@ -100,8 +100,8 @@ in
       # others
       #ccls
       aspell
-      bazel
-      bazel-buildtools
+      #bazel
+      #bazel-buildtools
       #binutils
       bison
       #clang-tools
