@@ -7,3 +7,6 @@ format = "$all"
 
 command_timeout = 1000 # default 500
 
+[directory]
+truncation_length = 100
+truncate_to_repo = false
