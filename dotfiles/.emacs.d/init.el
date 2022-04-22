@@ -1,3 +1,4 @@
+(mac-auto-ascii-mode 1) ; switch to English mode when you type C-x or M-x
 (setq make-backup-files nil) ; stop creating backup~ files
 (setq auto-save-default nil) ; stop creating #autosave# files
 
