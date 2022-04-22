@@ -17,7 +17,7 @@ tap "railwaycat/emacsmacport"
 tap "versent/homebrew-taps"
 
 # ===brew===
-brew "emacs-mac", args: ["with-modern-icon", "with-imagemagic"]
+brew "emacs-mac", args: ["with-modern-icon", "with-imagemagic", "with-modules"]
 brew "nvm", link: true
 brew "pyenv", link: true
 brew "reattach-to-user-namespace"

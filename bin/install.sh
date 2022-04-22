@@ -83,7 +83,7 @@ esac
 : "install doom" && {
   if ! command_exists doom; then
     git clone --depth 1 https://github.com/hlissner/doom-emacs "${HOME}/.emacs.d"
-    "${HOME}/.emacs.d/bin/doom install"
+    "${HOME}/.emacs.d/bin/doom" install
   else
     doom sync
     doom upgrade
