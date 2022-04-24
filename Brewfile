@@ -1,7 +1,7 @@
 # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
 # ===config===
 # set arguments for all "brew install --cask" commands
-cask_args appdir: "/Applications", greedy: true
+cask_args appdir: "/Applications"
 
 # ===tap===
 tap "alexhallam/tidy-viewer"
