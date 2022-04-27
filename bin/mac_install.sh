@@ -32,21 +32,21 @@ command_exists() {
   }
 }
 
-: "Java" && {
-  : "Java symlinking" && {
-    if ! command_exists java; then
-      sudo ln -sfn "/usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk"             # java15
-      sudo ln -sfn "$(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk" # java11
-      sudo ln -sfn "$(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk"   # java8
-    fi
-  }
-
-  : "jenv" && {
-    if [ ! -d "${HOME}/.jenv/versions" ]; then
-      mkdir -p "${HOME}/.jenv/versions"
-    fi
-  }
-}
+# : "Java" && {
+#   : "Java symlinking" && {
+#     if ! command_exists java; then
+#       sudo ln -sfn "/usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk"             # java15
+#       sudo ln -sfn "$(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk" # java11
+#       sudo ln -sfn "$(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk"   # java8
+#     fi
+#   }
+# 
+#   : "jenv" && {
+#     if [ ! -d "${HOME}/.jenv/versions" ]; then
+#       mkdir -p "${HOME}/.jenv/versions"
+#     fi
+#   }
+# }
 
 : "AppleScript" && {
   echo "TODO: AppleScript"

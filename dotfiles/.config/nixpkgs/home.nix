@@ -95,7 +95,7 @@ in
       git-lfs
 
       # editor
-      #neovim
+      neovim
 
       # others
       #bazel
@@ -142,7 +142,6 @@ in
       llvm
       mpfr
       neofetch
-      neovim
       ninja
       nixfmt
       nixpkgs-fmt
