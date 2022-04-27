@@ -98,17 +98,21 @@ in
       #neovim
 
       # others
-      #ccls
-      aspell
       #bazel
       #bazel-buildtools
       #binutils
-      bison
+      #ccls
       #clang-tools
+      #jdk11
+      #jdk8
+      #reattach-to-user-namespace
+      aspell
+      bison
       black
       broot
       cachix
       cmake
+      coq
       coreutils
       curl
       docker
@@ -132,21 +136,19 @@ in
       imagemagick
       inkscape
       isl
-      #jdk11
-      #jdk8
       jq
       libmpc
       libtelnet
       llvm
       mpfr
       neofetch
+      neovim
       ninja
       nixfmt
       nixpkgs-fmt
       openssl
       pkg-config
       readline
-      #reattach-to-user-namespace
       rlwrap
       rnix-lsp
       roswell
@@ -155,8 +157,8 @@ in
       shellcheck
       shfmt
       tcl
-      tikzit
       texlive.combined.scheme-minimal
+      tikzit
       tldr
       tmux
       unzip
