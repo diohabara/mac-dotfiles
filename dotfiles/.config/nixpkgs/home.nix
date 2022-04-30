@@ -78,9 +78,9 @@ in
       gotests
 
       # Haskell packages
-      #haskellPackages.ghc_8_10_2
-      #haskellPackages.ghcup
-      #haskellPackages.hls
+      haskellPackages.ghc
+      haskellPackages.ghcup
+      haskellPackages.haskell-language-server
       haskellPackages.hoogle
       haskellPackages.pandoc
       haskellPackages.stack

@@ -91,16 +91,16 @@ esac
 #   fi
 # }
 
-: "install haskell" && {
-  : "install haskell packages" && {
-    if ! command_exists ghcup; then
-      curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-    else
-      ghcup upgrade -n
-      ghcup install ghc
-    fi
-  }
-}
+#: "install haskell" && {
+#  : "install haskell packages" && {
+#    if ! command_exists ghcup; then
+#      curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+#    else
+#      ghcup upgrade -n
+#      ghcup install ghc
+#    fi
+#  }
+#}
 
 # : "install ocaml" && {
 #   : "install opam packages" && {

@@ -25,6 +25,7 @@ brew "telnet"
 brew "vcpkg"
 
 # ===cask===
+cask "1password"
 cask "alacritty"
 cask "alfred"
 cask "amethyst"
