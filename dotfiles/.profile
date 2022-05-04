@@ -39,4 +39,3 @@ export PATH="${PATH}:${HOME}/go/bin"
 export PATH="${PATH}:${HOME}/.go/bin"
 goenv="$(go env GOPATH)/bin"
 export PATH="${PATH}:${goenv}"
-

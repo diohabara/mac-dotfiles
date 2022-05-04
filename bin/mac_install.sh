@@ -40,7 +40,7 @@ command_exists() {
 #       sudo ln -sfn "$(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk"   # java8
 #     fi
 #   }
-# 
+#
 #   : "jenv" && {
 #     if [ ! -d "${HOME}/.jenv/versions" ]; then
 #       mkdir -p "${HOME}/.jenv/versions"

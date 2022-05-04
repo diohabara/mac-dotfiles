@@ -7,4 +7,4 @@ shfmt -w ./dotfiles/{.profile,.zshenv}
 shfmt -w ./dotfiles/.config/zsh/{.alias,.zshenv,.zshrc}
 
 # nix
-fd "nix$" dotfiles/.config/ | xargs nixpkgs-fmt
+fd --hidden --extension nix | xargs nixpkgs-fmt
