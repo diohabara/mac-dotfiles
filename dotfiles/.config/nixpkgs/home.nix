@@ -133,6 +133,7 @@ in
       gradle
       graphviz
       gzip
+      hugo
       imagemagick
       inkscape
       isl
