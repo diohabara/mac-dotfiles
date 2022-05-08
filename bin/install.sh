@@ -128,13 +128,13 @@ esac
 # }
 
 : "install python" && {
-  : "install pyenv" && {
-    if ! command_exists pyenv; then
-      # Doc: https://github.com/pyenv/pyenv-installer
-      rm -rf ~/.pyenv
-      curl https://pyenv.run | bash
-    fi
-  }
+#  : "install pyenv" && {
+#    if ! command_exists pyenv; then
+#      # Doc: https://github.com/pyenv/pyenv-installer
+#      rm -rf ~/.pyenv
+#      curl https://pyenv.run | bash
+#    fi
+#  }
   : "install via pip3" && {
     if command_exists pip3; then
       pip3 install --user --upgrade pip

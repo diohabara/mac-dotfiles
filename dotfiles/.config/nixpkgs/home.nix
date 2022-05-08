@@ -38,12 +38,12 @@ in
       # Python packages
       pipenv
       poetry
-      python39Packages.python-lsp-server
-      python39Packages.isort
-      python39Packages.nose
-      python39Packages.pip
-      python39Packages.pyflakes
-      python39Packages.pytest
+      python310Packages.python-lsp-server
+      python310Packages.isort
+      python310Packages.nose
+      python310Packages.pip
+      python310Packages.pyflakes
+      python310Packages.pytest
       wakatime
 
       # Rust packages
