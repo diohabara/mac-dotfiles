@@ -72,14 +72,14 @@ in
       ghq
       go
       gocode
-      golangci-lint
+      #golangci-lint
       gomodifytags
       gore
       gotests
 
       # Haskell packages
       haskellPackages.ghc
-      haskellPackages.ghcup
+      #haskellPackages.ghcup
       haskellPackages.haskell-language-server
       haskellPackages.hoogle
       haskellPackages.pandoc
@@ -133,7 +133,7 @@ in
       gradle
       graphviz
       gzip
-      hugo
+      #hugo
       imagemagick
       inkscape
       isl
