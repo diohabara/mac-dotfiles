@@ -44,7 +44,9 @@
 
 # Repo: https://github.com/dandavison/delta
 [delta]
-  syntax-theme = 'Solarized (dark)'
+  line-numbers = true
+  side-by-side = true
+  syntax-theme = GitHub
 [http]
   cookiefile = /Users/jio/.gitcookies
 [pull]
