@@ -51,7 +51,7 @@ in
       bat
       bottom
       delta
-      dust
+      du-dust
       exa
       fd
       hyperfine
