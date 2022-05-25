@@ -61,14 +61,6 @@ if [ -f "${HOME}/.ghcup/env" ]; then
   . "${HOME}/.ghcup/env"
 fi
 
-## Node.js
-### nvm
-export NVM_DIR="${HOME}/.nvm"
-# shellcheck disable=SC1091
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
-# shellcheck disable=SC1091
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completio
-
 ## Golang
 export PATH="${PATH}:${HOME}/go/bin"
 export PATH="${PATH}:${HOME}/.go/bin"
@@ -100,7 +92,7 @@ eval "$(zoxide init zsh --cmd cd)"
 
 # zplug
 source "${HOME}/.zplug/init.zsh"
-# zplug "sobolevn/wakatime-zsh-plugin", from:github
+zplug "sobolevn/wakatime-zsh-plugin", from:github
 zplug load
 
 # Doc: https://nixos.wiki/wiki/Locales
