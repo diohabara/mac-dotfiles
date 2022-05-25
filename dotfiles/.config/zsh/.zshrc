@@ -1,7 +1,4 @@
 #!/usr/bin/env sh
-# load zplug
-source "${HOME}/.zplug/init.zsh"
-
 # XDG Base Directory Specification
 XDG_CONFIG_HOME="${HOME}/.config"
 XDG_CACHE_HOME="${HOME}/.cache"
@@ -28,7 +25,7 @@ eval "$(gh completion -s zsh)"
 
 # Shell prompt
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=~/.config/starship.toml
+export STARSHIP_CONFIG="${HOME}/.config/starship.toml"
 
 # PATH
 export PATH="${PATH}:/usr/local/bin"
@@ -77,17 +74,7 @@ export PATH="${PATH}:${HOME}/go/bin"
 export PATH="${PATH}:${HOME}/.go/bin"
 export PATH="${PATH}:$(go env GOPATH)/bin"
 
-## Java
-### jenv
-if command_exists jenv; then
-  export PATH="${PATH}:/usr/local/opt/openjdk/bin"
-  export PATH="${PATH}:/usr/local/opt/openjdk@11/bin"
-  export PATH="${PATH}:/usr/local/opt/openjdk@8/bin"
-  eval "$(jenv init -)"
-fi
-
 ## OCaml
-### opam
 eval "$(opam env)"
 
 ## LaTeX
@@ -112,8 +99,8 @@ eval "$(zoxide init zsh --cmd cd)"
 # export PATH="${PATH}:/opt/riscv/bin"
 
 # zplug
-zplug "sobolevn/wakatime-zsh-plugin", from:github
-
+source "${HOME}/.zplug/init.zsh"
+# zplug "sobolevn/wakatime-zsh-plugin", from:github
 zplug load
 
 # Doc: https://nixos.wiki/wiki/Locales

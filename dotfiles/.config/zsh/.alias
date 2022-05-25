@@ -32,3 +32,4 @@ alias et='exa -T'
 if [ "$(uname)" = "Darwin" ]; then
   alias typora='open -a Typora'
 fi
+alias yt='yt-dlp --merge-output-format mp4'
