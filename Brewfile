@@ -15,6 +15,7 @@ tap "homebrew/core"
 tap "nrlquaker/createzap"
 tap "railwaycat/emacsmacport"
 tap "versent/homebrew-taps"
+tap "microsoft/git"
 
 # ===brew===
 brew "emacs-mac", args: ["with-modern-icon", "with-imagemagic", "with-modules"]
@@ -36,6 +37,7 @@ cask "docker"
 cask "dropbox"
 cask "firefox"
 cask "freedom"
+cask "git-credential-manager-core"
 cask "gitify"
 cask "google-chrome"
 cask "google-japanese-ime"
