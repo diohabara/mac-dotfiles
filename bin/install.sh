@@ -20,16 +20,17 @@ command_exists() {
 }
 
 : "install nix" && {
-  if [ -f "/etc/bashrc.backup-before-nix" ]; then
-    sudo mv /etc/bashrc.backup-before-nix /etc/bashrc
-  fi
-  if [ -f "/etc/zshrc.backup-before-nix" ]; then
-    sudo mv /etc/zshrc.backup-before-nix /etc/zshrc
-  fi
-  if [ -f "/etc/bash.bashrc.backup-before-nix" ]; then
-    sudo mv /etc/bash.bashrc.backup-before-nix /etc/bash.bashrc
-  fi
   if ! command_exists nix; then
+    # Doc: https://nixos.org/manual/nix/unstable/installation/installing-binary.html#macos
+    if test -f "/etc/bashrc.backup-before-nix"; then
+      sudo mv /etc/bashrc.backup-before-nix /etc/bashrc
+    fi
+    if test -f "/etc/zshrc.backup-before-nix"; then
+      sudo mv /etc/zshrc.backup-before-nix /etc/zshrc
+    fi
+    if test -f "/etc/bash.bashrc.backup-before-nix"; then
+      sudo mv /etc/bash.bashrc.backup-before-nix /etc/bash.bashrc
+    fi
     # Doc: https://nixos.org/manual/nix/stable/#sect-single-user-installation
     # Doc: https://nixos.org/manual/nix/stable/#sect-macos-installation
     if [ "$(uname)" == "Darwin" ]; then
