@@ -20,18 +20,18 @@ command_exists() {
 }
 
 : "install nix" && {
+  if [ -f "/etc/bashrc.backup-before-nix" ]; then
+    sudo mv /etc/bashrc.backup-before-nix /etc/bashrc
+  fi
+  if [ -f "/etc/zshrc.backup-before-nix" ]; then
+    sudo mv /etc/zshrc.backup-before-nix /etc/zshrc
+  fi
+  if [ -f "/etc/bash.bashrc.backup-before-nix" ]; then
+    sudo mv /etc/bash.bashrc.backup-before-nix /etc/bash.bashrc
+  fi
   if ! command_exists nix; then
     # Doc: https://nixos.org/manual/nix/stable/#sect-single-user-installation
     # Doc: https://nixos.org/manual/nix/stable/#sect-macos-installation
-    if [ -f "/etc/bashrc.backup-before-nix"]; then
-      sudo mv /etc/bashrc.backup-before-nix /etc/bashrc
-    fi
-    if [ -f "/etc/zshrc.backup-before-nix"]; then
-      sudo mv /etc/zshrc.backup-before-nix /etc/zshrc
-    fi
-    if [ -f "/etc/bash.bashrc.backup-before-nix"]; then
-      sudo mv /etc/bash.bashrc.backup-before-nix /etc/bash.bashrc
-    fi
     if [ "$(uname)" == "Darwin" ]; then
       sh <(curl -L https://nixos.org/nix/install)
     else
@@ -134,13 +134,13 @@ esac
 # }
 
 : "install python" && {
-#  : "install pyenv" && {
-#    if ! command_exists pyenv; then
-#      # Doc: https://github.com/pyenv/pyenv-installer
-#      rm -rf ~/.pyenv
-#      curl https://pyenv.run | bash
-#    fi
-#  }
+  #  : "install pyenv" && {
+  #    if ! command_exists pyenv; then
+  #      # Doc: https://github.com/pyenv/pyenv-installer
+  #      rm -rf ~/.pyenv
+  #      curl https://pyenv.run | bash
+  #    fi
+  #  }
   : "install via pip3" && {
     if command_exists pip3; then
       pip3 install --user --upgrade pip
