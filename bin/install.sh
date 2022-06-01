@@ -23,9 +23,15 @@ command_exists() {
   if ! command_exists nix; then
     # Doc: https://nixos.org/manual/nix/stable/#sect-single-user-installation
     # Doc: https://nixos.org/manual/nix/stable/#sect-macos-installation
-    sudo mv /etc/bashrc.backup-before-nix /etc/bashrc
-    sudo mv /etc/zshrc.backup-before-nix /etc/zshrc
-    sudo mv /etc/bash.bashrc.backup-before-nix /etc/bash.bashrc
+    if [ -f "/etc/bashrc.backup-before-nix"]; then
+      sudo mv /etc/bashrc.backup-before-nix /etc/bashrc
+    fi
+    if [ -f "/etc/zshrc.backup-before-nix"]; then
+      sudo mv /etc/zshrc.backup-before-nix /etc/zshrc
+    fi
+    if [ -f "/etc/bash.bashrc.backup-before-nix"]; then
+      sudo mv /etc/bash.bashrc.backup-before-nix /etc/bash.bashrc
+    fi
     if [ "$(uname)" == "Darwin" ]; then
       sh <(curl -L https://nixos.org/nix/install)
     else
