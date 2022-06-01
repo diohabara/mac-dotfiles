@@ -27,6 +27,9 @@ eval "$(gh completion -s zsh)"
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG="${HOME}/.config/starship.toml"
 
+# brew
+export PATH="${PATH}:/opt/homebrew/bin"
+
 # PATH
 export PATH="${PATH}:/usr/local/bin"
 export PATH="${PATH}:${HOME}/.local/bin"

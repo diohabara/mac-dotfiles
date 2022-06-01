@@ -23,6 +23,7 @@ command_exists() {
   if ! command_exists brew; then
     # Doc: https://brew.sh/
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    export PATH="${PATH}:/opt/homebrew/bin"
   fi
 
   : "install packages by brew" && {
