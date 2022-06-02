@@ -27,23 +27,23 @@ in
       })
 
       # node packages
-      nodePackages.bash-language-server
-      nodePackages.js-beautify
-      nodePackages.npm
+      #nodePackages.bash-language-server
+      #nodePackages.js-beautify
+      #nodePackages.npm
       nodePackages.prettier
       nodePackages.pyright
-      nodePackages.stylelint
-      nodejs
+      #nodePackages.stylelint
+      #nodejs
 
       # Python packages
-      pipenv
+      #pipenv
       poetry
       python310Packages.python-lsp-server
       python310Packages.isort
-      python310Packages.nose
+      #python310Packages.nose
       python310Packages.pip
-      python310Packages.pyflakes
-      python310Packages.pytest
+      #python310Packages.pyflakes
+      #python310Packages.pytest
       wakatime
 
       # Rust packages
@@ -51,31 +51,31 @@ in
       bat
       bottom
       delta
-      du-dust
+      #du-dust
       exa
       fd
       hyperfine
       mdbook
-      procs
+      #procs
       ripgrep
-      rust-analyzer
-      sd
+      #rust-analyzer
+      #sd
       starship
       tectonic
-      tidy-viewer
-      tokei
-      zellij
-      zoxide
+      #tidy-viewer
+      #tokei
+      #zellij
+      #zoxide
 
       # Go packages
       fzf
       ghq
       go
-      gocode
+      #gocode
       #golangci-lint
-      gomodifytags
-      gore
-      gotests
+      #gomodifytags
+      #gore
+      #gotests
 
       # Haskell packages
       haskellPackages.ghc
@@ -106,14 +106,14 @@ in
       #jdk11
       #jdk8
       #reattach-to-user-namespace
-      aspell
-      bison
+      #aspell
+      #bison
       black
-      broot
+      #broot
       cachix
       cmake
-      coq
-      coreutils
+      #coq
+      #coreutils
       curl
       docker
       docker-compose
@@ -126,12 +126,12 @@ in
       fontconfig
       gawk
       gdb
-      gibo
-      glslang
+      #gibo
+      #glslang
       gmp
       gnused
       gradle
-      graphviz
+      #graphviz
       gzip
       #hugo
       imagemagick
@@ -141,7 +141,7 @@ in
       libmpc
       libtelnet
       llvm
-      mpfr
+      #mpfr
       neofetch
       ninja
       nixfmt
@@ -151,14 +151,14 @@ in
       readline
       rlwrap
       rnix-lsp
-      roswell
-      rsync
-      rufo
+      #roswell
+      #rsync
+      #rufo
       shellcheck
       shfmt
-      tcl
+      #tcl
       texlive.combined.scheme-minimal
-      tikzit
+      #tikzit
       tldr
       tmux
       unzip
