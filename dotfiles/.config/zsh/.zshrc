@@ -86,9 +86,6 @@ if [ -n "$(which fzf-share)" ]; then
   . "$(fzf-share)/completion.zsh"
 fi
 
-# zoxide
-eval "$(zoxide init zsh --cmd cd)"
-
 # for toolchain
 # Doc: https://github.com/riscv/riscv-gnu-toolchain
 # export PATH="${PATH}:/opt/riscv/bin"
