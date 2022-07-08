@@ -14,7 +14,7 @@ tap "microsoft/git" # credential-manager-core
 tap "railwaycat/emacsmacport" # emacs-mac
 
 # ===brew===
-brew "emacs-mac", args: ["with-modern-icon", "with-imagemagic", "with-modules"]
+brew "emacs-mac", args: ["with-modern-icon", "with-imagemagic", "with-modules"], link: true
 brew "nvm", link: true
 brew "pyenv", link: true
 brew "reattach-to-user-namespace"
