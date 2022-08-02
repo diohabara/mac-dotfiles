@@ -13,8 +13,10 @@ For macOS and Linux(Ubuntu).
 xcode-select --install
 ```
 
-- put Dock left
-- hide Dock icons automatically
+- set capslock to be ctrl
+- enable three-finger drag
+- disable Spotlight in "Keyboard shortcuts" in "System Preferences"
+- make "Key Repeat" and "Delay Until Repeat" fastest and shortest in "System Preferences" respectively
 - disable Spotlight in "Keyboard shortcuts" in "System Preferences"
 - change Alfred's shortcut `command + space`
 - change "Define a word"'s shortcut `d`
