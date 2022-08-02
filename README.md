@@ -15,17 +15,14 @@ xcode-select --install
 
 - put Dock left
 - hide Dock icons automatically
-- connect HHKB via Bluetooth
 - disable Spotlight in "Keyboard shortcuts" in "System Preferences"
 - change Alfred's shortcut `command + space`
 - change "Define a word"'s shortcut `d`
 - make "Key Repeat" and "Delay Until Repeat" fastest and shortest in "System Preferences" respectively
 - set up
-  - Shiftit
+  - ShiftIt
     - change keyboard shortcuts
     - disable menu bar icon
-  - Keybase
-    - add a new device
   - Google Japanese Input
     - change "Keymap" to "ATOK" in "General"
     - make conversions in "Advanced" halfwidth
@@ -42,7 +39,6 @@ sudo apt update && sudo apt upgrade -y && sudo apt install -y curl
   - [Slack](https://slack.com/intl/ja-jp/downloads/linux)
   - [Docker](https://docs.docker.com/engine/install/ubuntu/)
   - [Spotify](https://www.spotify.com/us/download/linux/)
-  - [Zulip](https://zulip.com/apps/linux)
   - [Vivado](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html)
     - install the latest version of Vivado
       - download 2020.3 version

@@ -51,5 +51,10 @@ command_exists() {
 
 : "AppleScript" && {
   echo "TODO: AppleScript"
-  # . "${DOTFILES_HOME}/bin/apple.scpt"
+  # put Dock left
+  defaults write com.apple.Dock orientation -string left
+  killall Dock
+  # enable key repeating
+  defaults write -g ApplePressAndHoldEnabled -bool false
+  . "${DOTFILES_HOME}/bin/apple.scpt"
 }

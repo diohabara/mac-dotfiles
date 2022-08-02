@@ -19,7 +19,7 @@ command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-: "install nix" && {
+install_nix() {
   if ! command_exists nix; then
     # Doc: https://nixos.org/manual/nix/unstable/installation/installing-binary.html#macos
     if test -f "/etc/bashrc.backup-before-nix"; then
@@ -70,13 +70,13 @@ linux*)
   ;;
 esac
 
-: "install zplug" && {
+install_zplug() {
   if ! [ -d "${HOME}/.zplug" ]; then
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
   fi
 }
 
-: "install go packages" && {
+install_go() {
   if command_exists go; then
     go install github.com/bazelbuild/bazelisk@latest
     go install github.com/bazelbuild/buildtools/buildifier@latest
@@ -134,7 +134,7 @@ esac
 #   }
 # }
 
-: "install python" && {
+install_python() {
   #  : "install pyenv" && {
   #    if ! command_exists pyenv; then
   #      # Doc: https://github.com/pyenv/pyenv-installer
@@ -150,41 +150,42 @@ esac
   }
 }
 
-: "install rust packages" && {
+install_rust() {
   if ! command_exists rustup; then
     # Doc: https://www.rust-lang.org/tools/install
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
     # shellcheck disable=SC1091
     source "${HOME}/.cargo/env"
   fi
-  : "install rustup components" && {
-    rustup toolchain install stable
-    rustup toolchain install nightly
-    rustup update
-    # Doc: https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion-for-bash-fish-zsh-or-powershell
-    rustup completions zsh >"${ZSH_FUNCCOMP_DIR}/_rustup"
-    # For rust-analyzer
-    # Doc: https://rust-analyzer.github.io/manual.html#installation
-    rustup component add rust-src
-    # Doc: https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/rust/README.org
-    rustup component add rustfmt-preview
-    rustup component add clippy-preview
-    # For rls
-    # Doc: https://github.com/rust-lang/rls
-    rustup component add rls
-    rustup component add rust-analysis
-    rustup component add rust-src
-  }
-
-  : "install cargo packages" && {
-    if command_exists cargo; then
-      cargo install cargo-check
-    fi
-  }
+  rustup toolchain install stable
+  rustup toolchain install nightly
+  rustup update
+  # Doc: https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion-for-bash-fish-zsh-or-powershell
+  rustup completions zsh >"${ZSH_FUNCCOMP_DIR}/_rustup"
+  # For rust-analyzer
+  # Doc: https://rust-analyzer.github.io/manual.html#installation
+  rustup component add rust-src
+  # Doc: https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/rust/README.org
+  rustup component add rustfmt-preview
+  rustup component add clippy-preview
+  # For rls
+  # Doc: https://github.com/rust-lang/rls
+  rustup component add rls
+  rustup component add rust-analysis
+  rustup component add rust-src
+  if command_exists cargo; then
+    cargo install cargo-check
+  fi
 }
 
-: "update font cache" && {
+update_font() {
   fc-cache -fv
 }
 
 echo "Complete installation!"
+install_nix
+install_go
+install_python
+install_rust
+install_zplug
+update_font
