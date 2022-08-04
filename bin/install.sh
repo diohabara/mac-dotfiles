@@ -10,8 +10,7 @@ ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
 # misc
 ZSH_FUNCCOMP_DIR="${ZDOTDIR}/func_comp"
-GHQ_ROOT="${HOME}/repo"
-REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/dotfiles"
+CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 command mkdir -p "${ZSH_FUNCCOMP_DIR}"
 
@@ -56,12 +55,12 @@ install_nix() {
 install_os_specific() {
   case ${OSTYPE} in
   darwin*)
-    bash "${REPO_ROOT}/bin/mac_install.sh"
+    bash "${CURRENT_DIR}/mac_install.sh"
     ;;
   linux*)
     if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
       if [ -e /etc/lsb-release ]; then
-        bash "${REPO_ROOT}/bin/ubuntu_install.sh"
+        bash "${CURRENT_DIR}/ubuntu_install.sh"
       fi
     fi
     ;;
