@@ -12,6 +12,7 @@ ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 ZSH_FUNCCOMP_DIR="${ZDOTDIR}/func_comp"
 GHQ_ROOT="${HOME}/repo"
 REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/dotfiles"
+CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 command mkdir -p "${ZSH_FUNCCOMP_DIR}"
 
@@ -29,7 +30,7 @@ command_exists() {
   : "install packages by brew" && {
     # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
     brew upgrade
-    brew bundle install --file "${REPO_ROOT}/Brewfile" --no-lock
+    brew bundle install --file "${CURRENT_DIR}/../Brewfile" --no-lock
   }
 }
 
@@ -50,11 +51,10 @@ command_exists() {
 # }
 
 : "AppleScript" && {
-  echo "TODO: AppleScript"
   # put Dock left
   defaults write com.apple.Dock orientation -string left
   killall Dock
   # enable key repeating
   defaults write -g ApplePressAndHoldEnabled -bool false
-  . "${DOTFILES_HOME}/bin/apple.scpt"
+  "${CURRENT_DIR}/apple.applescript"
 }
