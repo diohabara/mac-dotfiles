@@ -82,3 +82,8 @@ flycheck_*.el
 
 # brew
 .Brewfile.lock.json
+
+
+# Added by cargo
+
+/target
