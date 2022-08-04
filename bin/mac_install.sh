@@ -10,8 +10,6 @@ ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
 # misc
 ZSH_FUNCCOMP_DIR="${ZDOTDIR}/func_comp"
-GHQ_ROOT="${HOME}/repo"
-REPO_ROOT="${GHQ_ROOT}/github.com/diohabara/dotfiles"
 CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 command mkdir -p "${ZSH_FUNCCOMP_DIR}"

@@ -12,6 +12,3 @@ jobs:
       - name: Install
         run: |
           ./bin/install.sh
-      - name: Format
-        run: |
-          ./bin/format.sh
