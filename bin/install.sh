@@ -88,65 +88,49 @@ install_go() {
   fi
 }
 
-# : "install doom" && {
-#   if ! command_exists doom; then
-#     git clone --depth 1 https://github.com/hlissner/doom-emacs "${HOME}/.emacs.d"
-#     "${HOME}/.emacs.d/bin/doom" install
-#   else
-#     doom sync
-#     doom upgrade
-#     doom build
-#   fi
-# }
+: "install doom" && {
+  if ! command_exists doom; then
+    git clone --depth 1 https://github.com/hlissner/doom-emacs "${HOME}/.emacs.d"
+    "${HOME}/.emacs.d/bin/doom" install
+  else
+    doom sync
+    doom upgrade
+    doom build
+  fi
+}
 
-#: "install haskell" && {
-#  : "install haskell packages" && {
-#    if ! command_exists ghcup; then
-#      curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-#    else
-#      ghcup upgrade -n
-#      ghcup install ghc
-#    fi
-#  }
-#}
+: "install haskell" && {
+  : "install haskell packages" && {
+    if ! command_exists ghcup; then
+      curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+    else
+      ghcup upgrade -n
+      ghcup install ghc
+    fi
+  }
+}
 
-# : "install ocaml" && {
-#   : "install opam packages" && {
-#     if command_exists opam; then
-#       if [ ! -d "${HOME}/.opam" ]; then
-#         opam init
-#       fi
-#       opam install async -y
-#       opam install core -y
-#       opam install dune -y
-#       opam install js_of_ocaml -y
-#       opam install js_of_ocaml-ppx -y
-#       opam install merlin -y
-#       opam install ocaml -y
-#       opam install ocaml-lsp-server -y
-#       opam install ocamlformat -y
-#       opam install ocamlformat-rpc -y
-#       opam install ocp-indent -y
-#       opam install user-setup -y
-#       opam install utop -y
-#       opam update -y
-#       opam upgrade -y
-#     fi
-#   }
-# }
-
-install_python() {
-  #  : "install pyenv" && {
-  #    if ! command_exists pyenv; then
-  #      # Doc: https://github.com/pyenv/pyenv-installer
-  #      rm -rf ~/.pyenv
-  #      curl https://pyenv.run | bash
-  #    fi
-  #  }
-  : "install via pip3" && {
-    if command_exists pip3; then
-      pip3 install --user --upgrade pip
-      pip3 install --user atcoder-tools
+: "install ocaml" && {
+  : "install opam packages" && {
+    if command_exists opam; then
+      if [ ! -d "${HOME}/.opam" ]; then
+        opam init
+      fi
+      opam install async -y
+      opam install core -y
+      opam install dune -y
+      opam install js_of_ocaml -y
+      opam install js_of_ocaml-ppx -y
+      opam install merlin -y
+      opam install ocaml -y
+      opam install ocaml-lsp-server -y
+      opam install ocamlformat -y
+      opam install ocamlformat-rpc -y
+      opam install ocp-indent -y
+      opam install user-setup -y
+      opam install utop -y
+      opam update -y
+      opam upgrade -y
     fi
   }
 }
@@ -183,11 +167,13 @@ update_font() {
   fc-cache -fv
 }
 
-echo "Complete installation!"
-install_nix
-install_os_specific
-install_go
-install_python
-install_rust
-install_zplug
-update_font
+: "main" && {
+  echo "Complete installation!"
+  install_nix
+  install_os_specific
+  install_go
+  install_python
+  install_rust
+  install_zplug
+  update_font
+}
