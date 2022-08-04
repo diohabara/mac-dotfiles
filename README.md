@@ -1,5 +1,7 @@
 # dotfiles
 
+[![GitHub Actions](https://github.com/diohabara/dotfiles/actions/workflows/ci.yml/badge.svg)](https://github.com/diohabara/dotfiles/actions/workflows/ci.yml)
+
 For macOS and Linux(Ubuntu).
 
 ## setup
