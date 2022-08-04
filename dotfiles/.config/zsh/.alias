@@ -7,29 +7,9 @@ alias sudo='sudo -E'
 ## macOS -> GNU
 alias xargs="gxargs"
 ## for convenience
-### cargo
-alias c='cargo'
-alias cb='cargo build'
-alias cf='cargo fmt'
-alias ct='cargo test'
-alias cr='cargo run'
-alias e='emacs -nw'
 ### ghq
 alias gr='cd $(ghq root)'
 alias gf='cd $(ghq list -p | fzf)'
 gg() { ghq get "$@"; }
-### git
-alias ga='git add'
-alias gs='git status'
-alias gd='git diff'
-alias gp='git push origin HEAD'
-alias gc='git commit'
-### exa
-alias e='exa'
-alias ea='exa -a'
-alias et='exa -T'
 ### misc
-if [ "$(uname)" = "Darwin" ]; then
-  alias typora='open -a Typora'
-fi
 alias yt='yt-dlp -N $(nproc) --merge-output-format mp4'

@@ -31,11 +31,12 @@ in
       nodePackages.prettier
 
       # Python packages
-      poetry
-      python310Packages.python-lsp-server
+      python310Packages.black
       python310Packages.isort
       python310Packages.pip
-      black
+      python310Packages.poetry
+      python310Packages.python-lsp-server
+      python310Packages.yamllint
       wakatime
 
       # Rust packages
@@ -54,6 +55,7 @@ in
       # Go packages
       fzf
       ghq
+      shfmt
 
       # Git tools
       act
@@ -73,7 +75,7 @@ in
       coreutils
       curl
       docker
-      docker-compose
+      docker-compose_2
       editorconfig-checker
       editorconfig-core-c
       ffmpeg
@@ -98,7 +100,6 @@ in
       rlwrap
       rnix-lsp
       shellcheck
-      shfmt
       texlive.combined.scheme-minimal
       tldr
       tmux

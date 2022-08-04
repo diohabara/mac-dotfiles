@@ -53,22 +53,24 @@ install_nix() {
   fi
 }
 
-case ${OSTYPE} in
-darwin*)
-  bash "${REPO_ROOT}/bin/mac_install.sh"
-  ;;
-linux*)
-  if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
-    if [ -e /etc/lsb-release ]; then
-      bash "${REPO_ROOT}/bin/ubuntu_install.sh"
+install_os_specific() {
+  case ${OSTYPE} in
+  darwin*)
+    bash "${REPO_ROOT}/bin/mac_install.sh"
+    ;;
+  linux*)
+    if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
+      if [ -e /etc/lsb-release ]; then
+        bash "${REPO_ROOT}/bin/ubuntu_install.sh"
+      fi
     fi
-  fi
-  ;;
-*)
-  echo "This operating system is not supported by this dotfiles"
-  exit 1
-  ;;
-esac
+    ;;
+  *)
+    echo "This operating system is not supported by this dotfiles"
+    exit 1
+    ;;
+  esac
+}
 
 install_zplug() {
   if ! [ -d "${HOME}/.zplug" ]; then
@@ -184,6 +186,7 @@ update_font() {
 
 echo "Complete installation!"
 install_nix
+install_os_specific
 install_go
 install_python
 install_rust
