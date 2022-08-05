@@ -88,7 +88,7 @@ install_go() {
   fi
 }
 
-: "install doom" && {
+install_doom() {
   if ! command_exists doom; then
     git clone --depth 1 https://github.com/hlissner/doom-emacs "${HOME}/.emacs.d"
     "${HOME}/.emacs.d/bin/doom" install
@@ -99,7 +99,7 @@ install_go() {
   fi
 }
 
-: "install haskell" && {
+install_haskell() {
   : "install haskell packages" && {
     if ! command_exists ghcup; then
       curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
@@ -110,7 +110,7 @@ install_go() {
   }
 }
 
-: "install ocaml" && {
+install_ocaml() {
   : "install opam packages" && {
     if command_exists opam; then
       if [ ! -d "${HOME}/.opam" ]; then
