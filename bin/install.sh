@@ -172,7 +172,6 @@ update_font() {
   install_nix
   install_os_specific
   install_go
-  install_python
   install_rust
   install_zplug
   update_font
