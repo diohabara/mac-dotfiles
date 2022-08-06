@@ -13,6 +13,7 @@ For macOS and Linux(Ubuntu).
 
 ```sh
 xcode-select --install
+sudo softwareupdate --install-rosetta
 ```
 
 - set capslock to be ctrl

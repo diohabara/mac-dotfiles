@@ -9,6 +9,7 @@ in
   # config
   programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
+  home.stateVersion = "18.09";
 
   home = {
     username = "${name}";
@@ -40,7 +41,6 @@ in
       wakatime
 
       # Rust packages
-      alacritty
       bat
       bottom
       delta
@@ -68,18 +68,19 @@ in
 
       # others
       binutils
+      cachix
       ccls
       clang-tools
-      cachix
       cmake
       coreutils
       curl
       docker
-      docker-compose_2
+      docker-compose
       editorconfig-checker
       editorconfig-core-c
       ffmpeg
       findutils
+      fontconfig
       gawk
       gdb
       gmp
