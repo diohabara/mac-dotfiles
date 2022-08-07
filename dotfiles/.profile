@@ -9,6 +9,12 @@ if [ -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then
   # shellcheck source=/dev/null
   source "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 fi
+# Doc: https://github.com/NixOS/nix/issues/3616#issuecomment-662858874
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
 # Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
 export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
