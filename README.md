@@ -76,3 +76,11 @@ bash -c "$(curl -fsSL raw.github.com/diohabara/dotfiles/master/bin/setup.sh)"
 ## Troubleshooting
 
 - If you having difficulty Doom Emacs font rendering, please refer to [this issue](https://github.com/hlissner/doom-emacs/issues/116).
+- After the update of macOS, append this code to `/etc/zhsrc` according to [this commenct](https://github.com/NixOS/nix/issues/3616)
+  ```sh
+    # Nix
+    if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+      source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+    fi
+    # End Nix
+  ```
