@@ -27,6 +27,9 @@ eval "$(gh completion -s zsh)"
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG="${HOME}/.config/starship.toml"
 
+# set color config
+export TERM=xterm-color
+
 # brew
 export PATH="${PATH}:/opt/homebrew/bin"
 
