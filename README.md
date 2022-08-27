@@ -32,6 +32,22 @@ sudo softwareupdate --install-rosetta
     - change "Keymap" to "ATOK" in "General"
     - make conversions in "Advanced" halfwidth
 - manually install [Tailscale](https://apps.apple.com/ca/app/tailscale/id1475387142)
+- enable `sudo` by touchID
+  - open `/etc/pam.d/sudo`
+  - add this line below `auth       sufficient     pam_smartcard.so`
+  ```txt
+  auth sufficient pam_tid.so
+  ```
+  - edit like below
+  ```txt
+  # sudo: auth account password session
+  auth       sufficient     pam_smartcard.so
+  auth       sufficient     pam_tid.so
+  auth       required       pam_opendirectory.so
+  account    required       pam_permit.so
+  password   required       pam_deny.so
+  session    required       pam_permit.so
+  ```
 
 ### Ubuntu
 
