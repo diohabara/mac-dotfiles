@@ -91,6 +91,7 @@ in
       libmpc
       libtelnet
       llvm
+      most
       mpfr
       neofetch
       nixfmt
