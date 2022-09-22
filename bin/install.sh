@@ -30,6 +30,9 @@ install_nix() {
     if test -f "/etc/bash.bashrc.backup-before-nix"; then
       sudo mv /etc/bash.bashrc.backup-before-nix /etc/bash.bashrc
     fi
+    if test -f "/etc/zsh/zshrc.backup-before-nix"; then
+      sudo mv /etc/zsh/zshrc.backup-before-nix /etc/zsh/zshrc
+    fi
     # Doc: https://nixos.org/manual/nix/stable/#sect-single-user-installation
     # Doc: https://nixos.org/manual/nix/stable/#sect-macos-installation
     if [ "$(uname)" == "Darwin" ]; then
