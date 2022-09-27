@@ -159,7 +159,8 @@ install_rust() {
   rustup component add rust-analysis
   rustup component add rust-src
   if command_exists cargo; then
-    cargo install cargo-check
+    # cargo install cargo-check
+    echo TODO
   fi
 }
 
