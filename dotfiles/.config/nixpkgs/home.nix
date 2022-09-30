@@ -67,7 +67,7 @@ in
       neovim
 
       # others
-      binutils
+      #binutils
       cachix
       ccls
       clang-tools
