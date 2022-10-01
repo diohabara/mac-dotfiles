@@ -68,6 +68,7 @@ in
 
       # others
       #binutils
+      #llvm
       cachix
       ccls
       clang-tools
@@ -90,7 +91,6 @@ in
       isl
       libmpc
       libtelnet
-      llvm
       most
       mpfr
       neofetch
