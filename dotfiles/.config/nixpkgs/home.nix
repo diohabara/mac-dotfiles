@@ -7,11 +7,11 @@ let
 in
 {
   # config
+  manual.manpages.enable = false;
   programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
   home.stateVersion = "22.05";
   home.homeDirectory = builtins.getEnv "HOME";
-  home.language.base = "en_US.UTF-8";
 
   home = {
     username = "${name}";
