@@ -46,7 +46,8 @@ install_nix() {
     # Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
     : "install home manager" && {
       if ! command_exists home-manager; then
-        nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+        nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz home-manager
+        # nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
         nix-channel --update
         nix-shell '<home-manager>' -A install
       fi

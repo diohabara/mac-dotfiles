@@ -101,3 +101,8 @@ zplug load
 # Doc: https://nixos.wiki/wiki/Locales
 # fix nix locale
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+# Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
+
+# for LLVM dev
+export PATH="$PATH:${HOME}/repo/github.com/phacility/arcanist/bin/"

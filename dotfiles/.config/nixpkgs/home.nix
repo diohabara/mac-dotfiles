@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   name = "diohabara";
@@ -9,7 +9,9 @@ in
   # config
   programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
-  home.stateVersion = "18.09";
+  home.stateVersion = "22.05";
+  home.homeDirectory = builtins.getEnv "HOME";
+  home.language.base = "en_US.UTF-8";
 
   home = {
     username = "${name}";
@@ -26,20 +28,6 @@ in
           "UbuntuMono"
         ];
       })
-
-      # node packages
-      nodePackages.bash-language-server
-      nodePackages.prettier
-
-      # Python packages
-      python310Packages.black
-      python310Packages.isort
-      python310Packages.pip
-      python310Packages.poetry
-      python310Packages.python-lsp-server
-      python310Packages.yamllint
-      wakatime
-
       # Rust packages
       bat
       bottom
@@ -66,21 +54,16 @@ in
       # editor
       neovim
 
+      # nix
+      rnix-lsp
+      nixfmt
+      nixpkgs-fmt
+
       # others
-      #binutils
-      #llvm
       cachix
-      ccls
-      clang-tools
-      cmake
-      coreutils
-      curl
-      docker
-      docker-compose
       editorconfig-checker
       editorconfig-core-c
       ffmpeg
-      findutils
       fontconfig
       gawk
       gdb
@@ -94,22 +77,9 @@ in
       most
       mpfr
       neofetch
-      nixfmt
-      nixpkgs-fmt
-      openssl
-      pkg-config
-      readline
-      rlwrap
-      rnix-lsp
       shellcheck
-      texlive.combined.scheme-minimal
       tldr
-      tmux
-      unzip
-      wget
-      xz
       yt-dlp
-      zlib
     ];
   };
 
