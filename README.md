@@ -11,7 +11,7 @@ For macOS and Linux(Ubuntu).
 - Before execute this command, sign in to App Store.
 - You may need to type `sudo xcodebuild -license accept`
 
-```sh
+```bash
 xcode-select --install
 sudo softwareupdate --install-rosetta
 ```
@@ -33,12 +33,16 @@ sudo softwareupdate --install-rosetta
     - make conversions in "Advanced" halfwidth
 - manually install [Tailscale](https://apps.apple.com/ca/app/tailscale/id1475387142)
 - enable `sudo` by touchID
+
   - open `/etc/pam.d/sudo`
-  - add this line below `auth       sufficient     pam_smartcard.so`
+  - add this line below `auth sufficient pam_smartcard.so`
+
   ```txt
   auth sufficient pam_tid.so
   ```
+
   - edit like below
+
   ```txt
   # sudo: auth account password session
   auth       sufficient     pam_smartcard.so
@@ -81,11 +85,19 @@ bash -c "$(curl -fsSL raw.github.com/diohabara/dotfiles/master/bin/setup.sh)"
 - connect GitHub via SSH
 
   - First follow this link <https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>.
+
+  ```bash
+  ssh-keygen -t ed25519 -C "your_email@example.com"
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_ed25519
+  gh auth login
+  gh ssh-key add ~/.ssh/id_ed25519.pub
+  ```
+
   - After finishing the instructions, execute this command.
 
-  ```sh
-  cd
-  cd repo/github.com/diohabara/dotfiles
+  ```bash
+  cd ~/repo/github.com/diohabara/dotfiles
   git remote set-url origin git@github.com:diohabara/dotfiles.git
   ```
 
@@ -93,7 +105,8 @@ bash -c "$(curl -fsSL raw.github.com/diohabara/dotfiles/master/bin/setup.sh)"
 
 - If you having difficulty Doom Emacs font rendering, please refer to [this issue](https://github.com/hlissner/doom-emacs/issues/116).
 - After the update of macOS, append this code to `/etc/zhsrc` according to [this commenct](https://github.com/NixOS/nix/issues/3616)
-  ```sh
+
+  ```bash
     # Nix
     if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
       source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
