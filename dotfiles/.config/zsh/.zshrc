@@ -106,3 +106,6 @@ export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/
 
 # for LLVM dev
 export PATH="$PATH:${HOME}/repo/github.com/phacility/arcanist/bin/"
+
+# enable comments
+setopt interactivecomments
