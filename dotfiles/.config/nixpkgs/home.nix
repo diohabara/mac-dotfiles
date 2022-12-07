@@ -79,7 +79,6 @@ in
       neofetch
       shellcheck
       tldr
-      yt-dlp
     ];
   };
 
