@@ -109,3 +109,7 @@ export PATH="$PATH:${HOME}/repo/github.com/phacility/arcanist/bin/"
 
 # for deno
 export PATH="$HOME/.deno/bin:$PATH"
+
+# enable comments
+setopt interactivecomments
+
