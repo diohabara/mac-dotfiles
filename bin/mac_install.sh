@@ -32,6 +32,15 @@ command_exists() {
   }
 }
 
+: "set up Emacs" && {
+  "link Emacs.app" && {
+    ln -sf /opt/homebrew/opt/emacs-plus/Emacs.app/Contents/MacOS/Emacs /Applications/Emacs.app
+  }
+  "download Spacemacs" && {
+    git clone --depth 1 https://github.com/syl20bnr/spacemacs ~/.emacs.d
+  }
+}
+
 # : "Java" && {
 #   : "Java symlinking" && {
 #     if ! command_exists java; then

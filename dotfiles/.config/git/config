@@ -2,7 +2,7 @@
 [user]
   name = tuampon
   email = diohabara@gmail.com
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF5mNonxIIvX70SLrx/Hu21yKLgKKMinHPLYAvie9bDr
+	signingkey = /Users/jio/.ssh/id_ed25519.pub
 
 [core]
   # Repo: https://github.com/neovim/neovim
@@ -55,10 +55,9 @@
 	autoSetupRemote = true
 [gpg]
 	format = ssh
-[gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [credential]
-	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[tag]
+	gpgsign = true

@@ -12,9 +12,12 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "microsoft/git" # credential-manager-core
 tap "railwaycat/emacsmacport" # emacs-mac
+tap "d12frosted/emacs-plus" # emacs-plus
 
 # ===brew===
-brew "emacs-mac", args: ["with-modern-icon", "with-imagemagic", "with-modules", "with-native-comp"], link: true
+# brew "emacs-plus", args: ["with-spacemacs-icon", "with-native-comp"]
+brew "emacs-plus", args: ["with-spacemacs-icon"]
+# brew "emacs-mac", args: ["with-modern-icon", "with-imagemagic", "with-modules", "with-native-comp"]
 brew "nvm", link: true
 brew "pyenv", link: true
 brew "reattach-to-user-namespace"
