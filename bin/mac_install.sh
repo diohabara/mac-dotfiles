@@ -34,10 +34,8 @@ command_exists() {
 
 : "set up Emacs" && {
   "link Emacs.app" && {
-    ln -sf /opt/homebrew/opt/emacs-plus/Emacs.app/Contents/MacOS/Emacs /Applications/Emacs.app
-  }
-  "download Spacemacs" && {
-    git clone --depth 1 https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    ln -sf /opt/homebrew/opt/emacs-plus/Emacs.app /Applications/Emacs.app
+    # ln -sf /opt/homebrew/opt/emacs-mac/Emacs.app /Applications/Emacs.app
   }
 }
 
