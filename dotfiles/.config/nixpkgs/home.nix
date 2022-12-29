@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  name = "diohabara";
+  name = "卍diohabara卍";
   email = "diohabara@gmail.com";
   githubUsername = "diohabara";
 in
@@ -10,7 +10,7 @@ in
   manual.manpages.enable = false;
   programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
-  home.stateVersion = "22.05";
+  home.stateVersion = "22.11"; # https://github.com/nix-community/home-manager/blob/master/modules/misc/version.nix
   home.homeDirectory = builtins.getEnv "HOME";
 
   home = {
@@ -28,18 +28,6 @@ in
           "UbuntuMono"
         ];
       })
-      # Rust packages
-      bat
-      bottom
-      delta
-      exa
-      fd
-      hyperfine
-      ripgrep
-      rust-analyzer
-      starship
-      tectonic
-
       # Go packages
       fzf
       ghq
@@ -82,47 +70,5 @@ in
       yt-dlp
     ];
   };
-
-  # programs.bat = {
-  #   enable = true;
-  #   config = {
-  #     theme = "GitHub";
-  #     italic text = "always";
-  #   };
-  # };
-
-  # programs.git = {
-  #   enable = true;
-  #   userName = "diohabara";
-  #   userEmail = "diohabara@gmail.com";
-  #   extraConfig = {
-  #     core = {
-  #       editor = "nvim";
-  #       quotepath = "false";
-  #       excludefile = "~/.git/ignore";
-  #     };
-  #     color = {
-  #       ui = "auto";
-  #     };
-  #     push = {
-  #       default = "simple";
-  #     };
-  #     pull = {
-  #       ff = "only";
-  #     };
-  #     init = {
-  #       templatedir = "~/.config/git/templates";
-  #       defaultBranch = "main";
-  #     };
-  #   };
-  #   ignores = [
-  #     ".DS_Store"
-  #   ];
-  #   delta = {
-  #     navigate = true;
-  #     line numbers = true;
-  #     syntax theme = "GitHub";
-  #   };
-  # };
 }
 

@@ -112,4 +112,3 @@ export PATH="$HOME/.deno/bin:$PATH"
 
 # enable comments
 setopt interactivecomments
-

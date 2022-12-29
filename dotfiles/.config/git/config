@@ -1,8 +1,8 @@
 # Doc: https://git-scm.com/docs/git-config
 [user]
-  name = tuampon
+  name = 卍diohabara卍
   email = diohabara@gmail.com
-	signingkey = /Users/jio/.ssh/id_ed25519.pub
+  signingkey = ~/.ssh/id_ed25519.pub
 
 [core]
   # Repo: https://github.com/neovim/neovim
@@ -30,7 +30,7 @@
 
 [commit]
   template = ~/.config/git/templates/gitmessage.txt
-	gpgsign = true
+  gpgsign = true
 
 [ghq]
   root = ~/repo
@@ -40,24 +40,37 @@
   line-numbers = true
   side-by-side = true
   decorations = true
-#  syntax-theme = GitHub
+  syntax-theme = GitHub
   whitespace-error-style = 22 reverse
+
 [http]
   cookiefile = /Users/jio/.gitcookies
+
 [pull]
   ff = only
+
 [filter "lfs"]
   process = git-lfs filter-process
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
+
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
+
 [gpg]
-	format = ssh
+  format = ssh
+
 [credential]
-	helper = /usr/local/share/gcm-core/git-credential-manager
+  helper = /usr/local/share/gcm-core/git-credential-manager
+
 [credential "https://dev.azure.com"]
-	useHttpPath = true
+  useHttpPath = true
+
 [tag]
-	gpgsign = true
+  gpgsign = true
+
+[alias]
+  # https://blog.toshimaru.net/git-log-graph/
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative

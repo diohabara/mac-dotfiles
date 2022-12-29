@@ -18,45 +18,7 @@ command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-install_nix() {
-  if ! command_exists nix; then
-    # Doc: https://nixos.org/manual/nix/unstable/installation/installing-binary.html#macos
-    if test -f "/etc/bashrc.backup-before-nix"; then
-      sudo mv /etc/bashrc.backup-before-nix /etc/bashrc
-    fi
-    if test -f "/etc/zshrc.backup-before-nix"; then
-      sudo mv /etc/zshrc.backup-before-nix /etc/zshrc
-    fi
-    if test -f "/etc/bash.bashrc.backup-before-nix"; then
-      sudo mv /etc/bash.bashrc.backup-before-nix /etc/bash.bashrc
-    fi
-    if test -f "/etc/zsh/zshrc.backup-before-nix"; then
-      sudo mv /etc/zsh/zshrc.backup-before-nix /etc/zsh/zshrc
-    fi
-    # Doc: https://nixos.org/manual/nix/stable/#sect-single-user-installation
-    # Doc: https://nixos.org/manual/nix/stable/#sect-macos-installation
-    if [ "$(uname)" == "Darwin" ]; then
-      sh <(curl -L https://nixos.org/nix/install)
-    else
-      sh <(curl -L https://nixos.org/nix/install) --daemon
-    fi
-  fi
-
-  if command_exists nix; then
-    # Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
-    : "install home manager" && {
-      if ! command_exists home-manager; then
-        nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz home-manager
-        # nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-        nix-channel --update
-        nix-shell '<home-manager>' -A install
-      fi
-      home-manager switch
-    }
-  fi
-}
-
-install_os_specific() {
+: "os specific" && {
   case ${OSTYPE} in
   darwin*)
     bash "${CURRENT_DIR}/mac_install.sh"
@@ -75,13 +37,31 @@ install_os_specific() {
   esac
 }
 
-install_zplug() {
-  if ! [ -d "${HOME}/.zplug" ]; then
-    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-  fi
+: "misc" && {
+  : "zplug" && {
+    if ! [ -d "${HOME}/.zplug" ]; then
+      curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+    fi
+  }
+  : "fzf" && {
+    if ! command_exists fzf; then
+      git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+      ~/.fzf/install
+    fi
+  }
 }
 
-install_go() {
+: "python" && {
+  "pyenv" && {
+    # https://github.com/pyenv/pyenv#automatic-installer
+    curl https://pyenv.run | bash
+  }
+  "poetry" && {
+    curl -sSL https://install.python-poetry.org | python3 -
+  }
+}
+
+: "go" && {
   if command_exists go; then
     go install github.com/bazelbuild/bazelisk@latest
     go install github.com/bazelbuild/buildtools/buildifier@latest
@@ -92,7 +72,7 @@ install_go() {
   fi
 }
 
-install_doom() {
+: "doom" && {
   if ! command_exists doom; then
     git clone --depth 1 https://github.com/hlissner/doom-emacs "${HOME}/.emacs.d"
     "${HOME}/.emacs.d/bin/doom" install
@@ -103,18 +83,13 @@ install_doom() {
   fi
 }
 
-install_haskell() {
-  : "install haskell packages" && {
-    if ! command_exists ghcup; then
-      curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-    else
-      ghcup upgrade -n
-      ghcup install ghc
+: "ocaml" && {
+  : "install opam" && {
+    if ! command_exists opam; then
+      bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
     fi
   }
-}
 
-install_ocaml() {
   : "install opam packages" && {
     if command_exists opam; then
       if [ ! -d "${HOME}/.opam" ]; then
@@ -139,7 +114,7 @@ install_ocaml() {
   }
 }
 
-install_rust() {
+: "rust" && {
   if ! command_exists rustup; then
     # Doc: https://www.rust-lang.org/tools/install
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
@@ -151,33 +126,26 @@ install_rust() {
   rustup update
   # Doc: https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion-for-bash-fish-zsh-or-powershell
   rustup completions zsh >"${ZSH_FUNCCOMP_DIR}/_rustup"
-  # For rust-analyzer
   # Doc: https://rust-analyzer.github.io/manual.html#installation
   rustup component add rust-src
   # Doc: https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/rust/README.org
   rustup component add rustfmt-preview
   rustup component add clippy-preview
-  # For rls
-  # Doc: https://github.com/rust-lang/rls
-  rustup component add rls
-  rustup component add rust-analysis
-  rustup component add rust-src
   if command_exists cargo; then
-    # cargo install cargo-check
-    echo TODO
+    cargo install bat \
+      bottom \
+      delta \
+      exa \
+      fd-find \
+      git-delta \
+      hyperfine \
+      ripgrep \
+      starship
   fi
 }
 
-update_font() {
+: "update_font" && {
   fc-cache -fv
 }
 
-: "main" && {
-  echo "Complete installation!"
-  install_nix
-  install_os_specific
-  install_go
-  install_rust
-  install_zplug
-  update_font
-}
+echo "Complete installation!"

@@ -78,7 +78,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt install -y curl
 ### Common
 
 ```sh
-bash -c "$(curl -fsSL raw.github.com/diohabara/dotfiles/master/bin/setup.sh)"
+bash -c "$(curl -fsSL raw.github.com/diohabara/dotfiles/master/script/setup)"
 ```
 
 - change your shell: `chsh -s $(which zsh)`
