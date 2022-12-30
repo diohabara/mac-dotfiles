@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -euox pipefail
 IFS="$(printf " \t\nx")"
 
 # XDG Base Directory Specification
@@ -106,6 +106,7 @@ command_exists() {
     sqlite3 \
     v4l2loopback-dkms \
     verilator \
+    wget \
     xclip \
     zlib1g-dev \
     zlib1g-dev \

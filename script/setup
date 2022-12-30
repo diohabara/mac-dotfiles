@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -euox pipefail
 IFS="$(printf " \t\nx")"
 
 REPO_URI='https://github.com/diohabara/dotfiles.git'

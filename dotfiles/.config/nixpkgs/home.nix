@@ -67,6 +67,7 @@ in
       neofetch
       shellcheck
       tldr
+      wget
       yt-dlp
     ];
   };

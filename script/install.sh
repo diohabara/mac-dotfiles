@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -euox pipefail
 IFS="$(printf " \t\nx")"
 
 # XDG Base Directory Specification
@@ -38,6 +38,12 @@ command_exists() {
 }
 
 : "misc" && {
+  : "starship" && {
+    if ! command_exists starship; then
+      # https://github.com/starship/starship#step-1-install-starship
+      curl -sS https://starship.rs/install.sh | sh
+    fi
+  }
   : "zplug" && {
     if ! [ -d "${HOME}/.zplug" ]; then
       curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
@@ -62,6 +68,9 @@ command_exists() {
 }
 
 : "go" && {
+  if ! command_exists go; then
+    bash <(curl -sL https://git.io/go-installer)
+  fi
   if command_exists go; then
     go install github.com/bazelbuild/bazelisk@latest
     go install github.com/bazelbuild/buildtools/buildifier@latest
@@ -108,8 +117,6 @@ command_exists() {
       opam install ocp-indent -y
       opam install user-setup -y
       opam install utop -y
-      opam update -y
-      opam upgrade -y
     fi
   }
 }
@@ -132,15 +139,14 @@ command_exists() {
   rustup component add rustfmt-preview
   rustup component add clippy-preview
   if command_exists cargo; then
-    cargo install bat \
+    cargo install \
+      bat \
       bottom \
-      delta \
       exa \
       fd-find \
       git-delta \
       hyperfine \
-      ripgrep \
-      starship
+      ripgrep
   fi
 }
 
