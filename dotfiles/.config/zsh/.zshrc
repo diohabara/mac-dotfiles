@@ -110,5 +110,9 @@ export PATH="$PATH:${HOME}/repo/github.com/phacility/arcanist/bin/"
 # for deno
 export PATH="$HOME/.deno/bin:$PATH"
 
+# for Doom
+# Doc: https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#configure
+DOOMDIR="${XDG_CONFIG_HOME}/.doom.d"
+
 # enable comments
 setopt interactivecomments

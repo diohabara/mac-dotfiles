@@ -21,6 +21,7 @@ in
       (nerdfonts.override {
         fonts = [
           "AnonymousPro"
+          "DejaVuSansMono"
           "FiraCode"
           "JetBrainsMono"
           "Noto"
