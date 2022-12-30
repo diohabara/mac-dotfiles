@@ -39,9 +39,15 @@ command_exists() {
 
 : "misc" && {
   : "starship" && {
+    # https://github.com/starship/starship#step-1-install-starship
     if ! command_exists starship; then
-      # https://github.com/starship/starship#step-1-install-starship
       curl -sS https://starship.rs/install.sh | sh
+    fi
+  }
+  : "direnv" && {
+    # https://direnv.net/docs/installation.html
+    if ! command_exists direnv; then
+      curl -sfL https://direnv.net/install.sh | bash
     fi
   }
   : "zplug" && {
@@ -58,11 +64,11 @@ command_exists() {
 }
 
 : "python" && {
-  "pyenv" && {
+  : "pyenv" && {
     # https://github.com/pyenv/pyenv#automatic-installer
     curl https://pyenv.run | bash
   }
-  "poetry" && {
+  : "poetry" && {
     curl -sSL https://install.python-poetry.org | python3 -
   }
 }
@@ -146,7 +152,8 @@ command_exists() {
       fd-find \
       git-delta \
       hyperfine \
-      ripgrep
+      ripgrep \
+      tokei
   fi
 }
 
