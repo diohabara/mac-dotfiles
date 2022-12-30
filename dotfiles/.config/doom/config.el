@@ -79,6 +79,6 @@
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'super)
 ;; to export PATHs in macOS
-(setq exec-path-from-shell-variables '("PATH"))
-  (exec-path-from-shell-initialize)
+;;(setq exec-path-from-shell-variables '("PATH"))
+;;(exec-path-from-shell-initialize)
 ;;; config.el ends here
