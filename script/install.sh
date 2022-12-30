@@ -66,24 +66,20 @@ command_exists() {
 : "python" && {
   : "pyenv" && {
     # https://github.com/pyenv/pyenv#automatic-installer
-    curl https://pyenv.run | bash
+    if ! command_exists pyenv; then
+      curl https://pyenv.run | bash
+    fi
   }
   : "poetry" && {
-    curl -sSL https://install.python-poetry.org | python3 -
+    if ! command_exists poetry; then
+      curl -sSL https://install.python-poetry.org | python3 -
+    fi
   }
 }
 
 : "go" && {
   if ! command_exists go; then
     bash <(curl -sL https://git.io/go-installer)
-  fi
-  if command_exists go; then
-    go install github.com/bazelbuild/bazelisk@latest
-    go install github.com/bazelbuild/buildtools/buildifier@latest
-    go install golang.org/x/tools/cmd/godoc@latest
-    go install golang.org/x/tools/cmd/goimports@latest
-    go install golang.org/x/tools/cmd/gorename@latest
-    go install golang.org/x/tools/cmd/guru@latest
   fi
 }
 
@@ -134,16 +130,18 @@ command_exists() {
     # shellcheck disable=SC1091
     source "${HOME}/.cargo/env"
   fi
-  rustup toolchain install stable
-  rustup toolchain install nightly
-  rustup update
-  # Doc: https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion-for-bash-fish-zsh-or-powershell
-  rustup completions zsh >"${ZSH_FUNCCOMP_DIR}/_rustup"
-  # Doc: https://rust-analyzer.github.io/manual.html#installation
-  rustup component add rust-src
-  # Doc: https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/rust/README.org
-  rustup component add rustfmt-preview
-  rustup component add clippy-preview
+  if command_exists rustup; then
+    rustup toolchain install stable
+    rustup toolchain install nightly
+    rustup update
+    # Doc: https://rust-lang.github.io/rustup/installation/index.html#enable-tab-completion-for-bash-fish-zsh-or-powershell
+    rustup completions zsh >"${ZSH_FUNCCOMP_DIR}/_rustup"
+    # Doc: https://rust-analyzer.github.io/manual.html#installation
+    rustup component add rust-src
+    # Doc: https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/rust/README.org
+    rustup component add rustfmt-preview
+    rustup component add clippy-preview
+  fi
   if command_exists cargo; then
     cargo install \
       bat \
