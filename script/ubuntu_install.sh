@@ -54,63 +54,63 @@ command_exists() {
   sudo apt upgrade -y
   sudo apt purge -y --autoremove
   sudo apt install -y \
-    "libcanberra-gtk*" \
-    apt-transport-https \
-    build-essential \
-    bzip2 \
-    ca-certificates \
-    clang \
-    clang-format \
-    fcitx-mozc \
-    firefox \
-    gnupg \
-    grep \
-    ibus-mozc \
-    lib32z1 \
-    libaio-dev \
-    libblkid-dev \
-    libbz2-1.0:i386 \
-    libbz2-dev \
-    libc6:i386 \
-    libdb-dev \
-    libedit-dev \
-    libexpat1-dev \
-    libffi-dev \
-    libfontconfig1-dev \
-    libfreetype6-dev \
-    libgdbm-dev \
-    libgmp3-dev \
-    libgraphite2-dev \
-    libgtk-3-dev \
-    libharfbuzz-dev \
-    liblzma-dev \
-    libmpdec-dev \
-    libncurses5-dev \
-    libncurses5:i386 \
-    libncursesw5-dev \
-    libreadline-dev \
-    libreadline6-dev \
-    libsqlite3-dev \
-    libssl-dev \
-    libstdc++6:i386 \
-    libtinfo-dev \
-    libtool \
-    libtool-bin \
-    libvterm-dev \
-    libxcb-xfixes0-dev \
-    lsb-release \
-    ninja-build \
-    obs-studio \
-    snapd \
-    software-properties-common \
-    sqlite3 \
-    v4l2loopback-dkms \
-    verilator \
-    wget \
-    xclip \
-    zlib1g-dev \
-    zlib1g-dev \
-    zsh
+    build-essential
+    # "libcanberra-gtk*" \
+    # apt-transport-https \
+    # bzip2 \
+    # ca-certificates \
+    # clang \
+    # clang-format \
+    # fcitx-mozc \
+    # firefox \
+    # gnupg \
+    # grep \
+    # ibus-mozc \
+    # lib32z1 \
+    # libaio-dev \
+    # libblkid-dev \
+    # libbz2-1.0:i386 \
+    # libbz2-dev \
+    # libc6:i386 \
+    # libdb-dev \
+    # libedit-dev \
+    # libexpat1-dev \
+    # libffi-dev \
+    # libfontconfig1-dev \
+    # libfreetype6-dev \
+    # libgdbm-dev \
+    # libgmp3-dev \
+    # libgraphite2-dev \
+    # libgtk-3-dev \
+    # libharfbuzz-dev \
+    # liblzma-dev \
+    # libmpdec-dev \
+    # libncurses5-dev \
+    # libncurses5:i386 \
+    # libncursesw5-dev \
+    # libreadline-dev \
+    # libreadline6-dev \
+    # libsqlite3-dev \
+    # libssl-dev \
+    # libstdc++6:i386 \
+    # libtinfo-dev \
+    # libtool \
+    # libtool-bin \
+    # libvterm-dev \
+    # libxcb-xfixes0-dev \
+    # lsb-release \
+    # ninja-build \
+    # obs-studio \
+    # snapd \
+    # software-properties-common \
+    # sqlite3 \
+    # v4l2loopback-dkms \
+    # verilator \
+    # wget \
+    # xclip \
+    # zlib1g-dev \
+    # zlib1g-dev \
+    # zsh
 
 }
 
