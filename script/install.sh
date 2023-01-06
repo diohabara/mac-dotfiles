@@ -83,23 +83,23 @@ command_exists() {
   fi
 }
 
-: "doom" && {
-  if ! command_exists doom; then
-    git clone --depth 1 https://github.com/hlissner/doom-emacs "${HOME}/.emacs.d"
-    "${HOME}/.emacs.d/bin/doom" install
-  else
-    doom sync
-    doom upgrade
-    doom build
-  fi
-}
+# : "doom" && {
+#   if ! command_exists doom; then
+#     git clone --depth 1 https://github.com/hlissner/doom-emacs "${HOME}/.emacs.d"
+#     "${HOME}/.emacs.d/bin/doom" install
+#   else
+#     doom sync
+#     doom upgrade
+#     doom build
+#   fi
+# }
 
-: "ocaml" && {
-  : "install opam" && {
-    if ! command_exists opam; then
-      bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
-    fi
-  }
+#: "ocaml" && {
+#  : "install opam" && {
+#    if ! command_exists opam; then
+#      bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
+#    fi
+#  }
 
 #  : "install opam packages" && {
 #    if command_exists opam; then
@@ -121,7 +121,7 @@ command_exists() {
 #      opam install utop -y
 #    fi
 #  }
-}
+# }
 
 : "rust" && {
   if ! command_exists rustup; then
