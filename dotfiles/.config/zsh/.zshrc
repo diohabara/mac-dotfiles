@@ -116,3 +116,7 @@ DOOMDIR="${XDG_CONFIG_HOME}/.doom.d"
 
 # enable comments
 setopt interactivecomments
+
+# default editor
+export EDITOR=vim
+eval "$(direnv hook zsh)"
