@@ -41,7 +41,7 @@ command_exists() {
 
 : "add apt repositories" && {
   if ! command_exists obs; then
-    sudo add-apt-repository ppa:obsproject/obs-studio
+    # sudo add-apt-repository ppa:obsproject/obs-studio
     sudo add-apt-repository ppa:kelleyk/emacs
   fi
 }
