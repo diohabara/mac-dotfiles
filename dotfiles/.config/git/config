@@ -77,3 +77,5 @@
   s = status
   wip = commit -m "wip"
   d = diff
+  b = branch
+  ba = branch -a
