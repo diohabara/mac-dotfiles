@@ -5,7 +5,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Inserts a blank line between shell prompts
-add_newline = true
+add_newline = false
 
 format = "$all"
 
@@ -17,5 +17,5 @@ truncation_length = 100
 
 # Replace the "❯" symbol in the prompt with "$"
 [character] # The name of the module we are configuring is "character"
-error_symbol = "[e](bold red)"
-success_symbol = "[s](bold green)"
+error_symbol = "[ε](bold red)"
+success_symbol = "[σ](bold green)"
