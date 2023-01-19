@@ -115,8 +115,9 @@ export PATH="$HOME/.deno/bin:$PATH"
 DOOMDIR="${XDG_CONFIG_HOME}/.doom.d"
 
 # enable comments
-setopt interactivecomments
+# setopt interactivecomments
 
 # default editor
 export EDITOR=vim
+bindkey -e
 eval "$(direnv hook zsh)"
