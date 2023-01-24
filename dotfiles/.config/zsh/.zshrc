@@ -30,9 +30,6 @@ export STARSHIP_CONFIG="${HOME}/.config/starship.toml"
 # set color config
 export TERM=xterm-color
 
-# brew
-export PATH="${PATH}:/opt/homebrew/bin"
-
 # PATH
 export PATH="${PATH}:/usr/local/bin"
 export PATH="${PATH}:${HOME}/.local/bin"
@@ -114,10 +111,16 @@ export PATH="$HOME/.deno/bin:$PATH"
 # Doc: https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#configure
 DOOMDIR="${XDG_CONFIG_HOME}/.doom.d"
 
+# for direnv
+eval "$(direnv hook zsh)"
+
 # enable comments
-# setopt interactivecomments
+setopt interactivecomments
 
 # default editor
 export EDITOR=vim
 bindkey -e
-eval "$(direnv hook zsh)"
+
+# for brew
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
