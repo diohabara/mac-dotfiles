@@ -124,3 +124,6 @@ bindkey -e
 # for brew
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
+
+# riscv-toolchain
+export PATH="$PATH:/opt/riscv/bin"
