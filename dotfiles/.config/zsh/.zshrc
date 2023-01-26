@@ -9,6 +9,10 @@ command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
+# for brew
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+
 # Autocompletion
 autoload -Uz compinit
 compinit -u
@@ -120,10 +124,6 @@ setopt interactivecomments
 # default editor
 export EDITOR=vim
 bindkey -e
-
-# for brew
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
 
 # riscv-toolchain
 export PATH="$PATH:/opt/riscv/bin"
