@@ -71,7 +71,7 @@ command_exists() {
 }
 
 : "set up Emacs" && {
-  "link Emacs.app" && {
+  : "link Emacs.app" && {
     ln -sf /opt/homebrew/opt/emacs-plus/Emacs.app /Applications/Emacs.app
     # ln -sf /opt/homebrew/opt/emacs-mac/Emacs.app /Applications/Emacs.app
   }
