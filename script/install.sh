@@ -83,6 +83,12 @@ command_exists() {
   fi
 }
 
+: "node" && {
+  if ! command_exists volta; then
+    curl https://get.volta.sh | bash
+  fi
+}
+
 # : "doom" && {
 #   if ! command_exists doom; then
 #     git clone --depth 1 https://github.com/hlissner/doom-emacs "${HOME}/.emacs.d"
