@@ -32,17 +32,11 @@ command_exists() {
   fi
 }
 
-#: "uninstall packages by apt" && {
-#  if apt list -a emacs; then
-#    sudo apt --purge -y remove emacs emacs23 emacs24 emacs25 emacs26 \
-#      emacs-common apel flim w3m-el emacs-el emacs-bin-common
-#  fi
-#}
-
-: "add apt repositories" && {
-  if ! command_exists obs; then
-    # sudo add-apt-repository ppa:obsproject/obs-studio
-    sudo add-apt-repository ppa:kelleyk/emacs
+: "fzf" && {
+  if ! command_exists fzf; then
+    # Doc: https://github.com/junegunn/fzf#installation
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
   fi
 }
 
@@ -53,86 +47,5 @@ command_exists() {
   sudo apt update
   sudo apt upgrade -y
   sudo apt purge -y --autoremove
-  sudo apt install -y \
-    build-essential
-  # "libcanberra-gtk*" \
-  # apt-transport-https \
-  # bzip2 \
-  # ca-certificates \
-  # clang \
-  # clang-format \
-  # fcitx-mozc \
-  # firefox \
-  # gnupg \
-  # grep \
-  # ibus-mozc \
-  # lib32z1 \
-  # libaio-dev \
-  # libblkid-dev \
-  # libbz2-1.0:i386 \
-  # libbz2-dev \
-  # libc6:i386 \
-  # libdb-dev \
-  # libedit-dev \
-  # libexpat1-dev \
-  # libffi-dev \
-  # libfontconfig1-dev \
-  # libfreetype6-dev \
-  # libgdbm-dev \
-  # libgmp3-dev \
-  # libgraphite2-dev \
-  # libgtk-3-dev \
-  # libharfbuzz-dev \
-  # liblzma-dev \
-  # libmpdec-dev \
-  # libncurses5-dev \
-  # libncurses5:i386 \
-  # libncursesw5-dev \
-  # libreadline-dev \
-  # libreadline6-dev \
-  # libsqlite3-dev \
-  # libssl-dev \
-  # libstdc++6:i386 \
-  # libtinfo-dev \
-  # libtool \
-  # libtool-bin \
-  # libvterm-dev \
-  # libxcb-xfixes0-dev \
-  # lsb-release \
-  # ninja-build \
-  # obs-studio \
-  # snapd \
-  # software-properties-common \
-  # sqlite3 \
-  # v4l2loopback-dkms \
-  # verilator \
-  # wget \
-  # xclip \
-  # zlib1g-dev \
-  # zlib1g-dev \
-  # zsh
-
-}
-
-: "install packages by snap" && {
-  echo "You may not use Japanese Input in Apps installed by snap"
-  # sudo snap set system experimental.parallel-instances=true
-  # : "install emacs" && {
-  #   sudo snap install emacs --beta --classic
-  # }
-  # : "install with classic" && {
-  #   sudo snap install --classic android-studio
-  #   sudo snap install --classic clion
-  #   sudo snap install --classic code
-  #   sudo snap install --classic emacs
-  #   sudo snap install --classic flutter
-  #   sudo snap install --classic intellij-idea-community
-  #   sudo snap install --classic slack
-  # }
-  # : "install without classic" && {
-  #   sudo snap install docker
-  #   sudo snap install spotify
-  #   sudo snap install zulip
-  # }
-  # sudo snap refresh
+  sudo apt install -y build-essential neovim
 }

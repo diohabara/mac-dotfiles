@@ -17,5 +17,5 @@ truncation_length = 100
 
 # Replace the "❯" symbol in the prompt with "$"
 [character] # The name of the module we are configuring is "character"
-error_symbol = "[ε](bold red)"
-success_symbol = "[ς](bold green)"
+error_symbol = "[Ё](bold red)"
+success_symbol = "[Σ](bold green)"

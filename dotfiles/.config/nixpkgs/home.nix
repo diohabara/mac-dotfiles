@@ -20,9 +20,6 @@ in
       # Docs: https://github.com/ryanoasis/nerd-fonts/blob/master/bin/scripts/lib/fonts.json
       (nerdfonts.override {
         fonts = [
-          "AnonymousPro"
-          "DejaVuSansMono"
-          "FiraCode"
           "JetBrainsMono"
           "Noto"
           "Ubuntu"

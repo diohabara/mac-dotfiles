@@ -21,13 +21,10 @@ sudo softwareupdate --install-rosetta
 - disable Spotlight in "Keyboard shortcuts" in "System Preferences"
 - make "Key Repeat" and "Delay Until Repeat" fastest and shortest in "System Preferences" respectively
 - disable Spotlight in "Keyboard shortcuts" in "System Preferences"
-- change Alfred's shortcut `command + space`
+- change Raycast's shortcut `command + space`
 - change "Define a word"'s shortcut `d`
 - make "Key Repeat" and "Delay Until Repeat" fastest and shortest in "System Preferences" respectively
 - set up
-  - ShiftIt
-    - change keyboard shortcuts
-    - disable menu bar icon
   - Google Japanese Input
     - change "Keymap" to "ATOK" in "General"
     - make conversions in "Advanced" halfwidth
@@ -59,26 +56,10 @@ sudo softwareupdate --install-rosetta
 sudo apt update && sudo apt upgrade -y && sudo apt install -y curl
 ```
 
-- manually install
-  - [VSCode](https://code.visualstudio.com/docs/setup/linux)
-  - [Slack](https://slack.com/intl/ja-jp/downloads/linux)
-  - [Docker](https://docs.docker.com/engine/install/ubuntu/)
-  - [Spotify](https://www.spotify.com/us/download/linux/)
-  - [Vivado](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html)
-    - install the latest version of Vivado
-      - download 2020.3 version
-      - `chmod +x` the installer
-      - execute with `sudo`
-        - do not check _installation options_
-      - `sudo ln -s /lib/x86_64-linux-gnu/libtinfo.so.6 /lib/x86_64-linux-gnu/libtinfo.so.5`
-      - `source settings64.sh` in `/tools/Xilinx/`
-      - Then, you can start `vivado`
-    - (refer to [this link](https://danielmangum.com/posts/vivado-2020-x-ubuntu-20-04/))
-
 ### Common
 
 ```sh
-bash -c "$(curl -fsSL raw.github.com/diohabara/dotfiles/master/script/setup)"
+bash -c "$(curl -fsSL raw.github.com/diohabara/dotfiles/master/script/**setup**)"
 ```
 
 - change your shell: `chsh -s $(which zsh)`
@@ -104,7 +85,7 @@ bash -c "$(curl -fsSL raw.github.com/diohabara/dotfiles/master/script/setup)"
 ## Troubleshooting
 
 - If you having difficulty Doom Emacs font rendering, please refer to [this issue](https://github.com/hlissner/doom-emacs/issues/116).
-- After the update of macOS, append this code to `/etc/zhsrc` according to [this commenct](https://github.com/NixOS/nix/issues/3616)
+- After the update of macOS, append this code to `/etc/zshrc` according to [this comment](https://github.com/NixOS/nix/issues/3616)
 
   ```bash
     # Nix
