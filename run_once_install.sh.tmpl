@@ -20,20 +20,12 @@ command_exists() {
 
 {{ if eq .chezmoi.os "darwin" -}}
 : "macOS" && {
-  softwareupdate --all --install --force
-  : "nix" && {
-    # Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
-    sh <(curl -L https://nixos.org/nix/install)
+  : "install xcode command line tools" && {
+    softwareupdate --all --install --force
+    sudo xcodebuild -license accept
+    xcode-select --install
+    sudo softwareupdate --install-rosetta
   }
-  : "home-manager" && {
-    # Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
-    nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.11.tar.gz home-manager
-    # nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-    nix-channel --update
-    nix-shell '<home-manager>' -A install
-    home-manager switch
-  }
-
   : "brew" && {
     # Doc: https://brew.sh/
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -42,11 +34,9 @@ command_exists() {
     brew upgrade
     brew bundle install --file "${CURRENT_DIR}/../Brewfile" --no-lock
   }
-
   : "Emacs" && {
     ln -sf /opt/homebrew/opt/emacs-plus/Emacs.app /Applications/Emacs.app
   }
-
   : "AppleScript" && {
     "${CURRENT_DIR}/apple.applescript"
   }
