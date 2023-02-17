@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+## for security
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias sudo='sudo -E'
+## macOS -> GNU
+## for convenience
+### ghq
+alias gr='cd $(ghq root)'
+alias gf='cd $(ghq list -p | fzf)'
+gg() { ghq get "$@"; }
+### misc
+alias yt='yt-dlp -N $(nproc) --merge-output-format mp4'
