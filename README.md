@@ -8,27 +8,18 @@ For macOS and Linux(Ubuntu).
 
 ### macOS
 
-- Before execute this command, sign in to App Store.
-- You may need to type `sudo xcodebuild -license accept`
-
 ```bash
+sudo xcodebuild -license accept
 xcode-select --install
 sudo softwareupdate --install-rosetta
 ```
 
-- set capslock to be ctrl
-- enable three-finger drag
-- disable Spotlight in "Keyboard shortcuts" in "System Preferences"
-- make "Key Repeat" and "Delay Until Repeat" fastest and shortest in "System Preferences" respectively
-- disable Spotlight in "Keyboard shortcuts" in "System Preferences"
 - change Raycast's shortcut `command + space`
-- change "Define a word"'s shortcut `d`
-- make "Key Repeat" and "Delay Until Repeat" fastest and shortest in "System Preferences" respectively
+  - change "Define a word"'s shortcut `d`
 - set up
   - Google Japanese Input
     - change "Keymap" to "ATOK" in "General"
     - make conversions in "Advanced" halfwidth
-- manually install [Tailscale](https://apps.apple.com/ca/app/tailscale/id1475387142)
 - enable `sudo` by touchID
 
   - open `/etc/pam.d/sudo`
@@ -59,7 +50,8 @@ sudo apt update && sudo apt upgrade -y && sudo apt install -y curl
 ### Common
 
 ```sh
-bash -c "$(curl -fsSL raw.github.com/diohabara/dotfiles/master/script/**setup**)"
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply diohabara
+chezmoi update
 ```
 
 - change your shell: `chsh -s $(which zsh)`
