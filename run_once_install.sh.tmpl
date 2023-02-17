@@ -22,7 +22,6 @@ command_exists() {
 : "macOS" && {
   : "install xcode command line tools" && {
     softwareupdate --all --install --force
-    sudo xcodebuild -license accept
     xcode-select --install
     sudo softwareupdate --install-rosetta
   }
