@@ -18,24 +18,75 @@ command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-: "os specific" && {
-  case ${OSTYPE} in
-  darwin*)
-    bash "${CURRENT_DIR}/mac_install.sh"
-    ;;
-  linux*)
-    if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
-      if [ -e /etc/lsb-release ]; then
-        bash "${CURRENT_DIR}/ubuntu_install.sh"
-      fi
-    fi
-    ;;
-  *)
-    echo "This operating system is not supported by this dotfiles"
-    exit 1
-    ;;
-  esac
+{{ if eq .chezmoi.os "darwin" -}}
+: "macOS" && {
+  softwareupdate --all --install --force
+  : "nix" && {
+    # Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
+    sh <(curl -L https://nixos.org/nix/install)
+  }
+  : "home-manager" && {
+    # Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
+    nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.11.tar.gz home-manager
+    # nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+    nix-channel --update
+    nix-shell '<home-manager>' -A install
+    home-manager switch
+  }
+
+  : "brew" && {
+    # Doc: https://brew.sh/
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    export PATH="${PATH}:/opt/homebrew/bin"
+    # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
+    brew upgrade
+    brew bundle install --file "${CURRENT_DIR}/../Brewfile" --no-lock
+  }
+
+  : "Emacs" && {
+    ln -sf /opt/homebrew/opt/emacs-plus/Emacs.app /Applications/Emacs.app
+  }
+
+  : "AppleScript" && {
+    "${CURRENT_DIR}/apple.applescript"
+  }
 }
+
+{{ else if eq .chezmoi.os "linux" -}}
+: "ubuntu" && {
+  sudo apt update
+  sudo apt upgrade -y
+  sudo apt install -y git
+  : "remap keys" && {
+    gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']" # turn capslock into control
+  }
+  : "enable multi-arch support" && {
+    sudo dpkg --add-architecture i386
+  }
+  : "install tailscale" && {
+    # Doc: https://login.tailscale.com/admin/welcome
+    if ! command_exists tailscale; then
+      curl -fsSL https://tailscale.com/install.sh | sh
+    fi
+  }
+  : "fzf" && {
+    if ! command_exists fzf; then
+      # Doc: https://github.com/junegunn/fzf#installation
+      git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+      ~/.fzf/install
+    fi
+  }
+  : "apt" && {
+    # https://askubuntu.com/questions/462094/unable-to-install-libssl1-0-0i386-due-to-unmet-dependencies/462471#462471
+    echo "deb http://security.ubuntu.com/ubuntu bionic-security main" |
+      sudo tee -a /etc/apt/sources.list.d/bionic.list
+    sudo apt update
+    sudo apt upgrade -y
+    sudo apt purge -y --autoremove
+    sudo apt install -y build-essential neovim
+  }
+}
+{{ end -}}
 
 : "misc" && {
   : "starship" && {

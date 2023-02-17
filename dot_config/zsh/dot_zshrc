@@ -1,12 +1,12 @@
 #!/usr/bin/env sh
 # XDG Base Directory Specification
 XDG_CONFIG_HOME="${HOME}/.config"
-XDG_CACHE_HOME="${HOME}/.cache"
-XDG_DATA_HOME="${HOME}/.share"
-CASK_ROOM="/usr/local/Caskroom/"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.share"
+export CASK_ROOM="/usr/local/Caskroom/"
 
 command_exists() {
-  command -v "$1" >/dev/null 2>&1
+	command -v "$1" >/dev/null 2>&1
 }
 
 # for brew
@@ -16,15 +16,15 @@ export PATH="/opt/homebrew/sbin:$PATH"
 # Autocompletion
 autoload -Uz compinit
 compinit -u
-if [ "${uname}" = "Darwin" ]; then
-  chmod 755 /usr/local/share/zsh
-  chmod 755 /usr/local/share/zsh/site-functions
+if [ "$(uname)" = "Darwin" ]; then
+	chmod 755 /usr/local/share/zsh
+	chmod 755 /usr/local/share/zsh/site-functions
 fi
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 eval "$(gh completion -s zsh)"
 
 # divided files
-# shellcheck disable=SC1090
+# shellcheck source=/dev/null
 . "${XDG_CONFIG_HOME}/zsh/.alias"
 
 # Shell prompt
@@ -55,7 +55,8 @@ eval "$(pyenv init --path)"
 ### poetry
 # shellcheck disable=SC1090
 if [ -e "${HOME}/.poetry" ]; then
-  . "${HOME}/.poetry/env"
+	# shellcheck source=/dev/null
+	. "${HOME}/.poetry/env"
 fi
 
 ## Rust
@@ -65,13 +66,15 @@ export PKG_CONFIG_PATH="${HOME}/bin/convert"
 ## Haskell
 export PATH="${PATH}:${HOME}/.cabal/bin:${HOME}/.ghcup/bin"
 if [ -f "${HOME}/.ghcup/env" ]; then
-  . "${HOME}/.ghcup/env"
+	# shellcheck source=/dev/null
+	. "${HOME}/.ghcup/env"
 fi
 
 ## Golang
 export PATH="${PATH}:${HOME}/go/bin"
 export PATH="${PATH}:${HOME}/.go/bin"
-export PATH="${PATH}:$(go env GOPATH)/bin"
+go_path="$(go env GOPATH)"
+export PATH="${PATH}:$go_path"
 
 ## OCaml
 eval "$(opam env)"
@@ -84,10 +87,10 @@ export PATH="${PATH}:/Library/TeX/texbin/"
 # Doc: https://nixos.wiki/wiki/Fzf
 # shllcheck disable=SC3054
 if [ -n "$(which fzf-share)" ]; then
-  # shellcheck disable=SC1091
-  . "$(fzf-share)/key-bindings.zsh"
-  # shellcheck disable=SC1091
-  . "$(fzf-share)/completion.zsh"
+	# shellcheck disable=SC1091
+	. "$(fzf-share)/key-bindings.zsh"
+	# shellcheck disable=SC1091
+	. "$(fzf-share)/completion.zsh"
 fi
 
 # for toolchain
@@ -95,7 +98,8 @@ fi
 # export PATH="${PATH}:/opt/riscv/bin"
 
 # zplug
-source "${HOME}/.zplug/init.zsh"
+# shellcheck source=/dev/null
+. "${HOME}/.zplug/init.zsh"
 zplug "sobolevn/wakatime-zsh-plugin", from:github
 zplug load
 
@@ -103,7 +107,7 @@ zplug load
 # fix nix locale
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 # Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
-export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
+export NIX_PATH="${HOME}/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}"
 
 # for LLVM dev
 export PATH="$PATH:${HOME}/repo/github.com/phacility/arcanist/bin/"
@@ -113,7 +117,7 @@ export PATH="$HOME/.deno/bin:$PATH"
 
 # for Doom
 # Doc: https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#configure
-DOOMDIR="${XDG_CONFIG_HOME}/.doom.d"
+export DOOMDIR="${XDG_CONFIG_HOME}/.doom.d"
 
 # for direnv
 eval "$(direnv hook zsh)"

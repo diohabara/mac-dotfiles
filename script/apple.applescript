@@ -1,5 +1,12 @@
 #!/usr/bin/osascript
 
+-- put Dock left
+defaults write com.apple.Dock orientation -string left
+killall Dock
+
+-- enable key repeating
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 -- hide Dock automatically
 tell application "System Events" to set the autohide of the dock preferences to true
 
