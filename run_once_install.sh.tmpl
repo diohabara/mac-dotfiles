@@ -71,6 +71,9 @@ EOF"
 {{ end -}}
 
 : "misc" && {
+  #: "nix" && {
+  #  sh <(curl -L https://nixos.org/nix/install) --no-daemon
+  #}
   : "starship" && {
     if ! command_exists starship; then
       # https://github.com/starship/starship#step-1-install-starship
