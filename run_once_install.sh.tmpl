@@ -20,6 +20,11 @@ command_exists() {
 
 {{ if eq .chezmoi.os "darwin" -}}
 : "macOS" && {
+  : "GUI" && {
+    defaults write com.apple.Dock orientation -string left
+    defaults write -g ApplePressAndHoldEnabled -bool false
+    defaults write -g ApplePressAndHoldEnabled -bool false
+  }
   : "password" && {
     sudo bash -c "cat <<EOF > /etc/pam.d/sudo
 # sudo: auth account password session

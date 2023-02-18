@@ -1,11 +1,4 @@
-#!/usr/bin/osascript
-
--- put Dock left
-defaults write com.apple.Dock orientation -string left
-killall Dock
-
--- enable key repeating
-defaults write -g ApplePressAndHoldEnabled -bool false
+#!/usr/bin/osascript -e
 
 -- hide Dock automatically
 tell application "System Events" to set the autohide of the dock preferences to true
@@ -57,4 +50,3 @@ tell application "System Events"
         set value of slider 2 of tab group 1 of window "Keyboard" to 0
     end tell
 end tell
-
