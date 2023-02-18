@@ -10,7 +10,7 @@ ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
 # misc
 ZSH_FUNCCOMP_DIR="${ZDOTDIR}/func_comp"
-CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"
+CURRENT_DIR="~/.share/chezmoi"
 
 command mkdir -p "${ZSH_FUNCCOMP_DIR}"
 
@@ -20,21 +20,23 @@ command_exists() {
 
 {{ if eq .chezmoi.os "darwin" -}}
 : "macOS" && {
-  : "install xcode command line tools" && {
-    softwareupdate --all --install --force
-    xcode-select --install
-    sudo softwareupdate --install-rosetta
+  : "password" && {
+    sudo bash -c "cat <<EOF > /etc/pam.d/sudo
+# sudo: auth account password session
+auth       sufficient     pam_smartcard.so
+auth       sufficient     pam_tid.so
+auth       required       pam_opendirectory.so
+account    required       pam_permit.so
+password   required       pam_deny.so
+session    required       pam_permit.so
+EOF"
   }
   : "brew" && {
     # Doc: https://brew.sh/
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     export PATH="${PATH}:/opt/homebrew/bin"
     # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
-    brew upgrade
-    brew bundle install --file "${CURRENT_DIR}/../Brewfile" --no-lock
-  }
-  : "Emacs" && {
-    ln -sf /opt/homebrew/opt/emacs-plus/Emacs.app /Applications/Emacs.app
+    brew bundle install --file "Brewfile" --no-lock
   }
   : "AppleScript" && {
     "${CURRENT_DIR}/apple.applescript"
@@ -187,6 +189,10 @@ command_exists() {
   find "$fonts_dir" -name '*Windows Compatible*' -delete
 
   fc-cache -fv
+}
+
+: "change shell" && {
+  chsh -s $(which zsh)
 }
 
 echo "Complete installation!"

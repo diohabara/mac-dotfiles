@@ -8,53 +8,19 @@ For macOS and Linux(Ubuntu).
 
 ### macOS
 
-```bash
-sudo xcodebuild -license accept
-xcode-select --install
-sudo softwareupdate --install-rosetta
-```
-
 - change Raycast's shortcut `command + space`
   - change "Define a word"'s shortcut `d`
 - set up
   - Google Japanese Input
     - change "Keymap" to "ATOK" in "General"
     - make conversions in "Advanced" halfwidth
-- enable `sudo` by touchID
-
-  - open `/etc/pam.d/sudo`
-  - add this line below `auth sufficient pam_smartcard.so`
-
-  ```txt
-  auth sufficient pam_tid.so
-  ```
-
-  - edit like below
-
-  ```txt
-  # sudo: auth account password session
-  auth       sufficient     pam_smartcard.so
-  auth       sufficient     pam_tid.so
-  auth       required       pam_opendirectory.so
-  account    required       pam_permit.so
-  password   required       pam_deny.so
-  session    required       pam_permit.so
-  ```
-
-### Ubuntu
-
-```sh
-sudo apt update && sudo apt upgrade -y && sudo apt install -y curl
-```
 
 ### Common
 
 ```sh
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply diohabara
-chezmoi update
 ```
 
-- change your shell: `chsh -s $(which zsh)`
 - connect GitHub via SSH
 
   - First follow this link <https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>.
