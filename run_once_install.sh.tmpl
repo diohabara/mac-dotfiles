@@ -45,19 +45,13 @@ EOF"
   }
 }
 
-{{ else if eq .chezmoi.os "linux" -}}
+{{ else if eq .chezmoi.osRelease.id "debian" -}}
 : "ubuntu" && {
   sudo apt update
   sudo apt upgrade -y
   sudo apt install -y git
   : "remap keys" && {
     gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']" # turn capslock into control
-  }
-  : "install tailscale" && {
-    # Doc: https://login.tailscale.com/admin/welcome
-    if ! command_exists tailscale; then
-      curl -fsSL https://tailscale.com/install.sh | sh
-    fi
   }
   : "fzf" && {
     if ! [ -d "~/.fzf" ]; then
@@ -80,7 +74,7 @@ EOF"
   : "starship" && {
     if ! command_exists starship; then
       # https://github.com/starship/starship#step-1-install-starship
-      curl -sS https://starship.rs/install.sh | sh
+      curl -sS https://starship.rs/install.sh | sh -s -- --yes
     fi
   }
   : "zplug" && {
