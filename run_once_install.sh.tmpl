@@ -38,9 +38,6 @@ EOF"
     # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
     brew bundle install --file "Brewfile" --no-lock
   }
-  : "AppleScript" && {
-    "${CURRENT_DIR}/script/apple.applescript"
-  }
 }
 
 {{ else if eq .chezmoi.os "linux" -}}
