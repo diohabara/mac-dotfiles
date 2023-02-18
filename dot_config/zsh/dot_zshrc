@@ -63,22 +63,6 @@ fi
 export PATH="${PATH}:${HOME}/.cargo/bin"
 export PKG_CONFIG_PATH="${HOME}/bin/convert"
 
-## Haskell
-export PATH="${PATH}:${HOME}/.cabal/bin:${HOME}/.ghcup/bin"
-if [ -f "${HOME}/.ghcup/env" ]; then
-	# shellcheck source=/dev/null
-	. "${HOME}/.ghcup/env"
-fi
-
-## Golang
-export PATH="${PATH}:${HOME}/go/bin"
-export PATH="${PATH}:${HOME}/.go/bin"
-go_path="$(go env GOPATH)"
-export PATH="${PATH}:$go_path"
-
-## OCaml
-eval "$(opam env)"
-
 ## LaTeX
 export PATH="${PATH}:/usr/local/texlive/2020/bin/x86_64-darwin/"
 export PATH="${PATH}:/Library/TeX/texbin/"
