@@ -71,7 +71,7 @@ EOF"
     sudo apt update
     sudo apt upgrade -y
     sudo apt purge -y --autoremove
-    sudo apt install -y build-essential neovim wget curl
+    sudo apt install -y build-essential neovim wget curl direnv
   }
   : "fonts" && {
     # Doc: https://gist.github.com/matthewjberger/7dd7e079f282f8138a9dc3b045ebefa0
@@ -109,12 +109,6 @@ EOF"
     if ! command_exists starship; then
       # https://github.com/starship/starship#step-1-install-starship
       curl -sS https://starship.rs/install.sh | sh
-    fi
-  }
-  : "direnv" && {
-    if ! command_exists direnv; then
-      # https://direnv.net/docs/installation.html
-      curl -sfL https://direnv.net/install.sh | bash
     fi
   }
   : "zplug" && {
