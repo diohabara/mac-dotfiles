@@ -41,7 +41,7 @@ EOF"
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     export PATH="${PATH}:/opt/homebrew/bin"
     # Doc: https://homebrew-file.readthedocs.io/en/latest/usage.html
-    brew bundle install --file "Brewfile" --no-lock
+    brew bundle install --file ".Brewfile" --no-lock
   }
 }
 
