@@ -16,10 +16,10 @@ export PATH="/opt/homebrew/sbin:$PATH"
 # Autocompletion
 autoload -Uz compinit
 compinit -u
-if [ "$(uname)" = "Darwin" ]; then
-	chmod 755 /usr/local/share/zsh
-	chmod 755 /usr/local/share/zsh/site-functions
-fi
+#if [ "$(uname)" = "Darwin" ]; then
+#	chmod 755 /usr/local/share/zsh
+#	chmod 755 /usr/local/share/zsh/site-functions
+#fi
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 eval "$(gh completion -s zsh)"
 
