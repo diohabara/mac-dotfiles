@@ -95,10 +95,6 @@ export NIX_PATH="${HOME}/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/ro
 
 # for LLVM dev
 export PATH="$PATH:${HOME}/repo/github.com/phacility/arcanist/bin/"
-
-# for deno
-export PATH="$HOME/.deno/bin:$PATH"
-
 # for Doom
 # Doc: https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#configure
 export DOOMDIR="${XDG_CONFIG_HOME}/.doom.d"
@@ -115,5 +111,3 @@ bindkey -e
 
 # riscv-toolchain
 export PATH="$PATH:/opt/riscv/bin"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
