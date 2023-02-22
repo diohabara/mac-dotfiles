@@ -111,3 +111,6 @@ bindkey -e
 
 # riscv-toolchain
 export PATH="$PATH:/opt/riscv/bin"
+
+# Doc: https://nixos.wiki/wiki/Locales
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
