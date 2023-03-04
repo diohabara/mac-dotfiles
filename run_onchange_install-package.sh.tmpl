@@ -54,7 +54,7 @@ EOF"
   }
 }
 
-{{ else if eq .chezmoi.osRelease.id "debian" -}}
+{{ else if eq .chezmoi.osRelease.id "ubuntu" -}}
 : "ubuntu" && {
   sudo apt update
   sudo apt upgrade -y
