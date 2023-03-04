@@ -6,7 +6,7 @@ export XDG_DATA_HOME="${HOME}/.share"
 export CASK_ROOM="/usr/local/Caskroom/"
 
 command_exists() {
-	command -v "$1" >/dev/null 2>&1
+  command -v "$1" >/dev/null 2>&1
 }
 
 # for brew
@@ -55,8 +55,8 @@ eval "$(pyenv init --path)"
 ### poetry
 # shellcheck disable=SC1090
 if [ -e "${HOME}/.poetry" ]; then
-	# shellcheck source=/dev/null
-	. "${HOME}/.poetry/env"
+  # shellcheck source=/dev/null
+  . "${HOME}/.poetry/env"
 fi
 
 ## Rust
@@ -71,10 +71,10 @@ export PATH="${PATH}:/Library/TeX/texbin/"
 # Doc: https://nixos.wiki/wiki/Fzf
 # shllcheck disable=SC3054
 if [ -n "$(which fzf-share)" ]; then
-	# shellcheck disable=SC1091
-	. "$(fzf-share)/key-bindings.zsh"
-	# shellcheck disable=SC1091
-	. "$(fzf-share)/completion.zsh"
+  # shellcheck disable=SC1091
+  . "$(fzf-share)/key-bindings.zsh"
+  # shellcheck disable=SC1091
+  . "$(fzf-share)/completion.zsh"
 fi
 
 # for toolchain

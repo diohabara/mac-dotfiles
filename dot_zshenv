@@ -14,7 +14,7 @@ export NIX_PATH="${NIX_PATH:+$NIX_PATH:}${HOME}/.nix-defexpr/channels:/nix/var/n
 
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-	# shellcheck source=/dev/null
-	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+  # shellcheck source=/dev/null
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 # End Nix
