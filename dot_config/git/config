@@ -71,11 +71,11 @@
   gpgsign = true
 
 [alias]
-  # https://blog.toshimaru.net/git-log-graph/
-  a = add .
+  a = add --all
   b = branch
   ba = branch -a
   d = diff
+  # https://blog.toshimaru.net/git-log-graph/
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   s = status
