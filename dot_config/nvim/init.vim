@@ -35,3 +35,6 @@ set whichwrap=b,s,h,l,<,>,[,]
 set wildoptions=pum
 " Also shows partial off-screen results in a preview window
 set inccommand=split
+" fzf
+set rtp+=/opt/homebrew/opt/fzf
+
