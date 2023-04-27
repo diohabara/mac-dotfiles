@@ -73,7 +73,9 @@ EOF"
   : "fzf" && {
     if ! command_exists "fzf"; then
       # Doc: https://github.com/junegunn/fzf#installation
-      git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+      if [ -d "~/.fzf" ]; then
+        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+      fi
       ~/.fzf/install
     fi
   }
