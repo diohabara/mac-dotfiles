@@ -124,3 +124,7 @@ fi
 
 # gradle
 export PATH="$PATH:/opt/gradle-6.9.3/bin"
+
+# linker
+export LDFLAGS=-L$(which lld)
+
