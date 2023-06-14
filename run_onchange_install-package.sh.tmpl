@@ -62,14 +62,6 @@ EOF"
   : "remap keys" && {
     gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']" # turn capslock into control
   }
-  : "nix" && {
-    if ! command_exists "nix"; then
-      # https://nixos.org/download.html
-      sh <(curl -L https://nixos.org/nix/install) --daemon
-      nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
-      nix-channel --update
-    fi
-  }
   : "fzf" && {
     if ! command_exists "fzf"; then
       # Doc: https://github.com/junegunn/fzf#installation
