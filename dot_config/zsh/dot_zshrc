@@ -16,10 +16,6 @@ export PATH="/opt/homebrew/sbin:$PATH"
 # Autocompletion
 autoload -Uz compinit
 compinit -u
-#if [ "$(uname)" = "Darwin" ]; then
-#	chmod 755 /usr/local/share/zsh
-#	chmod 755 /usr/local/share/zsh/site-functions
-#fi
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 eval "$(gh completion -s zsh)"
 
@@ -39,26 +35,6 @@ export PATH="${PATH}:/usr/local/bin"
 export PATH="${PATH}:${HOME}/.local/bin"
 export PATH="${PATH}:/usr/local/opt/binutils/bin"
 
-# Doom Emacs
-export PATH="${PATH}:${HOME}/.emacs.d/bin"
-
-## LLVM
-export PATH="/usr/local/opt/llvm/bin:${PATH}" # LLVM
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
-
-# Languages
-## Python
-export PYENV_ROOT="${HOME}/.pyenv"
-export PATH="${PATH}:${PYENV_ROOT}/bin"
-eval "$(pyenv init --path)"
-### poetry
-# shellcheck disable=SC1090
-if [ -e "${HOME}/.poetry" ]; then
-  # shellcheck source=/dev/null
-  . "${HOME}/.poetry/env"
-fi
-
 ## Rust
 export PATH="${PATH}:${HOME}/.cargo/bin"
 export PKG_CONFIG_PATH="${HOME}/bin/convert"
@@ -77,28 +53,11 @@ if [ -n "$(which fzf-share)" ]; then
   . "$(fzf-share)/completion.zsh"
 fi
 
-# for toolchain
-# Doc: https://github.com/riscv/riscv-gnu-toolchain
-# export PATH="${PATH}:/opt/riscv/bin"
-
 # zplug
 # shellcheck source=/dev/null
 . "${HOME}/.zplug/init.zsh"
 zplug "sobolevn/wakatime-zsh-plugin", from:github
 zplug load
-
-# Doc: https://nixos.wiki/wiki/Locales
-# fix nix locale
-export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
-# Doc: https://nix-community.github.io/home-manager/index.html#sec-install-standalone
-export NIX_PATH="${HOME}/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}"
-
-# for LLVM dev
-export PATH="$PATH:${HOME}/repo/github.com/phacility/arcanist/bin/"
-export PATH="$PATH:${HOME}/repo/github.com/diohabara/llvm-project/build/bin"
-# for Doom
-# Doc: https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#configure
-export DOOMDIR="${XDG_CONFIG_HOME}/.doom.d"
 
 # for direnv
 eval "$(direnv hook zsh)"
@@ -110,9 +69,6 @@ setopt interactivecomments
 export EDITOR=vim
 bindkey -e
 
-# riscv-toolchain
-export PATH="$PATH:/opt/riscv/bin"
-
 # Doc: https://nixos.wiki/wiki/Locales
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
@@ -120,9 +76,6 @@ export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
-
-# gradle
-export PATH="$PATH:/opt/gradle-6.9.3/bin"
 
 # linker
 FLAG_OPTION="-L$(which lld)"

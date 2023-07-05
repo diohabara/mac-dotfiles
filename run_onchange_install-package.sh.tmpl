@@ -92,20 +92,6 @@ EOF"
 }
 
 : "laguages" && {
-  : "python" && {
-    : "pyenv" && {
-      if ! command_exists pyenv; then
-        # https://github.com/pyenv/pyenv#automatic-installer
-        curl https://pyenv.run | bash
-      fi
-    }
-    : "poetry" && {
-      if ! command_exists poetry; then
-        # https://python-poetry.org/docs/
-        curl -sSL https://install.python-poetry.org | python3 -
-      fi
-    }
-  }
   : "rust" && {
     if ! command_exists rustup; then
       # Doc: https://www.rust-lang.org/tools/install
