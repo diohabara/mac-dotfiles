@@ -54,7 +54,7 @@ EOF"
   }
 }
 
-{{ else if eq .chezmoi.osRelease.id "ubuntu" -}}
+{{ else if eq .chezmoi.osRelease.id "linux-debian" -}}
   : "apt" && {
     # https://askubuntu.com/questions/462094/unable-to-install-libssl1-0-0i386-due-to-unmet-dependencies/462471#462471
     sudo apt update
