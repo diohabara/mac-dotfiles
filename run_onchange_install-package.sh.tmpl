@@ -55,10 +55,13 @@ EOF"
 }
 
 {{ else if eq .chezmoi.osRelease.id "ubuntu" -}}
-: "ubuntu" && {
-  sudo apt update
-  sudo apt upgrade -y
-  sudo apt install -y git
+  : "apt" && {
+    # https://askubuntu.com/questions/462094/unable-to-install-libssl1-0-0i386-due-to-unmet-dependencies/462471#462471
+    sudo apt update
+    sudo apt upgrade -y
+    sudo apt purge -y --autoremove
+    sudo apt install -y build-essential neovim wget curl direnv zsh git
+  }
   : "remap keys" && {
     gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']" # turn capslock into control
   }
@@ -70,13 +73,6 @@ EOF"
       fi
       ~/.fzf/install
     fi
-  }
-  : "apt" && {
-    # https://askubuntu.com/questions/462094/unable-to-install-libssl1-0-0i386-due-to-unmet-dependencies/462471#462471
-    sudo apt update
-    sudo apt upgrade -y
-    sudo apt purge -y --autoremove
-    sudo apt install -y build-essential neovim wget curl direnv zsh
   }
 }
 {{ end -}}
