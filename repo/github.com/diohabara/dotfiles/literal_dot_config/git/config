@@ -1,0 +1,82 @@
+# Doc: https://git-scm.com/docs/git-config
+[user]
+  name = 卍diohabara卍
+  email = diohabara@gmail.com
+  signingkey = ~/.ssh/id_ed25519.pub
+
+[core]
+  # Repo: https://github.com/neovim/neovim
+  editor = nvim
+  quotepath = false
+  # Repo: https://github.com/dandavison/delta
+  pager = delta --dark
+  excludefile = ~/git/ignore
+
+[interactive]
+  diffFilter = delta --color-only
+
+[init]
+  templatedir = ~/.config/git/templates
+  defaultBranch = "main"
+
+[diff]
+  tool = nvimdiff
+
+[difftool "nvimdiff"]
+  cmd = "nvim -R -d -c \"wincmd l\" -d \"${LOCAL}\" \"${REMOTE}\""
+
+[mergetool "nvimdiff"]
+  cmd = "nvim -d -c \"4wincmd w | wincmd J\" \"${LOCAL}\" \"${BASE}\" \"${REMOTE}\"  \"${MERGED}\""
+
+[commit]
+  template = ~/.config/git/templates/gitmessage.txt
+  gpgsign = true
+
+[ghq]
+  root = ~/repo
+
+# Repo: https://github.com/dandavison/delta
+[delta]
+  line-numbers = true
+  side-by-side = true
+  decorations = true
+  syntax-theme = GitHub
+  whitespace-error-style = 22 reverse
+
+[http]
+  cookiefile = /Users/jio/.gitcookies
+
+[pull]
+  ff = only
+
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+
+[push]
+  autoSetupRemote = true
+
+[gpg]
+  format = ssh
+
+[credential]
+  helper = /usr/local/share/gcm-core/git-credential-manager
+
+[credential "https://dev.azure.com"]
+  useHttpPath = true
+
+[tag]
+  gpgsign = true
+
+[alias]
+  a = add --all
+  b = branch
+  ba = branch -a
+  d = diff
+  # https://blog.toshimaru.net/git-log-graph/
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  s = status
+  wip = commit -m "wip"

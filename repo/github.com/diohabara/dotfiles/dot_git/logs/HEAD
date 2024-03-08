@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 eaf46ad69062932396a288abc7f8127554b27910 卍diohabara卍 <diohabara@gmail.com> 1686760153 -0500	clone: from ssh://github.com/diohabara/dotfiles.git
+eaf46ad69062932396a288abc7f8127554b27910 f01f22eabc132492ada3583b3cf94b1835a2d72e 卍diohabara卍 <diohabara@gmail.com> 1686760521 -0500	commit: feat: remove nix installation
+f01f22eabc132492ada3583b3cf94b1835a2d72e 1668e9076647458831a5133abd59fda7df0b30d4 卍diohabara卍 <diohabara@gmail.com> 1686846589 -0500	commit: feat: ignore vscode
+1668e9076647458831a5133abd59fda7df0b30d4 7da20b1b94cec99b051acca01cc533f505a912ed 卍diohabara卍 <diohabara@gmail.com> 1688586591 -0500	commit: wip
+7da20b1b94cec99b051acca01cc533f505a912ed 1fac8938870ae30b668ab466bd9c7b313d1f049e 卍diohabara卍 <diohabara@gmail.com> 1688586598 -0500	commit (amend): feat: download
+1fac8938870ae30b668ab466bd9c7b313d1f049e c23c6911d3d3d7581a132cfff5e762e9f54cb0ef 卍diohabara卍 <diohabara@gmail.com> 1688586613 -0500	commit (amend): fix
+c23c6911d3d3d7581a132cfff5e762e9f54cb0ef e198aaaf7aeaed08135faf13fffb628aa06eb504 卍diohabara卍 <diohabara@gmail.com> 1688586807 -0500	commit: fix
+e198aaaf7aeaed08135faf13fffb628aa06eb504 f64d3744aec024c7597cbe580b60354d1e333498 卍diohabara卍 <diohabara@gmail.com> 1688587015 -0500	commit: fix
+f64d3744aec024c7597cbe580b60354d1e333498 f64d3744aec024c7597cbe580b60354d1e333498 卍diohabara卍 <diohabara@users.noreply.github.com> 1709481097 -0600	reset: moving to HEAD
