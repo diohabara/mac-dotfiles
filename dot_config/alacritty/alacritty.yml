@@ -30,7 +30,7 @@ scrolling:
 
   # Number of lines the viewport will move for every line
   # scrolled when scrollback is enabled (history > 0).
-  # multiplier: 3
+  multiplier: 3
 
   # Faux Scrolling
   #
@@ -40,4 +40,4 @@ scrolling:
   # scrolling for applications like `man`.
   #
   # To disable this completely, set `faux_multiplier` to 0.
-  scrolling.multiplier: 3
+  # scrolling.multiplier: 3
